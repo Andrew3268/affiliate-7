@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'simple_form', '~> 4.0'
+gem 'devise', '~> 4.5'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

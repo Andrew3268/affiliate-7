@@ -1,53 +1,50 @@
 <!-- Header -->
 <header id="header">
 
-	<!-- Logo -->
-		<span class="logo">
-			<a href="index.html">Oh,i gotta buy this</a>
-			<span>Quick way to find the best deals</span>
-		</span>
-
-	<!-- Nav -->
-	<%= render 'home/navigation' %>	
+  <!-- Nav -->
+  <%= render 'posts/menubar' %> 
 
 </header>
 
 <!-- Wrapper -->
 <div class="wrapper">
 
-	<!-- Main -->
-		<section class="main">
+  <!-- Main -->
+    <section class="main">
 
-			<!-- Banner -->
-			<%= render 'home/banner' %>	
+      <!-- Banner -->
+      <%= render 'posts/banner' %> 
 
-			<!-- Blurb -->
-				<section>
-					<h1>Sed mattis nunc lorem</h1>
-					<p>Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla lorem.</p>
-				</section>
+      <!-- Blurb -->
+        <section>
+          <h1>Sed mattis nunc lorem</h1>
+          <p>Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla lorem.</p>
+        </section>
 
       <!-- Deals -->
         <div class="index_container">
           <h1>Responsive Cards</h1>
+          <h2><%= link_to "Add New Inspiration", new_post_path %></h2>
           <div class="grid">
 
+            <% @posts.each do |post| %>
             <div class="card">
               <div class="card--image">
-                <img src="https://cdn.shopify.com/s/files/1/1196/9896/collections/Iphone_SmartWatch_1_8ac8d0c3-f3ea-4a25-84fd-f57b230d6096_580x.jpg?v=1503340748">
+                <%= link_to (image_tag post.post_image), post %>
               </div>
               <div class="card--content">
-                <div class="card--category">Category</div>
-                <p>Lorem ipsum dolor sit.</p>
+                <div class="card--category"><%= post.post_source %></div>
+                <p><%= post.post_title %></p>
                 <ul>
-                  <li>$15</li>
-                  <li>$20</li>
+                  <li>$<%= post.post_price_is %></li>
+                  <li>$<%= post.post_price_was %></li>
                 </ul>
                 <div class="index_button">
-                 <a href="#">See More Detail</a>
+                 <a href="posts/<%= post.id %>">See More Detail</a>
                 </div>
               </div>          
             </div>
+            <% end %>
             
             <div class="card">
               <div class="card--image"><img src="https://www.livemint.com/rf/Image-621x414/LiveMint/Period2/2018/04/20/Photos/Processed/coverimage-NintendoSwitch-k9XD--621x414@LiveMint.jpg"></div>
@@ -128,12 +125,12 @@
         </div>
 
 
-		</section><!-- /.main -->
+    </section><!-- /.main -->
 
-	<!-- Sidebar -->
-	<%= render 'home/sidebar' %>	
+  <!-- Sidebar -->
+  <%= render 'posts/sidebar' %>  
 
 </div><!-- /.warpper -->
 
 <!-- Footer -->
-<%= render 'home/footer' %>
+<%= render 'posts/footer' %>
