@@ -1,9 +1,5 @@
-<!-- Header -->
 <header id="header">
-
-  <!-- Nav -->
-  <%= render 'posts/menubar' %> 
-
+  <%= render 'posts/navbar' %> 
 </header>
 
 <!-- Wrapper -->
@@ -13,7 +9,12 @@
     <section class="main">
 
       <h1><%= @post.post_title %></h1>
-      <h2><%= raw @post.post_spare_21 %></h2>
+      <%= @post.post_intro %>
+      <%= @post.post_price_is %>
+      <%= @post.post_price_was %>
+      <%= @post.post_source %>
+      <!-- <h2><%= raw @post.post_spare_21 %></h2> -->
+      <%= @post.user.name %>
 
       <%= link_to "Home", root_path %>
       <%= link_to "Edit", edit_post_path(@post) %>
