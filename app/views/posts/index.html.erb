@@ -32,6 +32,7 @@
                 <ul>
                   <li>$<%= post.post_price_is %></li>
                   <li>$<%= post.post_price_was %></li>
+                  <li><%= post.get_likes.size %> Likes</li>
                 </ul>
                 <div class="index_button">
                  <a href="posts/<%= post.id %>">See More Detail</a>
