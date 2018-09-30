@@ -18,6 +18,7 @@
 //= require breakpoints.min
 //= require browser.min
 //= require main
+//= require ckeditor/init 
 //= require_tree .
 
 

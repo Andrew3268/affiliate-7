@@ -1,9 +1,5 @@
-<!-- Header -->
 <header id="header">
-
-  <!-- Nav -->
   <%= render 'posts/menubar' %> 
-
 </header>
 
 <!-- Wrapper -->
@@ -17,14 +13,12 @@
 
       <!-- Blurb -->
         <section>
-          <h1>Sed mattis nunc lorem</h1>
           <p>Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla lorem.</p>
         </section>
 
       <!-- Deals -->
         <div class="index_container">
-          <h1>Responsive Cards</h1>
-          <h2><%= link_to "Add New Inspiration", new_post_path %></h2>
+          <p><%= link_to "Add New Inspiration", new_post_path %></p>
           <div class="grid">
 
             <% @posts.each do |post| %>
