@@ -6,6 +6,7 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'ckeditor'
 gem 'paperclip'
 gem 'acts_as_votable', '~> 0.11.1'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
