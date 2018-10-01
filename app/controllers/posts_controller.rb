@@ -4,7 +4,12 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @posts = Post.all.order("created_at DESC")
+    if params[:category].blank?
+      @posts = Post.all.order("created_at DESC")
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @posts = Post.where(category_id: @category_id).order("created_at DESC")
+    end
   end
 
   def show
@@ -62,7 +67,7 @@ class PostsController < ApplicationController
                                  :post_spare_07, :post_spare_08, :post_spare_09, :post_spare_10, :post_spare_11, :post_spare_12,
                                  :post_spare_13, :post_spare_14, :post_spare_15, :post_spare_16, :post_spare_17, :post_spare_18,
                                  :post_spare_19, :post_spare_20, :post_spare_21, :post_spare_22, :post_spare_23, :post_spare_24,
-                                 :post_spare_25)
+                                 :post_spare_25, :category_id)
   end
   
 end

@@ -1,3 +1,57 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* ---------------------------------------------
+   Show Page
+ --------------------------------------------- */
+.show_detail_wrap {
+  margin: 0;
+  padding: 0;
+}
+.show_left {
+  float: left;
+  width: 35%;
+  margin-right: 5%;
+ }
+.show_left img {
+  width: 100%;
+}
+.show_right {
+  float: left;
+  width: 60%;
+ }
+.show_right ul {
+  margin: 0 0 0 0;
+  padding-left: 0em;
+}
+.show_right ul li {
+  display: inline-block;
+  list-style: none;
+  padding-left: 0em;   
+  margin-right: 0.2em;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.show_right ul li:nth-child(2) {
+  text-decoration: line-through;
+}
+.admin {
+  float: right;
+}
+.check_boutton {
+  margin-top: 0.5em;
+}
+.show_right .contents {
+  margin-top: 1em;
+}
+.show_right .contents p {
+  margin: 0em;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.amazon_related {
+  margin-top: 70%;
+  padding: 0.5em;
+}

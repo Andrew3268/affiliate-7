@@ -8,21 +8,195 @@
   <!-- Main -->
     <section class="main">
 
-      <h1><%= @post.post_title %></h1>
-      <%= @post.post_intro %>
-      <%= @post.post_price_is %>
-      <%= @post.post_price_was %>
-      <%= @post.post_source %>
-      <!-- <h2><%= raw @post.post_spare_21 %></h2> -->
-      <%= @post.user.name %>
-      <p><%= @post.get_upvotes.size %> Likes</p>
-      <p><%= @post.get_downvotes.size %> Dislikes</p>
-      <%= link_to "Like", like_post_path(@post), method: :get %>
-      <%= link_to "Dislike", dislike_post_path(@post), method: :get %>
+      <!-- Blurb -->
+        <section>
+          <p>Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla lorem.</p>
+        
+      
+          <div class="show_detail_wrap">
+            <div class="show_left">
+              <img src="<%= @post.post_image %>">
+            </div>
 
-      <%= link_to "Home", root_path %>
-      <%= link_to "Edit", edit_post_path(@post) %>
-      <%= link_to "Delete", post_path(@post), method: :delete, date: {confirm: "Are you sure?"}%>
+            <div class="show_right">
+              <h3><%= @post.post_title %></h3>
+              <ul>
+                <li>$<%= @post.post_price_is %></li>
+                <li>$<%= @post.post_price_was %></li>
+              </ul>
+              <hr>
+               <%= @post.post_source %> 
+              <hr>
+              <div class="contents">
+                <p>What is this?</p>
+                <%= @post.post_intro %>
+                <%= @post.post_source %>
+                <!-- <h2><%= raw @post.post_spare_21 %></h2> -->
+                <%= @post.user.name %>
+              </div>
+              <p><%= @post.get_upvotes.size %> Likes</p>
+              <p><%= @post.get_downvotes.size %> Dislikes</p>
+              <%= link_to "Like", like_post_path(@post), method: :get %>
+              <%= link_to "Dislike", dislike_post_path(@post), method: :get %>
+              
+              <div class="admin">
+                <%= link_to "Home", root_path %>
+                <%= link_to "Add New Inspiration", new_post_path %>
+                <%= link_to "Edit", edit_post_path(@post) %>
+                <%= link_to "Delete", post_path(@post), method: :delete, date: {confirm: "Are you sure?"}%>
+              </div>
+              <hr>
+              <div class="check_boutton">
+                <a href="#" class="button">Check it Out</a>
+              </div>
+            </div>
+          </div>
+          
+        </section>
+        
+        <div class="amazon_related">
+          <script type="text/javascript">
+            amzn_assoc_placement = "adunit0";
+            amzn_assoc_tracking_id = "3628-20";
+            amzn_assoc_ad_mode = "search";
+            amzn_assoc_ad_type = "smart";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "US";
+            amzn_assoc_default_search_phrase = "iphone";
+            amzn_assoc_default_category = "All";
+            amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
+            amzn_assoc_search_bar = "true";
+            amzn_assoc_search_bar_position = "top";
+            amzn_assoc_title = "Shop Related Products";
+          </script>
+          <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+        </div><br>
 
+        
+        
     </section>
+
+  <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <!-- Blurb -->
+        <section>
+          <h2>Magna etiam</h2>
+          <p>Fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem sed euismod placerat. Vivamus porttitor et magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper lorem ipsum.</p>
+          <ul class="actions">
+            <li><a href="#" class="button">Learn More</a></li>
+          </ul>
+        </section>
+
+      <!-- Featured posts -->
+        <section class="featured-posts">
+          <h2>Sed aliquam</h2>
+          <article>
+            <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
+            <header>
+              <span class="date">September 19, 2016</span>
+              <h3><a href="#">Non velit accumsan cursus gravida amet sapien</a></h3>
+            </header>
+            <p>Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis varius.</p>
+            <ul class="actions">
+              <li><a href="#" class="button">Continue Reading</a></li>
+            </ul>
+          </article>
+        </section>
+
+      <!-- Posts -->
+        <section>
+          <h2>Arcu dolore</h2>
+          <ul class="posts">
+            <li>
+              <a href="#">Etiam quis viverra lorem in semper lorem.</a>
+              <span class="date">September 15, 2016</span>
+            </li>
+            <li>
+              <a href="#">Sed nisl arcu euismod sit amet nisi euismod sed cursus elementum ipsum.</a>
+              <span class="date">September 15, 2016</span>
+            </li>
+            <li>
+              <a href="#">Arcu vivamus quis venenatis orci lorem.</a>
+              <span class="date">September 15, 2016</span>
+            </li>
+            <li>
+              <a href="#">Veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore magna.</a>
+              <span class="date">September 15, 2016</span>
+            </li>
+            <li>
+              <a href="#">Mauris neque quam, fermentum ut nisl vitae</a>
+              <span class="date">September 15, 2016</span>
+            </li>
+            <li>
+              <a href="#">Convallis maximus nisl sed mattis nunc id lorem euismod amet placerat.</a>
+              <span class="date">September 15, 2016</span>
+            </li>
+            <li>
+              <a href="#">Sed nisl arcu euismod sit amet nisi euismod sed cursus elementum ipsum.</a>
+              <span class="date">September 15, 2016</span>
+            </li>
+          </ul>
+          <ul class="actions">
+            <li><a href="#" class="button">More Posts</a></li>
+          </ul>
+        </section>
+
+    </aside>
+
 </div>
+
+<!-- Footer -->
+<footer id="footer">
+  <div class="inner">
+    <section class="info">
+      <h3>About Us</h3>
+      <div class="about">
+        <p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur malesuada.</p><p>Sagittis felis ac sagittis semper. Curabitur purus leo donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis.</p>
+        <ul class="actions">
+          <li><a href="#" class="button">Learn More</a></li>
+        </ul>
+      </div>
+      <div class="team">
+        <article>
+          <span class="image"><img src="images/pic06.jpg" alt=""></span>
+          <p>
+            <strong class="name">John Doe</strong>
+            <span class="title">Lorem semper magna etiam</span>
+          </p>
+        </article>
+        <article>
+          <span class="image"><img src="images/pic07.jpg" alt=""></span>
+          <p>
+            <strong class="name">Jane Anderson</strong>
+            <span class="title">Etiam feugiat adipiscing veroeros</span>
+          </p>
+        </article>
+        <article>
+          <span class="image"><img src="images/pic08.jpg" alt=""></span>
+          <p>
+            <strong class="name">Mike Smith</strong>
+            <span class="title">Consequat nulla dolor blandit</span>
+          </p>
+        </article>
+      </div>
+    </section>
+    <section class="contact">
+      <h3>Contact Us</h3>
+      <ul class="contact-icons">
+        <li class="icon fa-home"><a href="#">1234 Somewhere Road #80486<br>Nashville, TN 00000</a></li>
+        <li class="icon fa-phone"><a href="#">(800) 555-0000 x12345</a></li>
+        <li class="icon fa-envelope"><a href="#">hello@untitled.tld</a></li>
+        <li class="icon fa-facebook"><a href="#">facebook.com/untitled-tld</a></li>
+        <li class="icon fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
+      </ul>
+    </section>
+  </div>
+  <div class="copyright">
+    &copy; Untitled. All rights reserved.
+  </div>
+</footer>
+
+
+
+
