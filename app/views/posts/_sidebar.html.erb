@@ -67,15 +67,17 @@
      <h2>Arcu dolore</h2>
      <div id="sidebar">
       <ul id="side-rcnt-thumb-post-list">
-
-        <li>
-          <div class="srtpl-l">
-            <a href="#" class="srtpl-a"><img class="srtpl-thumb" src="//source.unsplash.com/500x304" alt=""></a>
-          </div>
-          <div class="srtpl-r">
-              <a href="#" class="srtpl-n">Photo Gallery with PHP, MySQL, ImageMagick and jQuery</a>
-          </div>
-        </li>
+        
+        <%= @post_side.each do |ps| %>
+          <li>
+            <div class="srtpl-l">
+              <a href="#" class="srtpl-a"><img class="srtpl-thumb" src="<%= ps.post_image %>" alt=""></a>
+            </div>
+            <div class="srtpl-r">
+                <a href="#" class="srtpl-n"><%= ps.post_title %></a>
+            </div>
+          </li>
+        <% end %>
 
         <li class="srtpl-li">
           <div class="srtpl-l">
