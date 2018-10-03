@@ -4,6 +4,8 @@ class Post < ActiveRecord::Base
   belongs_to :category
 
   has_many :impressions, :as=>:impressionable
+  is_impressionable :counter_cache => true, :unique => true
+
  
    def impression_count
        impressions.size

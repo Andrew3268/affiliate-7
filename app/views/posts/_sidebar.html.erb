@@ -24,8 +24,32 @@
         </ul>
       </article>
     </section>
+     
+     <section>
+       <h2>Popular Post</h2>
+       <div id="sidebar">
+        <ul id="side-rcnt-thumb-post-list">
+          
+          <% @post_side.each do |ps| %>
+            <li>
+              <div class="srtpl-l">
+                <%= link_to (image_tag ps.post_image), ps, :class => "srtpl-a" %>
+                <!-- <a href="#" class="srtpl-a"><img class="srtpl-thumb" src="<%= ps.post_image %>" alt=""></a> -->
+              </div>
+              <div class="srtpl-r">
+                <%= link_to ps.post_title, ps, :class => "srtpl-n" %>
+              </div>
+            </li>
+          <% end %>
+          
+        </ul>
+        </div><br/>
+        <ul class="actions">
+          <li><a href="#" class="button">Learn More</a></li>
+        </ul>
+    </section>
 
-  <!-- Posts -->
+     <!-- Posts -->
     <section>
       <h2>Arcu dolore</h2>
       <ul class="posts">
@@ -61,56 +85,6 @@
       <ul class="actions">
         <li><a href="#" class="button">More Posts</a></li>
       </ul>
-    </section>
-     
-     <section>
-     <h2>Arcu dolore</h2>
-     <div id="sidebar">
-      <ul id="side-rcnt-thumb-post-list">
-        
-        <%= @post_side.each do |ps| %>
-          <li>
-            <div class="srtpl-l">
-              <a href="#" class="srtpl-a"><img class="srtpl-thumb" src="<%= ps.post_image %>" alt=""></a>
-            </div>
-            <div class="srtpl-r">
-                <a href="#" class="srtpl-n"><%= ps.post_title %></a>
-            </div>
-          </li>
-        <% end %>
-
-        <li class="srtpl-li">
-          <div class="srtpl-l">
-              <a href="#" class="srtpl-a"><img class="srtpl-thumb" src="//source.unsplash.com/500x304" alt=""></a>
-          </div>
-          <div class="srtpl-r">
-              <a href="#" class="srtpl-n">Advanced search form with PHP and MySQL</a>
-          </div>
-        </li>
-
-        <li class="srtpl-li">
-          <div class="srtpl-l">
-              <a href="#" class="srtpl-a"><img class="srtpl-thumb" src="//source.unsplash.com/500x304" alt=""></a>
-          </div>
-          <div class="srtpl-r">
-              <a href="#" class="srtpl-n">Secure Online Contact Form with Attachment</a>
-          </div>
-        </li>
-
-        <li class="srtpl-li">
-          <div class="srtpl-l">
-              <a href="#" class="srtpl-a"><img class="srtpl-thumb" src="//source.unsplash.com/500x304" alt=""></a>
-          </div>
-          <div class="srtpl-r">
-              <a href="#" class="srtpl-n">Photo Gallery with Image Tagging</a>
-          </div>
-        </li>
-
-      </ul>
-    </div><br/>
-    <ul class="actions">
-      <li><a href="#" class="button">Learn More</a></li>
-    </ul>
     </section>
 
 </aside>

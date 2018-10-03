@@ -18,10 +18,11 @@ class PostsController < ApplicationController
       @category_id = Category.find_by(name: params[:category]).id
       @posts = Post.where(category_id: @category_id).order("created_at DESC").page(params[:page]).per(30)
     end
-    @post_side = Post.all.order("created_at DESC")
+    @post_side = Post.order("impressions_count DESC").limit(5)
   end
 
   def show
+    @post_side = Post.order("impressions_count DESC").limit(5)
   end
 
   def new
