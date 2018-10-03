@@ -2,13 +2,21 @@
   <%= render 'posts/navbar' %> 
 </header>
 
-<!-- Wrapper -->
 <div class="wrapper">
 
-  <!-- Main -->
     <section class="main">
 
-      <!-- Blurb -->
+
+        <!-- for play youtube video-->
+        <div class="overlay-video">
+          <div class="videoWrapperExt">
+            <div class="videoWrapper">
+              <div class="video_close"></div>
+                <iframe id="player" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>        
+         </div>
+
         <section>
           <p>Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla lorem.</p>
         
@@ -21,33 +29,64 @@
             <div class="show_right">
               <h3><%= @post.post_title %></h3>
               <ul>
-                <li>$<%= @post.post_price_is %></li>
-                <li>$<%= @post.post_price_was %></li>
+                <li class="show_price_is">$<%= @post.post_price_is %></li>
+                <li class="show_price_was">$<%= @post.post_price_was %></li>
               </ul>
               <hr>
-               <%= @post.post_source %> 
+              <div class="youtube">
+                <ul>
+                  <li>
+                    <div class="js-overlay-start start" data-url="<%= @post.post_youtube_01 %>">
+                     <button class="button small"><i class="fa fa-play"></i>&nbsp;Watch Video</button>
+                    </div>
+                  </li>
+<!--                   <li>
+                    <div class="js-overlay-start start" data-url="<%= @post.post_youtube_02 %>">
+                     <button class="button small"><i class="fa fa-play"></i>&nbsp;Watch Video</button>
+                    </div>
+                  </li> -->
+                  <li><a class="button small" href="<%= @post.post_review %>"><i class="fa fa-check-circle"></i>&nbsp;See Review</a></li>
+                </ul>
+              </div>
+
+         <!--       <a href="<%= @post.post_youtube_01 %>">YouTube</a>
+               <a href="<%= @post.post_youtube_02 %>">YouTube</a>
+               <a href="<%= @post.post_review %>">See Review</a> -->
               <hr>
               <div class="contents">
                 <p>What is this?</p>
                 <%= @post.post_intro %>
-                <%= @post.post_source %>
-                <!-- <h2><%= raw @post.post_spare_21 %></h2> -->
-                <%= @post.user.name %>
+                <%= raw @post.post_spare_21 %>
+                <!-- <%= @post.user.name %> -->
               </div>
-              <p><%= @post.get_upvotes.size %> Likes</p>
-              <p><%= @post.get_downvotes.size %> Dislikes</p>
-              <%= link_to "Like", like_post_path(@post), method: :get %>
-              <%= link_to "Dislike", dislike_post_path(@post), method: :get %>
+
+              <%= @post.post_source %>
+             
+              <% if can? :update, @post %>
+                <%= link_to like_post_path(@post), method: :get, class: "data" do %>
+                  <i class="fa fa-thumbs-o-up"></i>
+                  <%= pluralize(@post.get_upvotes.size, "Like") %>
+                <% end %>
+
+                <%= link_to dislike_post_path(@post), method: :get, class: "data" do %>
+                  <i class="fa fa-thumbs-o-down"></i>
+                  <%= pluralize(@post.get_downvotes.size, "Dislike") %>
+                <% end %>
+              <% end %>
               
-              <div class="admin">
-                <%= link_to "Home", root_path %>
-                <%= link_to "Add New Inspiration", new_post_path %>
-                <%= link_to "Edit", edit_post_path(@post) %>
-                <%= link_to "Delete", post_path(@post), method: :delete, date: {confirm: "Are you sure?"}%>
-              </div>
+              <% if can? :update, @post %>
+                <div class="admin">
+                  <%= link_to "Home", root_path %>
+                  <%= link_to "New", new_post_path %>
+                  <%= link_to "Edit", edit_post_path(@post) %>
+                  <%= link_to "Delete", post_path(@post), method: :delete, date: {confirm: "Are you sure?"}%>
+                  <%= "#{@post.unique_impression_count}" %> views
+
+                </div>
+              <% end %>
               <hr>
               <div class="check_boutton">
-                <a href="#" class="button">Check it Out</a>
+                <a href="#" class="button primary fit">Check it Out</a>
               </div>
             </div>
           </div>
@@ -196,6 +235,8 @@
     &copy; Untitled. All rights reserved.
   </div>
 </footer>
+
+<%= render 'posts/post.js' %>
 
 
 

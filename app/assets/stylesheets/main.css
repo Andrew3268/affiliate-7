@@ -1474,7 +1474,7 @@ input, select, textarea {
     input[type="button"].small,
     button.small,
     .button.small {
-      font-size: 0.7em;
+      font-size: 0.6em;
     }
     input[type="submit"].large,
     input[type="reset"].large,
@@ -1555,7 +1555,7 @@ input, select, textarea {
     display: block;
     font-size: 0.9em;
     font-weight: 600;
-    margin: 0 0 1em 0;
+    margin: 1em 0 0 0;
   }
   input[type="text"],
   input[type="password"],

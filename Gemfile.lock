@@ -43,6 +43,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
     byebug (10.0.2)
+    cancancan (2.3.0)
     ckeditor (4.2.4)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -74,6 +75,8 @@ GEM
       activesupport (>= 4.2.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
+    impressionist (1.6.1)
+      nokogiri (~> 1)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -151,6 +154,7 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rolify (5.2.0)
     sass (3.6.0)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -204,15 +208,18 @@ PLATFORMS
 DEPENDENCIES
   acts_as_votable (~> 0.11.1)
   byebug
+  cancancan
   ckeditor
   coffee-rails (~> 4.1.0)
   devise (~> 4.5)
   font-awesome-rails (~> 4.7, >= 4.7.0.2)
+  impressionist
   jbuilder (~> 2.0)
   jquery-rails
   kaminari (~> 1.1, >= 1.1.1)
   paperclip
   rails (= 4.2.5)
+  rolify
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form (~> 4.0)

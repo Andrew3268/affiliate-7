@@ -1,13 +1,18 @@
 <%= simple_form_for @post do |f| %>
- <%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"} %>
- <%= f.input :post_title %>
- <%= f.input :post_intro %>
- <%= f.input :post_spare_21, as: :text, input_html: { class: 'ckeditor' }, label: "Description" %>
- <%= f.input :post_image %>
- <%= f.input :post_price_is %>
- <%= f.input :post_price_was %>
- <%= f.input :post_source %>
-
- 
- <%= f.button :submit %>
+ <div class="form_section">
+   <%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"} %>
+   <%= f.input :post_title %>
+   <%= f.input :post_intro %>
+   <%= f.input :post_spare_21, as: :text, input_html: { class: 'ckeditor' }, label: "Description" %>
+   <%= f.input :post_image %>
+   <%= f.input :post_price_is %>
+   <%= f.input :post_price_was %>
+   <%= f.input :post_source %>
+   <%= f.input :post_youtube_01 %>
+   <%= f.input :post_youtube_02 %>
+   <%= f.input :post_review %>
+   <div class="form_button">   
+    <%= f.button :submit %>
+   </div>
+ </div>
 <% end %>

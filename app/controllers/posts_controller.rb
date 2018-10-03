@@ -2,13 +2,21 @@ class PostsController < ApplicationController
 
   before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :log_impression, :only=> [:show]
+  load_and_authorize_resource
+
+  def log_impression
+      @post = Post.find(params[:id])
+      @post.impressions.create(ip_address: request.remote_ip)
+  end
+
 
   def index
     if params[:category].blank?
-      @posts = Post.all.order("created_at DESC").page(params[:page]).per(2)
+      @posts = Post.all.order("created_at DESC").page(params[:page]).per(30)
     else
       @category_id = Category.find_by(name: params[:category]).id
-      @posts = Post.where(category_id: @category_id).order("created_at DESC").page(params[:page]).per(1)
+      @posts = Post.where(category_id: @category_id).order("created_at DESC").page(params[:page]).per(30)
     end
   end
 
