@@ -150,3 +150,15 @@ list-style: none;
   outline: 0!important;
   text-decoration: none;  
 }
+
+/* ---------------------------------------------
+   Media Query
+ --------------------------------------------- */
+ @media screen and (max-width: 480px) {
+   .index_container {
+     padding: 0 1rem 1rem;
+   }
+   .card--image img {
+     object-fit: cover;
+   }
+ }
