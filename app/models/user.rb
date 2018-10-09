@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :dealzons
+  has_many :events
 end

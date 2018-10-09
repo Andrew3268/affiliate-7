@@ -1,6 +1,6 @@
 <%= simple_form_for @post do |f| %>
  <div class="form_section">
-   <%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"} %>
+   <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a category"} %>
    <%= f.input :post_title %>
    <%= f.input :post_intro %>
    <%= f.input :post_spare_21, as: :text, input_html: { class: 'ckeditor' }, label: "Description" %>

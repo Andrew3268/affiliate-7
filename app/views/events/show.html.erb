@@ -1,0 +1,6 @@
+<h1><%= @event.eb_title %></h1>
+<p><%= @event.eb_intro %></p>
+
+<%= link_to "Home", root_path %>
+<%= link_to "Edit", edit_event_path(@event) %>
+<%= link_to "Delete", event_path(@event), method: :delete, data: {Confirm: "Are you sure?"} %>

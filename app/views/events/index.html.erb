@@ -1,0 +1,11 @@
+<%= link_to "All", root_path %>
+<% Ecategory.all.each do |ecategory| %>
+ <%= link_to ecategory.name, events_path(ecategory: ecategory.name) %>
+<% end %>
+
+<% @events.each do |event| %>
+ <h1><%= link_to event.eb_title, event %></h1>
+ 
+<% end %>
+
+<%= link_to "New Event", new_event_path %>

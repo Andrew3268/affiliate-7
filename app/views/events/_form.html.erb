@@ -1,0 +1,7 @@
+<%= simple_form_for @event do |f| %>
+ <%= f.collection_select :ecategory_id, Ecategory.all, :id, :name, {prompt: "Choose a category"} %>
+ <%= f.input :eb_title %>
+ <%= f.input :eb_intro %>
+
+ <%= f.button :submit %>
+<% end %>
