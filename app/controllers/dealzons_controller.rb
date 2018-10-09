@@ -11,8 +11,13 @@ class DealzonsController < ApplicationController
   end
 
   def index
-    @dealzons = Dealzon.all.order("created_at DESC")
-    @dealzon_side = Dealzon.order("impressions_count DESC")
+    if params[:acategory].blank?
+     @dealzons = Dealzon.all.order("created_at DESC")
+    else
+     @acategory_id = Acategory.find_by(name: params[:acategory]).id
+     @dealzons = Dealzon.where(acategory_id: @acategory_id).order("created_at DESC")
+    end
+     @dealzon_side = Dealzon.order("impressions_count DESC")
   end
 
   def show 
@@ -61,7 +66,7 @@ class DealzonsController < ApplicationController
                                  :am_spare_07, :am_spare_08, :am_spare_09, :am_spare_10, :am_spare_11, :am_spare_12,
                                  :am_spare_13, :am_spare_14, :am_spare_15, :am_spare_16, :am_spare_17, :am_spare_18,
                                  :am_spare_19, :am_spare_20, :am_spare_21, :am_spare_22, :am_spare_23, :am_spare_24,
-                                 :am_spare_25, :category_id)
+                                 :am_spare_25, :acategory_id)
   end
 
 end

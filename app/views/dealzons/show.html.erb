@@ -39,11 +39,11 @@
               <%= raw @dealzon.am_spare_21 %>
               </div>
 
-              <%= @dealzon.am_category %>
+              <%= @dealzon.acategory.name %>
               
               <% if can? :update, @dealzon %>
                 <div class="admin">
-                  <%= link_to "Home", root_path %>
+                  <%= link_to "Home", dealzons_path%>
                   <%= link_to "New", new_dealzon_path %>
                   <%= link_to "Edit", edit_dealzon_path(@dealzon) %>
                   <%= link_to "Delete", dealzon_path(@dealzon), method: :delete, date: {confirm: "Are you sure?"}%>

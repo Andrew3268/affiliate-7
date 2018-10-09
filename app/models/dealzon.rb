@@ -1,5 +1,6 @@
 class Dealzon < ActiveRecord::Base
   belongs_to :user
+  belongs_to :acategory
 
   has_many :impressions, :as=>:impressionable
   is_impressionable :counter_cache => true, :unique => true

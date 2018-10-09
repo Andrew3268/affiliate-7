@@ -1,5 +1,6 @@
 <%= simple_form_for @dealzon do |f| %>
  <div class="form_section">
+   <%= f.collection_select :acategory_id, Acategory.all, :id, :name, {promt: "Choose a category"} %>
    <%= f.input :am_title %>
    <%= f.input :am_intro %>
    <%= f.input :am_spare_21, as: :text, input_html: { class: 'ckeditor' }, label: "Description" %>
