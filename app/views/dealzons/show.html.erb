@@ -24,7 +24,11 @@
               <hr>
                <% if @dealzon.am_code.present? %>
                 <div class="promo_code">
-                 <p>PROMO CODE : <%= @dealzon.am_code %></p>
+                  <ul>
+                    <li><p>PROMO CODE : <%= @dealzon.am_code %></p></li> |
+                    <li><p><%= @dealzon.am_date %></p></li>
+                  </ul>
+                 
                 </div>
                <% end %>
               <hr>

@@ -60,7 +60,7 @@ class DealzonsController < ApplicationController
   end
 
   def dealzon_params
-    params.require(:dealzon).permit(:am_title, :am_intro, :am_link, :am_image, :am_code, :am_price_is, :am_price_was,
+    params.require(:dealzon).permit(:am_title, :am_intro, :am_link, :am_image, :am_code, :am_date, :am_price_is, :am_price_was,
                                  :am_price_sale, :am_review, :am_category,
                                  :am_spare_01, :am_spare_02, :am_spare_03, :am_spare_04, :am_spare_05, :am_spare_06,
                                  :am_spare_07, :am_spare_08, :am_spare_09, :am_spare_10, :am_spare_11, :am_spare_12,

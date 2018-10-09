@@ -6,8 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
+# Category of Post
 Category.create(name: "Menu_01")
 Category.create(name: "Menu_02")
 Category.create(name: "Menu_03")
 Category.create(name: "Menu_04")
+
+# Category of Dealzon
+Acategory.create(name: "Sales & Offers")
+Acategory.create(name: "Deals")
+Acategory.create(name: "Coupons")
+Acategory.create(name: "Promo Codes")
+Acategory.create(name: "Promotions")

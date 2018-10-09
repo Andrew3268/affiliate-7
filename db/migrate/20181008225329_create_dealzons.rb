@@ -7,6 +7,7 @@ class CreateDealzons < ActiveRecord::Migration
       t.string :am_link
       t.string :am_image
       t.string :am_code
+      t.string :am_date
       t.string :am_price_is
       t.string :am_price_was
       t.string :am_price_sale
