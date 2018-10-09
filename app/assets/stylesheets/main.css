@@ -144,7 +144,8 @@ input, select, textarea {
     /*border-bottom: dotted 1px;*/
   }
     a:hover {
-      color: #3ed8c4 !important;
+      /*color: #3ed8c4 !important;*/
+      color: #3ed8c4;
       border-bottom-color: transparent;
     }
   strong, b {
