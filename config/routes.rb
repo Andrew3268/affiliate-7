@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
-  get ':controller(/:action(/:id))'
-  post ':controller(/:action(/:id))'
 
-  # root 'posts#index'
+  root 'posts#index'
 
   mount Ckeditor::Engine => '/ckeditor'
 
@@ -20,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :dealzons
-  root 'dealzons#index'
+  # root 'dealzons#index'
 
 
   # get 'home/index'
