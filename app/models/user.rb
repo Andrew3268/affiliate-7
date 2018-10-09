@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   has_many :posts
+  has_many :dealzons
 end

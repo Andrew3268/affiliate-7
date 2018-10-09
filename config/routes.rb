@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'posts#index'
+  # root 'posts#index'
 
   mount Ckeditor::Engine => '/ckeditor'
 
@@ -15,6 +15,9 @@ Rails.application.routes.draw do
       get "dislike", to: "posts#downvote"
     end
   end
+
+  resources :dealzons
+  root 'dealzons#index'
 
 
   # get 'home/index'

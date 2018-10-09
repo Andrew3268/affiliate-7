@@ -22,23 +22,23 @@
           <div class="grid">
 
             <% @posts.each do |post| %>
-            <div class="card">
-              <div class="card--image">
-                <%= link_to (image_tag post.post_image), post %>
-              </div>
-              <div class="card--content">
-                <div class="card--category"><%= post.post_source %></div>
-                <p><%= post.post_title %></p>
-                <ul>
-                  <li>$<%= post.post_price_is %></li>
-                  <li>$<%= post.post_price_was %></li>
-                  <!-- <li><i class="fa fa-thumbs-o-up"><%= post.get_likes.size %></i></li> -->
-                </ul>
-                <div class="index_button">
-                 <a class="button primary fit" href="posts/<%= post.id %>">See More Detail</a>
+              <div class="card">
+                <div class="card--image">
+                  <%= link_to (image_tag post.post_image), post %>
                 </div>
-              </div>          
-            </div>
+                <div class="card--content">
+                  <div class="card--category"><%= post.post_source %></div>
+                  <p><%= post.post_title %></p>
+                  <ul>
+                    <li>$<%= post.post_price_is %></li>
+                    <li>$<%= post.post_price_was %></li>
+                    <!-- <li><i class="fa fa-thumbs-o-up"><%= post.get_likes.size %></i></li> -->
+                  </ul>
+                  <div class="index_button">
+                   <a class="button primary fit" href="posts/<%= post.id %>">See More Detail</a>
+                  </div>
+                </div>          
+              </div>
             <% end %>
             
 <!--             <div class="card">

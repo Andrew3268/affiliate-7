@@ -10,7 +10,6 @@ class PostsController < ApplicationController
       @post.impressions.create(ip_address: request.remote_ip)
   end
 
-
   def index
     if params[:category].blank?
       @posts = Post.all.order("created_at DESC").page(params[:page]).per(30)

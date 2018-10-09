@@ -1,0 +1,99 @@
+<header id="header">
+  <%= render 'posts/navbar' %> 
+</header>
+
+<div class="wrapper">
+
+    <section class="main">
+      
+        <!-- for play youtube video-->
+        <div class="overlay-video">
+          <div class="videoWrapperExt">
+            <div class="videoWrapper">
+              <div class="video_close"></div>
+                <iframe id="player" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>        
+         </div>
+
+        <section>
+          <p>Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla lorem.</p>
+        
+      
+          <div class="show_detail_wrap">
+            <div class="show_left">
+              <img src="<%= @dealzon.am_image %>">
+            </div>
+
+            <div class="show_right">
+              <h3><%= @dealzon.am_title %></h3>
+              <ul>
+                <li class="show_price_is">$<%= @dealzon.am_price_is %></li>
+                <li class="show_price_was">$<%= @dealzon.am_price_was %></li>
+              </ul>
+              <hr>
+              
+              <hr>
+              <div class="contents">
+                <p>What is this?</p>
+                <%= @dealzon.am_intro %>
+                <%= raw @dealzon.am_spare_21 %>
+              </div>
+
+              <%= @dealzon.am_category %>
+              
+              <% if can? :update, @dealzon %>
+                <div class="admin">
+                  <%= link_to "Home", root_path %>
+                  <%= link_to "New", new_dealzon_path %>
+                  <%= link_to "Edit", edit_dealzon_path(@dealzon) %>
+                  <%= link_to "Delete", dealzon_path(@dealzon), method: :delete, date: {confirm: "Are you sure?"}%>
+                  <%= "#{@dealzon.unique_impression_count}" %> views
+                </div>
+              <% end %>
+              <hr>
+              <div class="check_boutton">
+                <a target="_blank" href="<%= @dealzon.am_link %>" class="button primary fit">Check it Out</a>
+              </div>
+            </div>
+          </div>
+          
+        </section>
+
+
+        <div class="amazon_related">
+          <script type="text/javascript">
+            amzn_assoc_placement = "adunit0";
+            amzn_assoc_tracking_id = "3628-20";
+            amzn_assoc_ad_mode = "search";
+            amzn_assoc_ad_type = "smart";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "US";
+            amzn_assoc_default_search_phrase = "<%= @dealzon.am_title %>";
+            amzn_assoc_default_category = "All";
+            amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
+            amzn_assoc_search_bar = "true";
+            amzn_assoc_search_bar_position = "top";
+            amzn_assoc_title = "Shop Related Products";
+          </script>
+          <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+        </div><br>
+       
+    </section>
+
+  <!-- Sidebar -->
+  <%= render 'dealzons/sidebar' %>
+</div>
+
+<!-- Footer -->
+<%= render 'posts/footer' %>
+
+
+
+<h1><%= @dealzon.am_title %></h1>
+<p><%= @dealzon.am_intro %></p>
+<%= raw @dealzon.am_spare_21 %>
+
+<%= link_to "Home", root_path %>
+<%= link_to "Edit", edit_dealzon_path(@dealzon) %>
+<%= link_to "Delete", dealzon_path(@dealzon), method: :delete, data: { confirm: "Are you sure?" } %>
