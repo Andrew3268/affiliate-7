@@ -1,6 +1,6 @@
 class DealzonsController < ApplicationController
 
-  before_action :find_dealzon, only: [:show, :edit, :update, :destroy]
+  before_action :find_dealzon, only: [:show, :edit, :update, :destroy, :deals]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :log_impression, :only=> [:show]
   load_and_authorize_resource

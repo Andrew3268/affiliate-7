@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get ':controller(/:action(/:id))'
+  post ':controller(/:action(/:id))'
+
   # root 'posts#index'
 
   mount Ckeditor::Engine => '/ckeditor'

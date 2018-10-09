@@ -6,8 +6,8 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def log_impression
-      @post = Post.find(params[:id])
-      @post.impressions.create(ip_address: request.remote_ip)
+     @post = Post.find(params[:id])
+    @post.impressions.create(ip_address: request.remote_ip)
   end
 
   def index

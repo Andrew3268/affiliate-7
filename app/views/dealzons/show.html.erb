@@ -6,18 +6,8 @@
 
     <section class="main">
       
-        <!-- for play youtube video-->
-        <div class="overlay-video">
-          <div class="videoWrapperExt">
-            <div class="videoWrapper">
-              <div class="video_close"></div>
-                <iframe id="player" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
-            </div>
-          </div>        
-         </div>
-
         <section>
-          <p>Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla lorem.</p>
+          <p class="notice">Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla lorem.</p>
         
       
           <div class="show_detail_wrap">
@@ -32,12 +22,21 @@
                 <li class="show_price_was">$<%= @dealzon.am_price_was %></li>
               </ul>
               <hr>
-              
+               <% if @dealzon.am_code.present? %>
+                <div class="promo_code">
+                 <p>PROMO CODE : <%= @dealzon.am_code %></p>
+                </div>
+               <% end %>
               <hr>
               <div class="contents">
-                <p>What is this?</p>
-                <%= @dealzon.am_intro %>
-                <%= raw @dealzon.am_spare_21 %>
+              <!-- for promo code -->  
+              <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold"><%= @dealzon.am_price_is %></span> at Amazon. If you use this promo code, you could save <span class="show_bold"><%= @dealzon.am_price_sale %>% off</span> more.</p>
+              <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)</p><br/>
+  
+              <!-- for deals -->
+              
+
+              <%= raw @dealzon.am_spare_21 %>
               </div>
 
               <%= @dealzon.am_category %>
@@ -87,13 +86,3 @@
 
 <!-- Footer -->
 <%= render 'posts/footer' %>
-
-
-
-<h1><%= @dealzon.am_title %></h1>
-<p><%= @dealzon.am_intro %></p>
-<%= raw @dealzon.am_spare_21 %>
-
-<%= link_to "Home", root_path %>
-<%= link_to "Edit", edit_dealzon_path(@dealzon) %>
-<%= link_to "Delete", dealzon_path(@dealzon), method: :delete, data: { confirm: "Are you sure?" } %>

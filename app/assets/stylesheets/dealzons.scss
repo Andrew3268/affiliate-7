@@ -1,3 +1,83 @@
 // Place all the styles related to the Dealzons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* ---------------------------------------------
+   Index Page
+ --------------------------------------------- */
+
+.dealzon_card {
+  width: calc(25% - 1.6rem);
+  margin: 0.8rem;
+  background: #fff;
+  overflow: hidden;
+  border-radius: .5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 300ms;
+}
+.dealzon_card:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+@media screen and (max-width: 800px) {
+  .dealzon_card {
+    display: flex;
+    width: calc(100% - 1.6rem);
+  }
+}
+
+
+.dealzon_nav {
+  width: 100%;
+  background-color:#65A8A6;
+}
+.dealzon_nav ul {
+  padding: 0em;
+}
+.dealzon_nav ul li {
+  display:inline-block;  
+}
+
+.dealzon_nav a {
+  color:#fff;
+  display:block;
+  text-decoration: none;
+  padding:10px 15px;
+ }
+
+.dealzon_nav a:hover {
+  background: #E65540;
+  color: #fff;
+}
+
+.dealzon_nav .menu-trigger {
+  display:none;
+  color:#fff;
+}
+
+@media screen and (max-width:500px) {
+  .dealzon_nav .menu-trigger {
+    display:block;
+  }
+  .dealzon_nav ul li {
+    display:block;
+    border-top:1px #79896D solid;    
+  }
+  .dealzon_nav ul {
+    display:none;
+  }
+}
+
+/* ---------------------------------------------
+   Show Page
+ --------------------------------------------- */
+.notice {
+  color: gray;
+}
+.promo_code p {
+ font-size: 1.3em;
+ margin: 0em;
+}
+.show_bold {
+ font-size: 1.1em;
+ font-weight: bold;
+}

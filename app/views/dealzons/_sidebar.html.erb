@@ -1,6 +1,28 @@
 <aside class="sidebar">
 
-  <!-- Blurb -->
+    <section>
+     <h2>Popular Post</h2>
+     <div id="sidebar">
+      <ul id="side-rcnt-thumb-post-list">
+        <% @dealzon_side.each do |ds| %>
+          <li>
+            <div class="srtpl-l">
+              <%= link_to (image_tag ds.am_image), ds, :class => "srtpl-a" %>        
+            </div>
+            <div class="srtpl-r">
+              <%= link_to ds.am_title, ds, :class => "srtpl-n" %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div><br/>
+    
+    <ul class="actions">
+      <li><a href="#" class="button">Learn More</a></li>
+    </ul>
+   </section>
+
+   <!-- Blurb -->
     <section>
       <h2>Magna etiam</h2>
       <p>Fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem sed euismod placerat. Vivamus porttitor et magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper lorem ipsum.</p>
@@ -24,28 +46,6 @@
         </ul>
       </article>
     </section>
-
-    <section>
-     <h2>Popular Post</h2>
-     <div id="sidebar">
-      <ul id="side-rcnt-thumb-post-list">
-        <% @dealzon_side.each do |ds| %>
-          <li>
-            <div class="srtpl-l">
-              <%= link_to (image_tag ds.am_image), ds, :class => "srtpl-a" %>        
-            </div>
-            <div class="srtpl-r">
-              <%= link_to ds.am_title, ds, :class => "srtpl-n" %>
-            </div>
-          </li>
-        <% end %>
-      </ul>
-    </div><br/>
-    
-    <ul class="actions">
-      <li><a href="#" class="button">Learn More</a></li>
-    </ul>
-   </section>
 
   <!-- Posts -->
     <section>
