@@ -4,43 +4,15 @@
      <h2>Popular Post</h2>
      <div id="sidebar">
       <ul id="side-rcnt-thumb-post-list">
-        
-        <% @dealzon_side.each do |ds| %>
-          <% if ds.acategory_id == 1 %> 
-            <li>
-              <div class="srtpl-l">
-                <%= link_to (image_tag ds.am_image), ds, :class => "srtpl-a" %>        
-              </div>
-              <div class="srtpl-r">
-                <%= link_to ds.am_title, ds, :class => "srtpl-n" %>
-              </div>
-            </li>
-          <% end %>
-        <% end %>
-      </ul>
-    </div><br/>
-    
-    <ul class="actions">
-      <li><a href="#" class="button">Learn More</a></li>
-    </ul>
-   </section>
-
-   <section>
-     <h2>Popular Post</h2>
-     <div id="sidebar">
-      <ul id="side-rcnt-thumb-post-list">
-        
-        <% @dealzon_side.each do |ds| %>
-          <% if ds.acategory_id == 2 %> 
-            <li>
-              <div class="srtpl-l">
-                <%= link_to (image_tag ds.am_image), ds, :class => "srtpl-a" %>        
-              </div>
-              <div class="srtpl-r">
-                <%= link_to ds.am_title, ds, :class => "srtpl-n" %>
-              </div>
-            </li>
-          <% end %>
+        <% @event_side.each do |eventside| %>
+          <li>
+            <div class="srtpl-l">
+              <%= link_to (image_tag eventside.eb_image), eventside, :class => "srtpl-a" %>        
+            </div>
+            <div class="srtpl-r">
+              <%= link_to eventside.eb_title, eventside, :class => "srtpl-n" %>
+            </div>
+          </li>
         <% end %>
       </ul>
     </div><br/>

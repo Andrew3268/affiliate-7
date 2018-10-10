@@ -1,11 +1,63 @@
-<%= link_to "All", root_path %>
-<% Ecategory.all.each do |ecategory| %>
- <%= link_to ecategory.name, events_path(ecategory: ecategory.name) %>
-<% end %>
+<header id="header">
+  <%= render 'dealzons/navbar' %> 
+</header>
 
-<% @events.each do |event| %>
- <h1><%= link_to event.eb_title, event %></h1>
- 
-<% end %>
+<!-- Wrapper -->
+<div class="wrapper">
 
-<%= link_to "New Event", new_event_path %>
+  <!-- Main -->
+    <section class="main">
+
+      <div class="dealzon_nav">
+        <a href="#" class="menu-trigger">Category</a>
+        <ul>
+          <li><%= link_to "All", events_path %></li>
+          <% Ecategory.all.each do |ecategory| %>
+            <li><%= link_to ecategory.name, events_path(ecategory: ecategory.name) %></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="index_container">
+        <p><%= link_to "Add New Inspiration", new_event_path %></p>
+        <div class="grid">
+
+          <% @events.each do |event| %>
+            <div class="dealzon_card">
+              <div class="card--image">
+                <%= link_to (image_tag event.eb_image), event %>
+              </div>
+              <div class="card--content">
+                <div class="card--category"><%= event.ecategory.name if event.ecategory %></div>
+                <p><%= event.eb_title %></p>
+                <ul>
+                  <li>$<%= event.eb_price_is %></li>
+                  <li>$<%= event.eb_price_was %></li>
+                </ul>
+                <div class="index_button">
+                <a class="button primary fit" href="events/<%= event.id %>">See More Detail</a>
+                </div>  
+              </div> 
+            </div>
+          <% end %>
+
+        </div><br/>
+        <%= paginate @events %>
+      </div>
+
+
+    </section>
+
+  <!-- Sidebar -->
+  <%= render "shared/sidebar" %>
+
+</div>
+
+<!-- Footer -->
+<%= render "shared/footer" %>
+<!-- Javascript -->
+<%= render "event.js" %>
+
+
+
+

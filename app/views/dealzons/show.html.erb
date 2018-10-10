@@ -4,85 +4,100 @@
 
 <div class="wrapper">
 
-    <section class="main">
-      
-        <section>
-          <p class="notice">Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla lorem.</p>
-        
-      
-          <div class="show_detail_wrap">
-            <div class="show_left">
-              <img src="<%= @dealzon.am_image %>">
-            </div>
-
-            <div class="show_right">
-              <h3><%= @dealzon.am_title %></h3>
-              <ul>
-                <li class="show_price_is">$<%= @dealzon.am_price_is %></li>
-                <li class="show_price_was">$<%= @dealzon.am_price_was %></li>
-              </ul>
-              <hr>
-               <% if @dealzon.am_code.present? %>
-                <div class="promo_code">
-                  <ul>
-                    <li><p>PROMO CODE : <%= @dealzon.am_code %></p></li> |
-                    <li><p><%= @dealzon.am_date %></p></li>
-                  </ul>
-                 
-                </div>
-               <% end %>
-              <hr>
-              <div class="contents">
-              <!-- for promo code -->  
-              <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold"><%= @dealzon.am_price_is %></span> at Amazon. If you use this promo code, you could save <span class="show_bold"><%= @dealzon.am_price_sale %>% off</span> more.</p>
-              <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)</p><br/>
+  <section class="main">
+    
+    <section>
+      <p class="notice">Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla lorem.</p>
+    
   
-              <!-- for deals -->
-              
+      <div class="show_detail_wrap">
+        <div class="show_left">
+          <img src="<%= @dealzon.am_image %>">
+        </div>
 
-              <%= raw @dealzon.am_spare_21 %>
-              </div>
-
-              <%= @dealzon.acategory.name %>
-              
-              <% if can? :update, @dealzon %>
-                <div class="admin">
-                  <%= link_to "Home", dealzons_path%>
-                  <%= link_to "New", new_dealzon_path %>
-                  <%= link_to "Edit", edit_dealzon_path(@dealzon) %>
-                  <%= link_to "Delete", dealzon_path(@dealzon), method: :delete, date: {confirm: "Are you sure?"}%>
-                  <%= "#{@dealzon.unique_impression_count}" %> views
-                </div>
-              <% end %>
-              <hr>
-              <div class="check_boutton">
-                <a target="_blank" href="<%= @dealzon.am_link %>" class="button primary fit">Check it Out</a>
-              </div>
+        <div class="show_right">
+          <h3><%= @dealzon.am_title %></h3>
+          <ul>
+            <li class="show_price_is">$<%= @dealzon.am_price_is %></li>
+          </ul>
+          <hr>
+           <% if @dealzon.am_code.present? %>
+            <div class="promo_code">
+              <ul>
+                <li><p>PROMO CODE : <%= @dealzon.am_code %></p></li> |
+                <li><p>Expiration Date: <%= @dealzon.am_date %></p></li>
+              </ul>
             </div>
-          </div>
+           <% end %>
+          <hr>
+
+          <div class="contents">
+            <% if @dealzon.am_code.present? %> 
+              <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %></span> at Amazon. If you use this promo code, you could save <span class="show_bold"><%= @dealzon.am_price_sale %>% off</span> more.</p>
+              <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)</p><br/>
+            <% else %>
+              <!-- for deals -->
+              <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %>(<%= @dealzon.am_price_sale %>% Off)</span> at Amazon.</p>
+              <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)</p><br/>
+            <% end %>
           
-        </section>
+            <div class="ckeditor">
+             <%= raw @dealzon.am_spare_21 %><br/>
+            </div>
+            
+            <% if @dealzon.am_code.present? %> 
+              <div class="code_step">
+                <p>How To Use:</p>
+                <ol>
+                  <li>Click "Use This Coupon"</li>
+                  <li>Click "Buy Now or Add to Cart"</li>
+                  <li>Proceed with payment then the code is automatically applied.</li>
+                </ol>
+              </div>
+            <% end %>
+          </div><!--/.contents-->
 
+          <%= @dealzon.acategory.name %>
+          
+          <% if can? :update, @dealzon %>
+            <div class="admin">
+              <%= link_to "Home", dealzons_path%>
+              <%= link_to "New", new_dealzon_path %>
+              <%= link_to "Edit", edit_dealzon_path(@dealzon) %>
+              <%= link_to "Delete", dealzon_path(@dealzon), method: :delete, data: {confirm: "Are you sure?"}%>
+              <%= "#{@dealzon.unique_impression_count}" %> views
+            </div>
+          <% end %>
 
-        <div class="amazon_related">
-          <script type="text/javascript">
-            amzn_assoc_placement = "adunit0";
-            amzn_assoc_tracking_id = "3628-20";
-            amzn_assoc_ad_mode = "search";
-            amzn_assoc_ad_type = "smart";
-            amzn_assoc_marketplace = "amazon";
-            amzn_assoc_region = "US";
-            amzn_assoc_default_search_phrase = "<%= @dealzon.am_title %>";
-            amzn_assoc_default_category = "All";
-            amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
-            amzn_assoc_search_bar = "true";
-            amzn_assoc_search_bar_position = "top";
-            amzn_assoc_title = "Shop Related Products";
-          </script>
-          <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-        </div><br>
-       
+          <hr>
+          <div class="check_boutton">
+            <a target="_blank" href="<%= @dealzon.am_link %>" class="button primary fit">Check it Out</a>
+          </div>
+        </div><!--/.show-right-->
+      </div><!--/.show_detail_wrap-->
+      
     </section>
+
+
+    <div class="amazon_related">
+      <script type="text/javascript">
+        amzn_assoc_placement = "adunit0";
+        amzn_assoc_tracking_id = "3628-20";
+        amzn_assoc_ad_mode = "search";
+        amzn_assoc_ad_type = "smart";
+        amzn_assoc_marketplace = "amazon";
+        amzn_assoc_region = "US";
+        amzn_assoc_default_search_phrase = "<%= @dealzon.am_title %>";
+        amzn_assoc_default_category = "All";
+        amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
+        amzn_assoc_search_bar = "true";
+        amzn_assoc_search_bar_position = "top";
+        amzn_assoc_title = "Shop Related Products";
+      </script>
+      <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+    </div><br>
+     
+  </section>
 
   <!-- Sidebar -->
   <%= render 'dealzons/sidebar' %>

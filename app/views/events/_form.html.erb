@@ -1,7 +1,19 @@
 <%= simple_form_for @event do |f| %>
- <%= f.collection_select :ecategory_id, Ecategory.all, :id, :name, {prompt: "Choose a category"} %>
- <%= f.input :eb_title %>
- <%= f.input :eb_intro %>
+  <div class="form_section">
+   <%= f.collection_select :ecategory_id, Ecategory.all, :id, :name, {prompt: "Choose a category"} %>
+   <%= f.input :eb_title %>
+   <%= f.input :eb_intro %>
+   <%= f.input :eb_spare_21, as: :text, input_html: { class: 'ckeditor' }, label: "Description" %>
+   <%= f.input :eb_image %>
+   <%= f.input :eb_review %>
+   <%= f.input :eb_code %>
+   <%= f.input :eb_date %>
+   <%= f.input :eb_price_is %>
+   <%= f.input :eb_price_was %>
+   <%= f.input :eb_price_sale %>
+   <%= f.input :eb_link %>
+   <br/>
 
- <%= f.button :submit %>
+   <%= f.button :submit %>
+  </div>
 <% end %>

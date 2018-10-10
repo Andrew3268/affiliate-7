@@ -8,6 +8,7 @@
 .index_container p {
   margin: .5rem 0;
   height: 3em;
+  font-size: 0.9em;
   overflow: hidden;
   text-overflow: ellipsis; 
   display: -webkit-box;
@@ -53,9 +54,10 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  padding: 0.5em;
 }
 .card--content {
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 .card--content ul {
   margin: 0 0 0.5em 0;
@@ -66,8 +68,12 @@
   list-style: none;
   padding-left: 0em;   
 }
+.card--content ul li:nth-child(1) {
+  font-size: 1.2em;
+}
 .card--content ul li:nth-child(2) {
   text-decoration: line-through;
+  color: #999;
 }
 .card--content ul li:nth-child(3) {
   float: right;
@@ -75,10 +81,11 @@
 .card--category {
   font-size: .65em;
   letter-spacing: .1ch;
-  padding-top: 1em;
+  /* padding-top: 1em; */
   font-weight: bold;
-  color: #999;
+  color: #fff;
   text-transform: uppercase;
+  padding-left: 0.5em;
 }
 .index_button {
   text-align: center;
@@ -103,6 +110,7 @@
     width: 100%;
     /* height: 17em; */
     object-fit: contain;
+
   }
 }
 

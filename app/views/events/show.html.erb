@@ -1,6 +1,89 @@
-<h1><%= @event.eb_title %></h1>
-<p><%= @event.eb_intro %></p>
+<header id="header">
+  <%= render 'posts/navbar' %> 
+</header>
 
-<%= link_to "Home", root_path %>
-<%= link_to "Edit", edit_event_path(@event) %>
-<%= link_to "Delete", event_path(@event), method: :delete, data: {Confirm: "Are you sure?"} %>
+<div class="wrapper">
+
+    <section class="main">
+      
+        <section>
+          <p class="notice">Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla lorem.</p>
+        
+      
+          <div class="show_detail_wrap">
+            <div class="show_left">
+              <img src="<%= @event.eb_image %>">
+            </div>
+
+            <div class="show_right">
+              <h3><%= @event.eb_title %></h3>
+              <ul>
+                <li class="show_price_is">$<%= @event.eb_price_is %></li>
+                <li class="show_price_was">$<%= @event.eb_price_was %></li>
+                <li>+ free shipping</li>
+              </ul>
+              <hr>
+               <% if @event.eb_code.present? %>
+                <div class="promo_code">
+                  <ul>
+                    <li><p>PROMO CODE : <%= @event.eb_code %></p></li> |
+                    <li><p><%= @event.eb_date %></p></li>
+                  </ul>
+                 
+                </div>
+               <% end %>
+              <hr>
+              <div class="contents">
+              <!-- for promo code -->  
+              <p><span class="show_bold"><%= @event.eb_title %></span> is on sale now for <span class="show_bold"><%= @event.eb_price_is %></span> at eBay. If you use this promo code, you could save <span class="show_bold"><%= @event.eb_price_sale %>% off</span> more.</p>
+            
+              <%= raw @event.eb_spare_21 %>
+              </div>
+
+              <%= @event.ecategory.name if @event.ecategory %>
+              
+              <% if can? :update, @event %>
+                <div class="admin">
+                  <%= link_to "Home", events_path%>
+                  <%= link_to "New", new_event_path %>
+                  <%= link_to "Edit", edit_event_path(@event) %>
+                  <%= link_to "Delete", event_path(@event), method: :delete, date: {confirm: "Are you sure?"}%>
+                  <%= "#{@event.unique_impression_count}" %> views
+                </div>
+              <% end %>
+              <hr>
+              <div class="check_boutton">
+                <a target="_blank" href="<%= @event.eb_link %>" class="button primary fit">Check it Out</a>
+              </div>
+            </div>
+          </div>
+          
+        </section>
+
+
+        <div class="amazon_related">
+          <script type="text/javascript">
+            amzn_assoc_placement = "adunit0";
+            amzn_assoc_tracking_id = "3628-20";
+            amzn_assoc_ad_mode = "search";
+            amzn_assoc_ad_type = "smart";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "US";
+            amzn_assoc_default_search_phrase = "<%= @event.eb_title %>";
+            amzn_assoc_default_category = "All";
+            amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
+            amzn_assoc_search_bar = "true";
+            amzn_assoc_search_bar_position = "top";
+            amzn_assoc_title = "Shop Related Products";
+          </script>
+          <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+        </div><br>
+       
+    </section>
+
+  <!-- Sidebar -->
+  <%= render 'events/sidebar_show' %>
+</div>
+
+<!-- Footer -->
+<%= render 'posts/footer' %>

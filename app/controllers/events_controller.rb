@@ -2,18 +2,26 @@ class EventsController < ApplicationController
 
   before_action :find_event, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :log_impression, :only=> [:show]
   load_and_authorize_resource
+
+  def log_impression
+    @event = Event.find(params[:id])
+    @event.impressions.create(ip_address: request.remote_ip)
+  end
 
   def index
     if params[:ecategory].blank?
-     @events = Event.all.order("created_at DESC")
+     @events = Event.all.order("created_at DESC").page(params[:page]).per(40)
     else
       @ecategory_id = Ecategory.find_by(name: params[:ecategory]).id
-      @events = Event.where(ecategory_id: @ecategory_id).order("created_at DESC")
+      @events = Event.where(ecategory_id: @ecategory_id).order("created_at DESC").page(params[:page]).per(40)
     end
+    @event_side = Event.order("impressions_count DESC")
   end
 
   def show
+    @event_side = Event.order("impressions_count DESC")
   end
 
   def new
