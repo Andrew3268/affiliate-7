@@ -2,8 +2,13 @@
   <%= render 'dealzons/navbar' %> 
 </header>
 
+<div class="index_header">
+ <h1>All about the Amazon</h1>
+</div>
+
 <!-- Wrapper -->
 <div class="wrapper">
+
 
 <!-- Main -->
   <section class="main">
@@ -46,7 +51,7 @@
                  <div class="category_sale"> you can save <span class="sale_index"><%= deal.am_price_sale %>%off</span> more</div>
                 <% end %>
                 <% if deal.acategory_id == 5 %> 
-                 <div class="card--category category_brown"><%= deal.acategory.name %></div>
+                 <div class="card--category category_orange"><%= deal.acategory.name %></div>
                 <% end %>
               </div>
 
@@ -64,9 +69,10 @@
               </div>  
 
               <% if can? :update, deal %>
-              <div class="admin">
+              <div class="admin_index">
                 <%= link_to "Edit", edit_dealzon_path(deal) %>
                 <%= link_to "Delete", dealzon_path(deal), method: :delete, data: {confirm: "Are you sure?"}%>
+                <%= "#{deal.unique_impression_count}" %> views
               </div>
             <% end %>
             </div> 

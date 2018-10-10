@@ -22,24 +22,19 @@
   height: 1.5em;
 }
 .category_blue {
-  background: #08f;
-  width: 52%;
+  color: #08f;
 }
 .category_red {
-  background: red;
-  width: 56%;
+  color: #ff3333;
 }
 .category_green {
-  background: green;
-  width: 26%;
+  color: #00cd00;
 }
 .category_purple {
-  background: purple;
-  width: 37%;
+  color: #cd00cd;
 }
-.category_brown {
-  background: brown;
-  width: 48%;
+.category_orange {
+  color: #ffa500;
 }
 .category_sale {
   font-size: .65em;
@@ -57,24 +52,21 @@
   .dealzon_card {
     display: flex;
     width: calc(100% - 1.6rem);
+  } 
+  .dealzon_nav {
+    display: none;
+  }
+  .card--content {
+    width: 100%;
   }
 }
 @media screen and (max-width:500px) {
-   .category_blue {
-    width: 43.5%;
+  .card--content {
+    width: 100%;
   }
-  .category_red {
-    width: 59%;
+  .index_container p {
+    margin: 0 0 0.5rem 0;
   }
-  .category_green {
-    width: 22%;
-  }
-  .category_purple {  
-    width: 37%;
-  }
-  .category_brown {
-    width: 41%;
- }
 }
 /* ~~~~~~~~~~~~~~~~~~ Quick Nave ~~~~~~~~~~~~~~~~~~ */
 .dealzon_nav {

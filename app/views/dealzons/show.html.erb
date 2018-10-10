@@ -70,9 +70,15 @@
           <% end %>
 
           <hr>
-          <div class="check_boutton">
-            <a target="_blank" href="<%= @dealzon.am_link %>" class="button primary fit">Check it Out</a>
-          </div>
+          <% if @dealzon.acategory_id == 4 %> 
+            <div class="check_boutton">
+              <a target="_blank" href="<%= @dealzon.am_link %>" class="button primary fit">Copy code & Open site</a>
+            </div>
+          <% else %>
+            <div class="check_boutton">
+              <a target="_blank" href="<%= @dealzon.am_link %>" class="button primary fit">Check it Out</a>
+            </div>
+          <% end %>
         </div><!--/.show-right-->
       </div><!--/.show_detail_wrap-->
       
