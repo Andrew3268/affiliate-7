@@ -8,3 +8,34 @@
 .somthing_hidden {
   display: none;
 }
+
+/* ---------------------------------------------
+   Accordian of Sidebar 
+ --------------------------------------------- */
+.accordian {
+  list-style:none;
+  margin:0 0 40px;
+  padding:0;
+  border:1px solid #ddd;
+  border-top:0;
+}
+ul.accordian li {
+  padding-left: 0em;
+}
+.accordian header {
+  display:block;
+  margin:0;
+  padding:1em;
+  background:#fff;
+  border-top:1px solid #ddd;
+  cursor:pointer;
+}
+.accordian section {
+  display:none;
+  padding:1em;
+  background:#fff;
+  border-top:1px solid #ddd;
+}
+.accordian section.active {
+  display:block;
+}

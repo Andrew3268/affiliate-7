@@ -35,7 +35,7 @@
             </div>
             <div class="card--content">
 
-              <div class="index_category">
+             <div class="index_category">
               <% if event.ecategory_id == 1 %> 
                <div class="card--category category_red"><%= event.ecategory.name if event.ecategory %></div>
               <% end %>
@@ -49,23 +49,22 @@
               <% if event.ecategory_id == 4 %> 
                <div class="card--category category_purple"><%= event.ecategory.name if event.ecategory %></div>
               <% end %>
-            </div>
-
+             </div>
              
-              <p><%= event.eb_title %></p>
-              <% if event.ecategory_id == 1 %>
+             <p><%= event.eb_title %></p>
+             <% if event.ecategory_id == 1 %>
                <ul class="featured_index">
                 <li><%= event.eb_featured_sale %></li>
                </ul>
-              <% else %>
+             <% else %>
                <ul>
                 <li>$<%= event.eb_price_is %></li>
                 <li>$<%= event.eb_price_was %></li>
                </ul>
-              <% end %>
-              <div class="index_button">
+             <% end %>
+             <div class="index_button">
                <a class="button primary fit" href="events/<%= event.id %>">See More Detail</a>
-              </div>  
+             </div>  
             </div> 
           </div>
          <% end %>

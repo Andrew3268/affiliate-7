@@ -44,30 +44,121 @@
     </ul>
    </section>
 
+   <!-- Accordian -->
    <section>
-     <h2>Popular Post</h2>
-     <div id="sidebar">
-      <ul id="side-rcnt-thumb-post-list">
-        
-        <% @dealzon_side.each do |ds| %>
-          <% if ds.acategory_id == 2 %> 
-            <li>
-              <div class="srtpl-l">
-                <%= link_to (image_tag ds.am_image), ds, :class => "srtpl-a" %>        
-              </div>
-              <div class="srtpl-r">
-                <%= link_to ds.am_title, ds, :class => "srtpl-n" %>
-              </div>
-            </li>
-          <% end %>
-        <% end %>
-      </ul>
-    </div><br/>
-    
-    <ul class="actions">
-      <li><a href="#" class="button">Learn More</a></li>
+    <h2>Popular Deals by Category</h2>
+     <ul id="accord1" class="accordian">
+      <li>
+        <header>One</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @dealzon_side.each do |dealside| %>
+              <% if dealside.acategory_id == 1 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
+      <li>
+        <header>Two</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @dealzon_side.each do |dealside| %>
+              <% if dealside.acategory_id == 2 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
+      <li>
+        <header>Three</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @dealzon_side.each do |dealside| %>
+              <% if dealside.acategory_id == 3 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
+      <li>
+        <header>Three</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @dealzon_side.each do |dealside| %>
+              <% if dealside.acategory_id == 4 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
+      <li>
+        <header>Three</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @dealzon_side.each do |dealside| %>
+              <% if dealside.acategory_id == 5 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
     </ul>
    </section>
+   <!-- Accordian -->
+
+
+   
 
    <!-- Blurb -->
     <section>
