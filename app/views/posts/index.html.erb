@@ -27,7 +27,7 @@
                   <%= link_to (image_tag post.post_image), post %>
                 </div>
                 <div class="card--content">
-                  <div class="card--category"><%= post.post_source %></div>
+                  <div class="card--category"><span class="source_index"><%= post.post_source %></span></div>
                   <p><%= post.post_title %></p>
                   <ul>
                     <li>$<%= post.post_price_is %></li>
@@ -40,21 +40,6 @@
                 </div>          
               </div>
             <% end %>
-            
-<!--             <div class="card">
-              <div class="card--image"><img src="//source.unsplash.com/500x306"></div>
-              <div class="card--content">
-                <div class="card--category">Category</div>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab incidunt aliquam cumque accusantium.</p>
-                <ul>
-                  <li>$15</li>
-                  <li>$20</li>
-                </ul>
-                <div class="index_button">
-                 <a href="#">See More Detail</a>
-                </div>
-              </div>
-            </div> -->
            
           </div><br/>
           <%= paginate @posts %>
@@ -69,4 +54,4 @@
 </div><!-- /.warpper -->
 
 <!-- Footer -->
-<%= render 'posts/footer' %>
+<%= render 'shared/footer' %>
