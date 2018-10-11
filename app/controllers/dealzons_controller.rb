@@ -17,11 +17,12 @@ class DealzonsController < ApplicationController
      @acategory_id = Acategory.find_by(name: params[:acategory]).id
      @dealzons = Dealzon.where(acategory_id: @acategory_id).order("created_at DESC").page(params[:page]).per(40)
     end
-     @dealzon_side = Dealzon.order("impressions_count DESC")
+     @dealzon_side = Dealzon.order("impressions_count DESC").limit(5)
   end
 
   def show 
-    @dealzon_side = Dealzon.order("impressions_count DESC")
+    @dealzon_show = Dealzon.all.order("created_at DESC")
+    @dealzon_side = Dealzon.order("impressions_count DESC").limit(5)
   end
 
   def new
@@ -61,7 +62,7 @@ class DealzonsController < ApplicationController
 
   def dealzon_params
     params.require(:dealzon).permit(:am_title, :am_intro, :am_link, :am_image, :am_code, :am_date, :am_price_is, :am_price_was,
-                                 :am_price_sale, :am_review, :am_category,
+                                 :am_price_sale, :am_review, :am_category, :am_expire, :am_shipping,
                                  :am_spare_01, :am_spare_02, :am_spare_03, :am_spare_04, :am_spare_05, :am_spare_06,
                                  :am_spare_07, :am_spare_08, :am_spare_09, :am_spare_10, :am_spare_11, :am_spare_12,
                                  :am_spare_13, :am_spare_14, :am_spare_15, :am_spare_16, :am_spare_17, :am_spare_18,

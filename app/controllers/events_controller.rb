@@ -17,11 +17,11 @@ class EventsController < ApplicationController
       @ecategory_id = Ecategory.find_by(name: params[:ecategory]).id
       @events = Event.where(ecategory_id: @ecategory_id).order("created_at DESC").page(params[:page]).per(40)
     end
-    @event_side = Event.order("impressions_count DESC")
+    @event_side = Event.order("impressions_count DESC").limit(5)
   end
 
   def show
-    @event_side = Event.order("impressions_count DESC")
+    @event_side = Event.order("impressions_count DESC").limit(5)
   end
 
   def new
@@ -60,8 +60,8 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:eb_title, :eb_intro, :eb_link, :eb_image, :eb_code, :eb_date, :eb_price_is, :eb_price_was,
-                                 :eb_price_sale, :eb_review, :eb_youtube_01, :eb_youtube_02, :eb_ckeditor, :eb_source,
+    params.require(:event).permit(:eb_title, :eb_intro, :eb_link, :eb_image, :eb_code, :eb_date, :eb_price_is, :eb_price_was, :eb_shipping,
+                                 :eb_price_sale, :eb_review, :eb_youtube_01, :eb_youtube_02, :eb_ckeditor, :eb_source, :eb_expire, :eb_featured_sale,
                                  :eb_spare_01, :eb_spare_02, :eb_spare_03, :eb_spare_04, :eb_spare_05, :eb_spare_06,
                                  :eb_spare_07, :eb_spare_08, :eb_spare_09, :eb_spare_10, :eb_spare_11, :eb_spare_12,
                                  :eb_spare_13, :eb_spare_14, :eb_spare_15, :eb_spare_16, :eb_spare_17, :eb_spare_18,

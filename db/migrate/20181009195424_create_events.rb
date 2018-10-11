@@ -16,6 +16,9 @@ class CreateEvents < ActiveRecord::Migration
       t.string :eb_source
       t.string :eb_code
       t.string :eb_date
+      t.string :eb_expire
+      t.string :eb_shipping
+      t.string :eb_featured_sale
       t.string :eb_spare_01
       t.string :eb_spare_02
       t.string :eb_spare_03

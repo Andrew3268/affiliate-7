@@ -22,16 +22,16 @@
     <li>
       <a href="#" class="icon fa-angle-down">Store</a>
       <ul>
+       <li><a href="/dealzons">Amazon</a></li>
        <li>
-          <a href="/dealzons">Amazon</a>
-          <ul>
+         <a href="/events">eBay</a>
+         <ul>
             <li><%= link_to "All Offer", dealzons_path %></li>
-            <% Acategory.all.each do |acategory| %>
-             <li><%= link_to acategory.name, dealzons_path(acategory: acategory.name) %></li>
+            <% Ecategory.all.each do |ecategory| %>
+             <li><%= link_to ecategory.name, dealzons_path(ecategory: ecategory.name) %></li>
             <% end %>
           </ul>
-       </li>
-       <li><a href="/events">eBay</a></li>
+      </li>
       </ul>
     </li>
 

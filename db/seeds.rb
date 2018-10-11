@@ -18,3 +18,9 @@ Acategory.create(name: "Deals")
 Acategory.create(name: "Coupons")
 Acategory.create(name: "Promo Codes")
 Acategory.create(name: "Promotions")
+
+# Category of Event
+Ecategory.create(name: "Featured Sales")
+Ecategory.create(name: "Deals")
+Ecategory.create(name: "Promo Codes")
+Ecategory.create(name: "Interesing")

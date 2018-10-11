@@ -3,7 +3,7 @@
 </header>
 
 <div class="index_header">
- <h1>All about the Amazon</h1>
+ <h1>All about the Amazon Shopping</h1>
 </div>
 
 <!-- Wrapper -->
@@ -16,7 +16,7 @@
     <div class="dealzon_nav">
       <a href="#" class="menu-trigger">Category</a>
       <ul>
-        <li><%= link_to "All", dealzons_path %></li>
+        <li><%= link_to "All Offer", dealzons_path %></li>
         <% Acategory.all.each do |acategory| %>
           <li><%= link_to acategory.name, dealzons_path(acategory: acategory.name) %></li>
         <% end %>

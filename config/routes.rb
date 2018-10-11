@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   # root 'posts#index'
 
   resources :dealzons
-  root 'dealzons#index'
+  # root 'dealzons#index'
 
   resources :events
-  # root 'events#index'
+  root 'events#index'
 
 
   # get 'home/index'

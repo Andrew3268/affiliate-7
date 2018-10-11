@@ -13,6 +13,8 @@ class CreateDealzons < ActiveRecord::Migration
       t.string :am_price_sale
       t.string :am_review
       t.string :am_category
+      t.string :am_expire
+      t.string :am_shipping
       t.string :am_spare_01
       t.string :am_spare_02
       t.string :am_spare_03
