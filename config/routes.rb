@@ -13,13 +13,16 @@ Rails.application.routes.draw do
       get "dislike", to: "posts#downvote"
     end
   end
-  root 'posts#index'
+  # root 'posts#index'
 
   resources :dealzons
   # root 'dealzons#index'
 
   resources :events
   # root 'events#index'
+
+  resources :blogs
+  root 'blogs#index'
 
 
   # get 'home/index'

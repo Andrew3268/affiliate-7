@@ -1,0 +1,6 @@
+<h1><%= @blog.blog_title %></h1>
+<p><%= @blog.blog_intro %></p>
+
+<%= link_to "Home", root_path %>
+<%= link_to "Edit", edit_blog_path(@blog) %>
+<%= link_to "Delete", blog_path(@blog), method: :delete, data: {confirm: "Are you sure?"} %>

@@ -1,0 +1,22 @@
+<header id="header">
+  <%= render 'dealzons/navbar' %> 
+</header>
+
+
+<div class="wrapper">
+  <section class="main">
+
+    <h1>This is Blog Index</h1>
+    <%= link_to "All Blogs", root_path %>
+    <% Bcategory.all.each do |bcategory| %>
+     <%= link_to bcategory.name, blogs_path(bcategory: bcategory.name) %>
+    <% end %>
+
+    <% @blogs.each do |blog| %>
+     <h2><%= link_to blog.blog_title, blog %></h2>
+    <% end %>
+
+    <%= link_to "Add New Something", new_blog_path %>
+
+  </section>
+</div>
