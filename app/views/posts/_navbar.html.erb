@@ -10,9 +10,9 @@
     <li><a href="/">Home</a></li>
 
     <li>
-      <a href="#" class="icon fa-angle-down">Category</a>
+      <a href="#" class="icon fa-angle-down">Gadgets</a>
       <ul>
-        <li><%=link_to "Everything", root_path %></li>
+        <li><%=link_to "What's New", root_path %></li>
         <% Category.all.each do |category| %>
          <li><%= link_to category.name, posts_path(category: category.name) %></li>
         <% end %>
@@ -20,7 +20,7 @@
     </li>
 
     <li>
-      <a href="#" class="icon fa-angle-down">Store</a>
+      <a href="#" class="icon fa-angle-down">Stores</a>
       <ul>
        <li><a href="/dealzons">Amazon</a></li>
        <li><a href="#">eBay</a></li>

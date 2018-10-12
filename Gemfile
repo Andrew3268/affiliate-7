@@ -10,6 +10,11 @@ gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'cancancan'
 gem 'rolify'
 gem 'impressionist'
+gem 'figaro'
+
+group :production do
+  gem 'mysql2'
+end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
