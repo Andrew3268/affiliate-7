@@ -30,7 +30,7 @@
       <div class="grid">
 
         <% @dealzons.each do |deal| %>
-          <div class="dealzon_card">
+          <div class="card">
             <div class="card--image">
               <%= link_to (image_tag deal.am_image), deal %>
             </div>
@@ -87,7 +87,7 @@
   </section>
 
   <!-- Sidebar -->
-  <%= render "shared/sidebar" %>
+  <%= render "dealzons/sidebar_index" %>
 
 </div>
 

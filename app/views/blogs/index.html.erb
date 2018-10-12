@@ -2,21 +2,67 @@
   <%= render 'dealzons/navbar' %> 
 </header>
 
-
 <div class="wrapper">
+
   <section class="main">
 
-    <h1>This is Blog Index</h1>
-    <%= link_to "All Blogs", root_path %>
-    <% Bcategory.all.each do |bcategory| %>
-     <%= link_to bcategory.name, blogs_path(bcategory: bcategory.name) %>
-    <% end %>
+    <div class="dealzon_nav">
+      <a href="#" class="menu-trigger">Category</a>
+      <ul>
+        <li><%= link_to "All Offer", blogs_path %></li>
+        <% Bcategory.all.each do |bcategory| %>
+          <li><%= link_to bcategory.name, blogs_path(bcategory: bcategory.name) %></li>
+        <% end %>
+        <% if can? :update, @blog %>
+         <li><%= link_to "Write Blog ", new_blog_path %></li>
+        <% end %>
+      </ul>
+    </div>
 
     <% @blogs.each do |blog| %>
-     <h2><%= link_to blog.blog_title, blog %></h2>
+     <div class="blog-card">
+      <div class="meta">
+        <div class="photo" style="background-image: url(<%= blog.blog_image %>)"></div>
+        <ul class="details">
+          <li class="author"><a href="#">Oh,i gott buy this</a></li>
+          <li class="date"><%= blog.blog_date %></li>
+          <% if can? :update, blog %>
+           <li class="tags">
+             <ul>
+              <li><%= link_to "Edit", edit_blog_path(blog) %></li>
+              <li><%= link_to "Delete", blog_path(blog), method: :delete, data: {confirm: "Are you sure?"} %></li>
+              <li><%= "#{blog.unique_impression_count}" %> views</li>
+             </ul>
+           </li>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="description">
+        <h1 class="blog_title"><%= blog.blog_title %></h1>
+        <h2>Opening a door to the future</h2>
+        <p><%= blog.blog_intro %></p>
+        <p class="read-more">
+          <a href="/blogs/<%= blog.id %>">Read More</a>
+        </p>
+      </div>
+     </div>
     <% end %>
 
-    <%= link_to "Add New Something", new_blog_path %>
+   <%= paginate @blogs %>
 
   </section>
+
+  <!-- Sidebar -->
+  <%= render "blogs/sidebar_index" %>
+
 </div>
+
+<!-- Footer -->
+<%= render "shared/footer" %>
+
+
+
+
+
+<%= link_to "Add New Something", new_blog_path %>

@@ -54,7 +54,7 @@
           <hr>
 
           <div class="contents">
-            <% if @dealzon.am_code.present? %> 
+            <% if @dealzon.acategory_id == 4 %> 
              <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %></span> at Amazon. If you use this promo code, you could save <span class="show_bold"><%= @dealzon.am_price_sale %>% off</span> more.</p>
              <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)</p><br/>
             <% else %>
@@ -74,7 +74,7 @@
               <div class="code_step">
                 <p>How To Use:</p>
                 <ol>
-                  <li>Click "Use This Coupon"</li>
+                  <li>Click "Copy code & Open site"</li>
                   <li>Click "Buy Now or Add to Cart"</li>
                   <li>Proceed with payment then the code is automatically applied.</li>
                 </ol>
@@ -107,24 +107,30 @@
           <% end %>
         </div><!--/.show-right-->
       </div><!--/.show_detail_wrap-->
-      
 
-      <div class="test">
+       <div class="related_show">
+        <h1>You may also like</h1>
         <% @dealzon_show.each do |deal| %>
          <% if deal.acategory_id == @dealzon.acategory_id %> 
-         <h3><%= link_to deal.am_title, deal %></h3>
+         <div class="related_card">
+           <%= link_to (image_tag deal.am_image), deal %>
+           <h3><%= link_to deal.am_title, deal %></h3>
+         </div>
          <% end %>
         <% end %>
-      </div>
-
+       </div>
+      
     </section>
-
-
+ 
   </section>
+  
 
   <!-- Sidebar -->
-  <%= render 'dealzons/sidebar' %>
+  <%= render 'dealzons/sidebar_show' %>
 </div>
+
+  
+
 
 <!-- Footer -->
 <%= render 'shared/footer' %>

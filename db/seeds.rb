@@ -24,3 +24,10 @@ Ecategory.create(name: "Featured Sales")
 Ecategory.create(name: "Deals")
 Ecategory.create(name: "Promo Codes")
 Ecategory.create(name: "Interesing")
+
+# Category of Blog
+Bcategory.create(name: "blog_01")
+Bcategory.create(name: "blog_02")
+Bcategory.create(name: "blog_03")
+Bcategory.create(name: "blog_04")
+Bcategory.create(name: "blog_05")

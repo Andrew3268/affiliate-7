@@ -1,6 +1,41 @@
-<h1><%= @blog.blog_title %></h1>
-<p><%= @blog.blog_intro %></p>
+<header id="header">
+  <%= render 'posts/navbar' %> 
+</header>
 
-<%= link_to "Home", root_path %>
-<%= link_to "Edit", edit_blog_path(@blog) %>
-<%= link_to "Delete", blog_path(@blog), method: :delete, data: {confirm: "Are you sure?"} %>
+<div class="wrapper">
+
+  <section class="main">
+    
+    <section>
+      <p class="notice">Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla lorem.</p>
+
+      <div class="header_blog_show">
+        <h1><%= @blog.blog_title %></h1>
+        <p><%= @blog.blog_intro %></p>
+        <img src="<%= @blog.blog_image %>">
+      </div>
+      <div class="ckeditor_blog_show">
+        <%= raw @blog.blog_ckeditor %>
+      </div>
+      
+      <%= link_to "Home", root_path %>
+      <%= link_to "Edit", edit_blog_path(@blog) %>
+      <%= link_to "Delete", blog_path(@blog), method: :delete, data: {confirm: "Are you sure?"} %>
+      
+    </section>
+ 
+  </section>
+  
+
+  <!-- Sidebar -->
+  <%= render 'blogs/sidebar_show' %>
+</div>
+
+  
+
+
+<!-- Footer -->
+<%= render 'shared/footer' %>
+
+
+

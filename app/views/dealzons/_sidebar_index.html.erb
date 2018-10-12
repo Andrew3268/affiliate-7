@@ -1,0 +1,200 @@
+<aside class="sidebar">
+  <!-- Blurb -->
+    <section>
+      <h2>Real Time Amazon Deals</h2>
+      <p>Amazon offers thousands of great deals, but, sifting through the endless pages can be a huge hassle. We have just made your life easier. We offer a quick way to find the best deals on Amazon Simply click on the percentage off next to the category you want to browse. You will be redirected to a new window containing your Amazon search results.</p>
+      <ul class="actions">
+        <li><a href="#" class="button">Learn More</a></li>
+      </ul>
+    </section> 
+
+    <section>
+     <h2>Popular Post</h2>
+     <div id="sidebar">
+      <ul id="side-rcnt-thumb-post-list">      
+        <% @dealzon_side.each do |ds| %>
+          <li>
+            <div class="srtpl-l">
+              <%= link_to (image_tag ds.am_image), ds, :class => "srtpl-a" %>        
+            </div>
+            <div class="srtpl-r">
+              <%= link_to ds.am_title, ds, :class => "srtpl-n" %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div><br/>
+    
+    <ul class="actions">
+      <li><a href="#" class="button">Learn More</a></li>
+    </ul>
+   </section>
+
+   <!-- Accordian -->
+   <section>
+    <h2>Popular Deals by Category</h2>
+     <ul id="accord1" class="accordian">
+      <li>
+        <header>One</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @dealzon_side.each do |dealside| %>
+              <% if dealside.acategory_id == 1 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
+      <li>
+        <header>Two</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @dealzon_side.each do |dealside| %>
+              <% if dealside.acategory_id == 2 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
+      <li>
+        <header>Three</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @dealzon_side.each do |dealside| %>
+              <% if dealside.acategory_id == 3 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
+      <li>
+        <header>Three</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @dealzon_side.each do |dealside| %>
+              <% if dealside.acategory_id == 4 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
+      <li>
+        <header>Three</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @dealzon_side.each do |dealside| %>
+              <% if dealside.acategory_id == 5 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
+    </ul>
+   </section>
+   <!-- Accordian --> 
+
+   <!-- Featured posts -->
+    <section class="featured-posts">
+      <h2>Recent Blog</h2>
+      <article>
+        <a href="#" class="image fit"><img src="https://images-na.ssl-images-amazon.com/images/I/81F%2BkHvKecL._SL1500_.jpg" alt=""></a>
+        <header>
+          <span class="date">September 19, 2016</span>
+          <h3><a href="#">Non velit accumsan cursus gravida amet sapien</a></h3>
+        </header>
+        <p>Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis varius.</p>
+        <ul class="actions">
+          <li><a href="#" class="button">Continue Reading</a></li>
+        </ul>
+      </article>
+    </section>
+
+  <!-- Posts -->
+    <section>
+      <h2>Arcu dolore</h2>
+      <ul class="posts">
+        <li>
+          <a href="#">Etiam quis viverra lorem in semper lorem.</a>
+          <span class="date">September 15, 2016</span>
+        </li>
+        <li>
+          <a href="#">Sed nisl arcu euismod sit amet nisi euismod sed cursus elementum ipsum.</a>
+          <span class="date">September 15, 2016</span>
+        </li>
+        <li>
+          <a href="#">Arcu vivamus quis venenatis orci lorem.</a>
+          <span class="date">September 15, 2016</span>
+        </li>
+        <li>
+          <a href="#">Veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore magna.</a>
+          <span class="date">September 15, 2016</span>
+        </li>
+        <li>
+          <a href="#">Mauris neque quam, fermentum ut nisl vitae</a>
+          <span class="date">September 15, 2016</span>
+        </li>
+        <li>
+          <a href="#">Convallis maximus nisl sed mattis nunc id lorem euismod amet placerat.</a>
+          <span class="date">September 15, 2016</span>
+        </li>
+        <li>
+          <a href="#">Sed nisl arcu euismod sit amet nisi euismod sed cursus elementum ipsum.</a>
+          <span class="date">September 15, 2016</span>
+        </li>
+      </ul>
+      <ul class="actions">
+        <li><a href="#" class="button">More Posts</a></li>
+      </ul>
+    </section>
+
+</aside>

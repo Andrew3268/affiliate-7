@@ -1,7 +1,13 @@
-<%= simple_form_for @blog do |f| %>
- <%= f.collection_select :bcategory_id, Bcategory.all, :id, :name, {prompt: "Choose a category"} %>
- <%= f.input :blog_title %>
- <%= f.input :blog_intro %>
-
- <%= f.button :submit %>
+ <%= simple_form_for @blog do |f| %>
+  <div class="form_section">
+   <%= f.collection_select :bcategory_id, Bcategory.all, :id, :name, {prompt: "Choose a category"} %>
+   <%= f.input :blog_title %>
+   <%= f.input :blog_intro %>
+   <%= f.input :blog_image %>
+   <%= f.input :blog_writer %>
+   <%= f.input :blog_date %>
+   <%= f.input :blog_ckeditor, as: :text, input_html: { class: 'ckeditor' }, label: "Description" %>
+   <br/>
+   <%= f.button :submit %>
+  </div>
 <% end %>

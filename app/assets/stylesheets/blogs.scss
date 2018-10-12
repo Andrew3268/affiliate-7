@@ -1,3 +1,33 @@
 // Place all the styles related to the Blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* ---------------------------------------------
+   Index Page
+ --------------------------------------------- */
+.blog_title {
+  color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -moz-line-clamp: 2; 
+  -webkit-line-clamp: 2; /* number of line */ 
+  -ms-line-clamp: 2;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  word-wrap:break-word;
+}
+
+/* ---------------------------------------------
+   Show Page
+ --------------------------------------------- */
+.header_blog_show {
+  margin-bottom: 4em;
+}
+.ckeditor_blog_show img,
+.header_blog_show img {
+  width: 100%;
+}
+
+
