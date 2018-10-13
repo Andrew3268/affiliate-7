@@ -11,6 +11,7 @@ gem 'cancancan'
 gem 'rolify'
 gem 'impressionist'
 gem 'figaro'
+gem 'enumerize', '~> 1.1.1'
 
 # group :production do
 #   gem 'mysql2'
