@@ -24,6 +24,9 @@ Rails.application.routes.draw do
   resources :blogs
   # root 'blogs#index'
 
+  resources :categories
+  # root 'categories#index'
+
 
   # get 'home/index'
   # root 'home#index'

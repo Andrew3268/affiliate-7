@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   has_many :dealzons
   has_many :events
   has_many :blogs
+  has_many :categories
 end
