@@ -7,10 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Category of Post
-Category.create(name: "Menu_01")
-Category.create(name: "Menu_02")
-Category.create(name: "Menu_03")
-Category.create(name: "Menu_04")
+Category.create(name: "Tech")
+Category.create(name: "Geeky")
+Category.create(name: "Home & kitchen")
+Category.create(name: "Travel")
+Category.create(name: "Outdoor & Sports")
 
 # Category of Dealzon
 Acategory.create(name: "Sales & Offers")

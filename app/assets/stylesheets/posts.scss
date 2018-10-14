@@ -6,8 +6,11 @@
    Index Page
  --------------------------------------------- */
 .source_index {
-   color: #999;
+  color: #999;
  }
+.crowdfunding {
+  color: #999
+}
 
 /* ---------------------------------------------
    Show Page
@@ -73,6 +76,13 @@
 }
 .show_right .contents p {
   margin: 0em;
+}
+.post_index {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.ckeditor {
+  margin-top: 2em;
 }
 .amazon_related {  
   padding: 0.5em;

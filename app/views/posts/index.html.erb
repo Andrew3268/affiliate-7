@@ -29,12 +29,20 @@
                 <div class="card--content">
                   <div class="card--category"><span class="source_index"><%= post.post_source %></span></div>
                   <p><%= post.post_title %></p>
-                  <ul>
-                    
-                    <li>$<%= post.post_price_is %></li>
-                    <li>$<%= post.post_price_was %></li>
-                    <!-- <li><i class="fa fa-thumbs-o-up"><%= post.get_likes.size %></i></li> -->
-                  </ul>
+                  <% if post.post_spare_01.present? %>
+                    <div class="somthing_hidden"><%= post.post_spare_01 %></div>
+                    <ul>
+                      <li class="crowdfunding">Crowdfunding</li>
+                    </ul>
+                  <% else %>
+                    <div class="index_price">
+                      <ul>
+                        <li>$<%= post.post_price_is %></li>
+                        <li>$<%= post.post_price_was %></li>
+                      </ul>
+                    </div>
+                  <% end %>
+                  
                   <div class="index_button">
                    <a class="button primary fit" href="posts/<%= post.id %>">See More Detail</a>
                   </div>

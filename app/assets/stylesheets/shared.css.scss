@@ -50,191 +50,133 @@ ul.accordian li {
   width: 100%;
 }
 
-/* ---------------------------------------------
-   Blog Card
- --------------------------------------------- */
+
+/* ---------------------------------------------------------
+   Related(the same category_id) product in show pate
+ --------------------------------------------------------- */
+.header-section {
+  width: 98%;
+  height: 50px;
+  position: relative;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1280px) {
+  .header-section {
+    width: 1001px;
+  }
+}
+
+.grid-section {
+  height: auto;
+  position: relative;
+  margin: 0 auto;
+  margin-top: -40em;
+}
+
+@media screen and (min-width: 1280px) {
+  .grid-section {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 853px) {
+  .grid-section {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .grid-section {
+    width: 100%;
+    margin-bottom: 5em;
+  }
+}
+/* Blog Card */
 .blog-card {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem auto;
-  box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.6%;
+  width: calc(96.5% / 4);
+  height: 250px;
   background: #fff;
-  line-height: 1.4;
-  font-family: sans-serif;
-  border-radius: 5px;
-  overflow: hidden;
-  z-index: 0;
+  display: inline-block;
+  margin: 4px 2px;
+  vertical-align: top;
+  cursor: pointer;
 }
-.blog-card a {
-  color: inherit;
+.blog-card:hover {
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.1);
 }
-.blog-card a:hover {
-  color: #5ad67d;
-}
-.blog-card:hover .photo {
-  -webkit-transform: scale(1.3) rotate(3deg);
-          transform: scale(1.3) rotate(3deg);
-}
-.blog-card .meta {
-  position: relative;
-  z-index: 0;
-  height: 200px;
-}
-.blog-card .photo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-size: cover;
-  background-position: center;
-  transition: -webkit-transform .2s;
-  transition: transform .2s;
-  transition: transform .2s, -webkit-transform .2s;
-}
-.blog-card .details,
-.blog-card .details ul {
-  margin: auto;
-  padding: 0;
-  list-style: none;
-}
-.blog-card .details {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -100%;
-  margin: auto;
-  transition: left .2s;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 10px;
+.blog-card__image {
   width: 100%;
-  font-size: .9rem;
-}
-.blog-card .details a {
-  -webkit-text-decoration: dotted underline;
-          text-decoration: dotted underline;
-}
-.blog-card .details ul li {
-  display: inline-block;
-}
-.blog-card .details .author:before {
-  font-family: FontAwesome;
-  margin-right: 10px;
-  content: "\f007";
-}
-.blog-card .details .date:before {
-  font-family: FontAwesome;
-  margin-right: 10px;
-  content: "\f133";
-}
-.blog-card .details .tags ul:before {
-  font-family: FontAwesome;
-  content: "\f02b";
-  margin-right: 10px;
-}
-.blog-card .details .tags li {
-  margin-right: 2px;
-}
-.blog-card .details .tags li:first-child {
-  margin-left: -4px;
-}
-.blog-card .description {
-  padding: 1rem;
-  background: #fff;
-  position: relative;
-  z-index: 1;
-}
-.blog-card .description h1,
-.blog-card .description h2 {
-  font-family: Poppins, sans-serif;
-}
-.blog-card .description h1 {
-  line-height: 1;
+  height: 150px;
   margin: 0;
-  font-size: 1.7rem;
 }
-.blog-card .description h2 {
-  font-size: 1rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  color: #a2a2a2;
-  margin-top: 5px;
+.blog-card__image img {
+  width: 100%;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.8;
 }
-.blog-card .description .read-more {
-  text-align: right;
-}
-.blog-card .description .read-more a {
-  color: #5ad67d;
-  display: inline-block;
-  position: relative;
-}
-.blog-card .description .read-more a:after {
-  content: "\f061";
-  font-family: FontAwesome;
-  margin-left: -10px;
-  opacity: 0;
-  vertical-align: middle;
-  transition: margin .3s, opacity .3s;
-}
-.blog-card .description .read-more a:hover:after {
-  margin-left: 5px;
-  opacity: 1;
-}
-.blog-card p {
-  position: relative;
-  margin: 1rem 0 0;
-}
-.blog-card p:first-of-type {
-  margin-top: 1.25rem;
-}
-.blog-card p:first-of-type:before {
-  content: "";
-  position: absolute;
-  height: 5px;
-  background: #5ad67d;
-  width: 35px;
-  top: -0.75rem;
-  border-radius: 3px;
-}
-.blog-card:hover .details {
-  left: 0%;
-}
-@media (min-width: 640px) {
+@media screen and (max-width: 1275px) {
   .blog-card {
-    flex-direction: row;
-    max-width: 700px;
+    width: calc(95% / 4);
   }
-  .blog-card .meta {
-    flex-basis: 40%;
-    height: auto;
+}
+@media screen and (max-width: 768px) {
+  .blog-card {
+    width: calc(96% / 3);
   }
-  .blog-card .description {
-    flex-basis: 60%;
+}
+@media screen and (max-width: 533px) {
+  .blog-card {
+    width: calc(96% / 2);
   }
-  .blog-card .description:before {
-    -webkit-transform: skewX(-3deg);
-            transform: skewX(-3deg);
-    content: "";
-    background: #fff;
-    width: 30px;
-    position: absolute;
-    left: -10px;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
+}
+@media screen and (max-width: 360px) {
+  .blog-card {
+    width: 98%;
   }
-  .blog-card.alt {
-    flex-direction: row-reverse;
-  }
-  .blog-card.alt .description:before {
-    left: inherit;
-    right: -10px;
-    -webkit-transform: skew(3deg);
-            transform: skew(3deg);
-  }
-  .blog-card.alt .details {
-    padding-left: 25px;
-  }
+}
+.blog-card__title {
+  width: 100%;
+  height: 40px;
+}
+.blog-card__title p {
+  margin: 8px 5px;
+  text-align: left;
+  color: #9C9C9C;
+  font-size: 0.82em;
+  font-weight: 600;
+}
+.blog-card hr {
+  width: 95%;
+  border-top: 1px solid #EDEDED;
+  margin-top: 20px;
+}
+.blog-card__details {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  margin-top: 12px;
+  bottom: 0;
+  padding: 0 5px;
+  display: block;
+}
+.blog-card__details--time, .blog-card__details--view, .blog-card__details--like {
+  float: left;
+  font-size: 0.75em;
+  margin-top: 11px;
+  color: #C0C0C0;
+}
+.blog-card__details--view {
+  float: right;
+}
+.blog-card__details--like {
+  float: right;
+  margin-left: 9px;
+}
+.blog-card__details--like i:hover {
+  color: #1382C1;
+}
+.interested {
+  font-size: 1.5em;
+  margin-top: 25em;
 }

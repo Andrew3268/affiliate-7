@@ -17,9 +17,9 @@
          </div>
 
         <section>
+          
           <p>Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla lorem.</p>
         
-      
           <div class="show_detail_wrap">
             <div class="show_left">
               <img src="<%= @post.post_image %>">
@@ -27,10 +27,17 @@
 
             <div class="show_right">
               <h3><%= @post.post_title %></h3>
-              <ul>
-                <li class="show_price_is">$<%= @post.post_price_is %></li>
-                <li class="show_price_was">$<%= @post.post_price_was %></li>
-              </ul>
+              <% if @post.post_spare_01.present? %>
+               <div class="somthing_hidden"><%= @post.post_spare_01 %></div>
+               <ul>
+                <li class="show_price_is">Crowdfunding</li>
+               </ul>
+              <% else %>
+                <ul>
+                  <li class="show_price_is">$<%= @post.post_price_is %></li>
+                  <li class="show_price_was">$<%= @post.post_price_was %></li>
+                </ul>
+              <% end %>
               <hr>
               <div class="youtube">
                 <ul>
@@ -39,24 +46,17 @@
                      <button class="button small"><i class="fa fa-play"></i>&nbsp;Watch Video</button>
                     </div>
                   </li>
-<!--                   <li>
-                    <div class="js-overlay-start start" data-url="<%= @post.post_youtube_02 %>">
-                     <button class="button small"><i class="fa fa-play"></i>&nbsp;Watch Video</button>
-                    </div>
-                  </li> -->
                   <li><a class="button small" href="<%= @post.post_review %>"><i class="fa fa-check-circle"></i>&nbsp;See Review</a></li>
                 </ul>
               </div>
-
-         <!--       <a href="<%= @post.post_youtube_01 %>">YouTube</a>
-               <a href="<%= @post.post_youtube_02 %>">YouTube</a>
-               <a href="<%= @post.post_review %>">See Review</a> -->
               <hr>
               <div class="contents">
-                <p>What is this?</p>
+                <p class="post_index">What is this?</p>
                 <%= @post.post_intro %>
-                <%= raw @post.post_spare_21 %>
-                <!-- <%= @post.user.name %> -->
+
+                <div class="ckeditor">
+                 <%= raw @post.post_spare_21 %>
+                </div>
               </div>
 
               <%= @post.post_source %>
@@ -71,27 +71,83 @@
                 </div>
               <% end %>
               <hr>
-              <div class="check_boutton">
-                <a target="_blank" href="<%= @post.post_link %>" class="button primary fit">Check it Out</a>
-              </div>
+              <% if @post.post_spare_01.present? %>
+               <div class="somthing_hidden"><%= @post.post_spare_01 %></div>
+               <div class="check_boutton">
+                <a target="_blank" href="<%= @post.post_link %>" class="button primary fit">Pre-order from <%= @post.post_source %></a>
+               </div>
+              <% else %>
+               <div class="check_boutton">
+                 <a target="_blank" href="<%= @post.post_link %>" class="button primary fit">Check it Out</a>
+               </div>
+              <% end %>
             </div>
           </div>
-          
-        </section>
 
-    </section>
+        </section>
+        <div class="wrapper">
+         <section class="main">
+          <section>
+           <section class="grid-section">
+
+              <h1 class="interested">You may also be interested in the following product(s)</h1>
+              <% @posts_show.each do |postshow| %>
+               <% if postshow.category_id == @post.category_id %> 
+                <article class="blog-card">
+                  <div class="blog-card__image">
+                    <%= link_to (image_tag postshow.post_image), postshow %>
+                  </div>
+                  <div class="blog-card__title">
+                    <p><%= link_to postshow.post_title, postshow %></p>
+                  </div>
+
+                  <div class="blog-card__details">
+                    <% if @post.post_spare_01.present? %>
+                     <div class="somthing_hidden"><%= @post.post_spare_01 %></div>
+                     <span class="blog-card__details--like">Crowdfunding</span>
+                    <% else %>
+                     <span class="blog-card__details--like">$<%= postshow.post_price_is %></span>
+                     <span class="blog-card__details--view">$<%= postshow.post_price_was %></i></span>        
+                    <% end %>
+                  </div>
+                </article>
+               <% end %>
+              <% end %>
+              
+              <article class="blog-card">
+                <div class="blog-card__image">
+                  <img src="https://www.dropbox.com/s/6i60hcgrz7yatl5/nexus-6-2770-001.jpg?raw=1">
+                </div>
+                <div class="blog-card__title">
+                  <p> Object Oriented Programming for Junior Programmers </p>
+                </div>
+                <div class="blog-card__details">
+                  <span class="blog-card__details--time"><i class="fa fa-clock-o"></i> 1 day ago </span>
+                  <span class="blog-card__details--like"><i class="fa fa-heart"></i> 15 </span>
+                  <span class="blog-card__details--view"><i class="fa fa-eye"></i> 1259 </span>        
+                </div>
+              </article>
+                          
+             </section>
+           </section>
+         </section>
+        </div>
+
+    </section><!--/.main-->
 
   <!-- Sidebar -->
   <%= render 'posts/sidebar' %>  
 
 </div>
 
+
+
+
 <!-- Footer -->
 <%= render 'shared/footer' %>
 
 <!-- Javascript -->
 <%= render 'posts/post.js' %>
-
 
 
 
