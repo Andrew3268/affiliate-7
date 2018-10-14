@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :blogs
   has_many :categories
+  has_many :acategories
 end

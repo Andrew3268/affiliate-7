@@ -15,8 +15,10 @@ ActiveRecord::Schema.define(version: 20181012045316) do
 
   create_table "acategories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "acategory_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "bcategories", force: :cascade do |t|
