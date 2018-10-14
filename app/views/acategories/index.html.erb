@@ -1,5 +1,5 @@
 <header id="header">
-  <%= render 'dealzons/navbar' %> 
+  <%= render 'posts/navbar' %> 
 </header>
 
 <div class="wrapper">
@@ -7,7 +7,7 @@
   <section class="main">
     
     <div class="category_wrap">
-     <h1>List of categories of Post</h1>
+     <h1>List of categories of Dealzon</h1>
       <%= link_to "Add New Category", new_acategory_path %>
       <table>
         <tr>
@@ -20,7 +20,7 @@
           <td><%= category.name %></td>
           <td><%= category.acategory_id %></td>
           <td><%= link_to "Edit", edit_acategory_path(category) %></td>
-          <td><%= link_to "Delete", acategory_path(category), method: :delete, data: "{Are you sure?}" %></td>
+          <td><%= link_to "Delete", acategory_path(category), method: :delete, data: {confrim: "Are you sure?"} %></td>
          </tr>
         <% end %>
       </table>
@@ -34,18 +34,3 @@
 <%= render "shared/footer" %>
 
 
-
-
-
-
-
-
-
-
-
-<h1>This is the index page</h1>
-<% @acategories.each do |acategory| %>
- <h2><%= link_to acategory.name, acategory %></h2>
-<% end %>
-
-<%= link_to "Add Category", new_acategory_path %>

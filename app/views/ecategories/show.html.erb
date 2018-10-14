@@ -1,0 +1,6 @@
+<h1><%= @ecategory.name %></h1>
+<p><%= @ecategory.ecategory_id %></p>
+
+<%= link_to "Home", root_path %>
+<%= link_to "Edit", edit_ecategory_path(@ecategory) %>
+<%= link_to "Delete", ecategory_path(@ecategory), method: :delete, data: {confirm: "Are you sure?"} %>

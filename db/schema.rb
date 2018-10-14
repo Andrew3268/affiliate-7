@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(version: 20181012045316) do
 
   create_table "bcategories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "bcategory_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "blogs", force: :cascade do |t|
@@ -111,8 +113,10 @@ ActiveRecord::Schema.define(version: 20181012045316) do
 
   create_table "ecategories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "ecategory_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "events", force: :cascade do |t|

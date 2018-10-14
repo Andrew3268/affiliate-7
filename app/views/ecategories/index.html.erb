@@ -7,20 +7,20 @@
   <section class="main">
     
     <div class="category_wrap">
-     <h1>List of categories of Post</h1>
-      <%= link_to "Add New Category", new_category_path %>
+     <h1>List of categories of eBay</h1>
+      <%= link_to "Add New Category", new_ecategory_path %>
       <table>
         <tr>
           <th>Category</th>
           <th>Category ID</th>
           <th colspan="2">Option</th>
         </tr>
-        <% @categories.each do |category| %>
+        <% @ecategories.each do |category| %>
          <tr>
           <td><%= category.name %></td>
-          <td><%= category.category_id %></td>
-          <td><%= link_to "Edit", edit_category_path(category) %></td>
-          <td><%= link_to "Delete", category_path(category), method: :delete, data: {confrim: "Are you sure?"} %></td>
+          <td><%= category.ecategory_id %></td>
+          <td><%= link_to "Edit", edit_ecategory_path(category) %></td>
+          <td><%= link_to "Delete", ecategory_path(category), method: :delete, data: {confrim: "Are you sure?"} %></td>
          </tr>
         <% end %>
       </table>
@@ -32,11 +32,3 @@
 
 <!-- Footer -->
 <%= render "shared/footer" %>
-
-
-
-
-
-
-
-

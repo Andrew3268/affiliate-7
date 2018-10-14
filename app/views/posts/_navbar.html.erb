@@ -47,6 +47,7 @@
           <ul>
            <li><%= link_to "Gadget", new_category_path %></li>
            <li><%= link_to "Amazon", new_acategory_path %></li>
+           <li><%= link_to "eBay", new_ecategory_path %></li>
           </ul>
          </li>
          <li>
@@ -54,6 +55,7 @@
           <ul>
            <li><%= link_to "Gadget", categories_path %></li>
            <li><%= link_to "Amazon", acategories_path %></li>
+           <li><%= link_to "eBay", ecategories_path %></li>
           </ul>
          </li>    
          <% if user_signed_in? %>
