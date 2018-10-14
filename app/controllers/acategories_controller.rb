@@ -18,7 +18,7 @@ class AcategoriesController < ApplicationController
   def create
     @acategory = current_user.acategories.build(acategory_params)
      if @acategory.save
-      redirect_to root_path
+      redirect_to acategories_path
      else
       render 'new'
      end
@@ -29,7 +29,7 @@ class AcategoriesController < ApplicationController
 
   def update
     if @acategory.update(acategory_params)
-      redirect_to root_path
+      redirect_to acategories_path
     else
       render 'edit'
     end
@@ -37,7 +37,7 @@ class AcategoriesController < ApplicationController
 
   def destroy
     @acategory.destroy
-     redirect_to root_path
+     redirect_to acategories_path
   end
 
   private

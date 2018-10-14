@@ -102,8 +102,8 @@
                   </div>
 
                   <div class="blog-card__details">
-                    <% if @post.post_spare_01.present? %>
-                     <div class="somthing_hidden"><%= @post.post_spare_01 %></div>
+                    <% if postshow.post_spare_01.present? %>
+                     <div class="somthing_hidden"><%= postshow.post_spare_01 %></div>
                      <span class="blog-card__details--like">Crowdfunding</span>
                     <% else %>
                      <span class="blog-card__details--like">$<%= postshow.post_price_is %></span>
