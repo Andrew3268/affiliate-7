@@ -4,6 +4,7 @@
 <div class="wrapper">
   <section class="main">
    <%= simple_form_for @dealzon do |f| %>
+     <h1>Edit Deals of Amazon</h1>
      <div class="form_section">
        <%= f.collection_select :acategory_id, Acategory.all, :id, :name, {prompt: "Choose a category"} %><br/>
        <%= f.select :am_expire, ([["Ongoing", ""], "This code & promotion has expired"]) %><br/>

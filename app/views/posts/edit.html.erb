@@ -7,8 +7,10 @@
 
   <!-- Main -->
     <section class="main">
+
      <%= simple_form_for @post do |f| %>
        <div class="form_section">
+        <h1>Edit Gadget</h1>
          <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a category"} %>
          <%= f.input :post_title %>
          <%= f.input :post_image %>

@@ -20,7 +20,7 @@
           <td><%= category.name %></td>
           <td><%= category.acategory_id %></td>
           <td><%= link_to "Edit", edit_acategory_path(category) %></td>
-          <td><%= link_to "Delete", acategory_path(category), method: :delete, data: {confrim: "Are you sure?"} %></td>
+          <td><%= link_to "Delete", acategory_path(category), method: :delete, data: {confirm: "Are you sure?"} %></td>
          </tr>
         <% end %>
       </table>
