@@ -1,29 +1,48 @@
 <aside class="sidebar">
-
+    <!-- Blurb -->
     <section>
-
-    <div class="amazon_related">
-      <script type="text/javascript">
-        amzn_assoc_placement = "adunit0";
-        amzn_assoc_tracking_id = "3628-20";
-        amzn_assoc_ad_mode = "search";
-        amzn_assoc_ad_type = "smart";
-        amzn_assoc_marketplace = "amazon";
-        amzn_assoc_region = "US";
-        amzn_assoc_default_search_phrase = "<%= @dealzon.am_category %>";
-        amzn_assoc_default_category = "All";
-        amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
-        amzn_assoc_search_bar = "true";
-        amzn_assoc_search_bar_position = "top";
-        amzn_assoc_title = "Shop Related Products";
-      </script>
-      <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-    </div><br>
-     
+      <h2>AMAZON QUICK SEARCH</h2>
+      <a href="#" class="image fit"><img src="https://pmcvariety.files.wordpress.com/2018/01/amazon-logo.jpg?w=1000" alt=""></a>
+      <p>Amazon offers thousands of great deals, but finding the best deal through endless pages might make you crazy. It offers a quick way to find the best deals on Amazon.</p>
+      <ul class="actions">
+        <li><a class="cta" href="#google">Quick Search</a></li>
+        <div id="google" class="modaloverlay">
+          <div class="modal">
+            <a href="#close" class="modal_close">&times;</a>
+            <div>
+              <h2>Quick way to find the best deals</h2>
+              <p>Amazon offers thousands of great deals, but finding the best deal through endless pages might make you crazy. It offers a quick way to find the best deals on Amazon. You are going to get awesome deals just by clicking on the percentage off next to the category you want to browse.</p>
+              <%= render 'shared/amazon_table' %>
+            </div>
+          </div>
+        </div>
+      </ul>
     </section>
 
     <section>
-     <h2>Popular Post</h2>
+
+      <div class="amazon_related">
+        <script type="text/javascript">
+          amzn_assoc_placement = "adunit0";
+          amzn_assoc_tracking_id = "3628-20";
+          amzn_assoc_ad_mode = "search";
+          amzn_assoc_ad_type = "smart";
+          amzn_assoc_marketplace = "amazon";
+          amzn_assoc_region = "US";
+          amzn_assoc_default_search_phrase = "<%= @dealzon.am_category %>";
+          amzn_assoc_default_category = "All";
+          amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
+          amzn_assoc_search_bar = "true";
+          amzn_assoc_search_bar_position = "top";
+          amzn_assoc_title = "Shop Related Products";
+        </script>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+      </div><br>
+       
+    </section>
+
+    <section>
+     <h2>POPULAR DEALS</h2>
      <div id="sidebar">
       <ul id="side-rcnt-thumb-post-list">      
         <% @dealzon_side.each do |ds| %>
@@ -32,6 +51,7 @@
               <%= link_to (image_tag ds.am_image), ds, :class => "srtpl-a" %>        
             </div>
             <div class="srtpl-r">
+              <p><%= ds.acategory.name %></p>
               <%= link_to ds.am_title, ds, :class => "srtpl-n" %>
             </div>
           </li>
@@ -46,10 +66,10 @@
 
    <!-- Accordian -->
    <section>
-    <h2>Popular Deals by Category</h2>
+    <h3>POPULAR DEALS BY CATEGORY</h3>
      <ul id="accord1" class="accordian">
       <li>
-        <header>One</header>
+        <header>Sales & Offer</header>
         <section>
          <div id="sidebar">
           <ul id="side-rcnt-thumb-post-list">
@@ -70,7 +90,7 @@
         </section>
       </li>
       <li>
-        <header>Two</header>
+        <header>Deals</header>
         <section>
          <div id="sidebar">
           <ul id="side-rcnt-thumb-post-list">
@@ -91,7 +111,7 @@
         </section>
       </li>
       <li>
-        <header>Three</header>
+        <header>Promotions</header>
         <section>
          <div id="sidebar">
           <ul id="side-rcnt-thumb-post-list">
@@ -112,33 +132,12 @@
         </section>
       </li>
       <li>
-        <header>Three</header>
+        <header>Promo Codes</header>
         <section>
          <div id="sidebar">
           <ul id="side-rcnt-thumb-post-list">
             <% @dealzon_side.each do |dealside| %>
               <% if dealside.acategory_id == 4 %> 
-                <li>
-                  <div class="srtpl-l">
-                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
-                  </div>
-                  <div class="srtpl-r">
-                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
-                  </div>
-                </li>
-              <% end %>
-            <% end %>
-          </ul>
-        </div>
-        </section>
-      </li>
-      <li>
-        <header>Three</header>
-        <section>
-         <div id="sidebar">
-          <ul id="side-rcnt-thumb-post-list">
-            <% @dealzon_side.each do |dealside| %>
-              <% if dealside.acategory_id == 5 %> 
                 <li>
                   <div class="srtpl-l">
                     <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
@@ -161,16 +160,16 @@
    
 
    <!-- Blurb -->
-    <section>
+<!--     <section>
       <h2>Magna etiam</h2>
       <p>Fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem sed euismod placerat. Vivamus porttitor et magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper lorem ipsum.</p>
       <ul class="actions">
         <li><a href="#" class="button">Learn More</a></li>
       </ul>
-    </section>
+    </section> -->
 
   <!-- Featured posts -->
-    <section class="featured-posts">
+<!--     <section class="featured-posts">
       <h2>Sed aliquam</h2>
       <article>
         <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
@@ -183,10 +182,10 @@
           <li><a href="#" class="button">Continue Reading</a></li>
         </ul>
       </article>
-    </section>
+    </section> -->
 
   <!-- Posts -->
-    <section>
+<!--     <section>
       <h2>Arcu dolore</h2>
       <ul class="posts">
         <li>
@@ -221,6 +220,6 @@
       <ul class="actions">
         <li><a href="#" class="button">More Posts</a></li>
       </ul>
-    </section>
+    </section> -->
 
 </aside>

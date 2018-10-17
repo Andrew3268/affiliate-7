@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts_show = Post.all.order("created_at DESC")
+    @posts_show = Post.all.order("created_at DESC").limit(8)
     @post_side = Post.order("impressions_count DESC").limit(5)
   end
 

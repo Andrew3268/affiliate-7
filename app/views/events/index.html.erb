@@ -1,5 +1,5 @@
 <header id="header">
-  <%= render 'posts/navbar' %> 
+  <%= render 'events/navbar' %> 
 </header>
 
 <div class="index_header">
@@ -41,10 +41,11 @@
               <% end %>
               <% if event.ecategory_id == 2 %> 
                <div class="card--category category_green"><%= event.ecategory.name if event.ecategory %></div>
+               <div class="category_sale">you can save <span class="deal_index"><%= event.eb_price_sale %>%off</span></div>
               <% end %>
               <% if event.ecategory_id == 3 %> 
                <div class="card--category category_blue"><%= event.ecategory.name if event.ecategory %></div>
-               <div class="category_sale"> you can save <span class="sale_index"><%= event.eb_price_sale %>%off</span> more</div>
+               <div class="category_sale">you can save <span class="code_index"><%= event.eb_price_sale %>%off more</span></div>
               <% end %>
               <% if event.ecategory_id == 4 %> 
                <div class="card--category category_purple"><%= event.ecategory.name if event.ecategory %></div>
@@ -53,14 +54,20 @@
              
              <p><%= event.eb_title %></p>
              <% if event.ecategory_id == 1 %>
-               <ul class="featured_index">
+               <ul>
                 <li><%= event.eb_featured_sale %></li>
                </ul>
              <% else %>
+              <% if event.ecategory_id == 3 %>
+               <ul>
+                <li><%= event.eb_price_sale %>% Off</li>
+               </ul>
+              <% else %>
                <ul>
                 <li>$<%= event.eb_price_is %></li>
                 <li>$<%= event.eb_price_was %></li>
                </ul>
+              <% end %>
              <% end %>
              <div class="index_button">
                <a class="button primary fit" href="events/<%= event.id %>">See More Detail</a>
@@ -77,7 +84,7 @@
     </section>
 
   <!-- Sidebar -->
-  <%= render "shared/sidebar" %>
+  <%= render "events/sidebar_show" %>
 
 </div>
 

@@ -1,3 +1,198 @@
+/* ---------------------------------------------
+   Responsive Product Cards
+ --------------------------------------------- */
+.index_container p {
+  margin: .5rem 0;
+  height: 3em;
+  font-size: 0.9em;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -moz-line-clamp: 2; 
+  -webkit-line-clamp: 2; /* number of line */ 
+  -ms-line-clamp: 2;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  word-wrap:break-word;
+}
+.index_container {
+  padding: 0 2rem 2rem;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.8rem;
+}
+.card {
+  /* width: calc(33.3% - 1.6rem); */
+  /* width: calc(25% - 1.6rem); */
+  /* margin: 0.8rem; */
+  width: calc(27% - 1.6rem);
+  margin: 0.3rem;
+  background: #fff;
+  overflow: hidden;
+  border-radius: .5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 300ms;
+}
+
+.card:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.card--image {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+.card--image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 0.5em;
+}
+.card--content {
+  padding: 0 0.5rem;
+}
+.card--content ul {
+  margin: 0 0 0.5em 0;
+  padding-left: 0em;
+}
+.card--content ul li {
+  display: inline-block;
+  list-style: none;
+  padding-left: 0em;   
+}
+.card--content ul li:nth-child(1) {
+  font-size: 1.2em;
+}
+.card--content ul li:nth-child(2) {
+  text-decoration: line-through;
+  color: #999;
+}
+.card--content ul li:nth-child(3) {
+  float: right;
+}
+.card--category {
+  font-size: .65em;
+  letter-spacing: .1ch;
+  /* padding-top: 1em; */
+  font-weight: bold;
+  /* color: #fff; */
+  text-transform: uppercase;
+}
+.index_button {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+@media screen and (max-width: 800px) {
+  .card {
+    display: flex;
+    width: calc(100% - 1.6rem);
+    border-bottom: 1px solid;
+    margin-bottom: 1em;
+  }
+}
+@media screen and (max-width: 800px) {
+  .card--image {
+    width: 25%;
+    min-width: 40%;
+    padding-bottom: 25%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .card--image img {
+    position: absolute;
+    width: 100%;
+    /* height: 17em; */
+    object-fit: contain;
+
+  }
+}
+
+/* ---------------------------------------------
+ Content with image(left) in Sidebar 
+ --------------------------------------------- */
+ul#side-rcnt-thumb-post-list {
+list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#side-rcnt-thumb-post-list li {
+  overflow: hidden;
+  border-bottom: 1px solid #CCC;
+  padding: 10px 0;
+  position: relative;
+  min-height: 76px;
+}
+.srtpl-l {
+  float: left;
+  width: 20%;
+  margin-right: 15px;
+}
+.srtpl-l img {
+  width: 100%;
+}
+.srtpl-a {
+  display: block;
+  outline: 0!important;
+  font-weight: 400;
+}
+#side-rcnt-thumb-post-list img {
+  max-width: 100%;
+  height: 4em;
+  vertical-align: middle;
+  border: 0;
+  object-fit: cover;
+}
+.srtpl-r {
+  margin-left: 90px;
+}
+.srtpl-r p {
+  margin: 0em;
+  font-size: 0.8em;
+  color: #999;
+}
+.srtpl-n {
+  display: block;
+  color: #343534;
+  line-height: 1.2;
+  font-weight: 600;
+  font-size: 15px;
+  outline: 0!important;
+  text-decoration: none;  
+}
+
+/* ---------------------------------------------
+   Media Query
+ --------------------------------------------- */
+ @media screen and (max-width: 480px) {
+   .index_container {
+     padding: 0 1rem 1rem;
+     margin-top: 2em;
+   }
+   .card--image img {
+     object-fit: contain;
+   }
+ }
+
+/* ---------------------------------------------
+   Devise
+ --------------------------------------------- */
+.devise_wrap {
+  width: 70%;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+
+/* ---------------------------------------------
+   Index
+ --------------------------------------------- */
 .index_header {
   display: flex;
   position: relative;
@@ -8,10 +203,14 @@
 .somthing_hidden {
   display: none;
 }
+.notice {
+  font-size: 0.8em;
+  color: #999;
+}
 
-/* ---------------------------------------------
-   Accordian of Sidebar 
- --------------------------------------------- */
+/* ------------------------------------------------------
+   Accordian of Sidebar for popular post by category
+ ------------------------------------------------------ */
 .accordian {
   list-style:none;
   margin:0 0 40px;
@@ -40,19 +239,9 @@ ul.accordian li {
   display:block;
 }
 
-/* ---------------------------------------------
-   Related Post test in all show page
- --------------------------------------------- */
-.related_card {
-  width: 25%;
-}
-.related_show img {
-  width: 100%;
-}
-
 
 /* ---------------------------------------------------------
-   Related(the same category_id) product in show pate
+   Related(the same category_id) product in show page
  --------------------------------------------------------- */
 .header-section {
   width: 98%;
@@ -60,20 +249,17 @@ ul.accordian li {
   position: relative;
   margin: 0 auto;
 }
-
 @media screen and (min-width: 1280px) {
   .header-section {
     width: 1001px;
   }
 }
-
 .grid-section {
   height: auto;
   position: relative;
   margin: 0 auto;
   margin-top: -40em;
 }
-
 @media screen and (min-width: 1280px) {
   .grid-section {
     width: 100%;
@@ -90,9 +276,9 @@ ul.accordian li {
     margin-bottom: 5em;
   }
 }
-/* Blog Card */
-.blog-card {
-  width: calc(96.5% / 4);
+/* related Card */
+.related-card {
+  width: calc(96% / 4);
   height: 250px;
   background: #fff;
   display: inline-block;
@@ -100,15 +286,15 @@ ul.accordian li {
   vertical-align: top;
   cursor: pointer;
 }
-.blog-card:hover {
+.related-card:hover {
   box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.1);
 }
-.blog-card__image {
+.related-card__image {
   width: 100%;
   height: 150px;
   margin: 0;
 }
-.blog-card__image img {
+.related-card__image img {
   width: 100%;
   height: 150px;
   -o-object-fit: cover;
@@ -116,42 +302,55 @@ ul.accordian li {
   opacity: 0.8;
 }
 @media screen and (max-width: 1275px) {
-  .blog-card {
+  .related-card {
     width: calc(95% / 4);
   }
 }
 @media screen and (max-width: 768px) {
-  .blog-card {
+  .related-card {
     width: calc(96% / 3);
   }
 }
 @media screen and (max-width: 533px) {
-  .blog-card {
+  .related-card {
     width: calc(96% / 2);
   }
 }
 @media screen and (max-width: 360px) {
-  .blog-card {
+  .related-card {
     width: 98%;
   }
 }
-.blog-card__title {
+.related-card__title {
   width: 100%;
   height: 40px;
 }
-.blog-card__title p {
+.related-card__title p {
   margin: 8px 5px;
   text-align: left;
   color: #9C9C9C;
   font-size: 0.82em;
   font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -moz-line-clamp: 3; 
+  -webkit-line-clamp: 3; /* number of line */ 
+  -ms-line-clamp: 3;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  word-wrap:break-word;
 }
-.blog-card hr {
+.related-card__title a {
+  color: #9C9C9C;
+}
+.related-card hr {
   width: 95%;
   border-top: 1px solid #EDEDED;
   margin-top: 20px;
 }
-.blog-card__details {
+.related-card__details {
   width: 100%;
   height: 40px;
   position: relative;
@@ -160,23 +359,117 @@ ul.accordian li {
   padding: 0 5px;
   display: block;
 }
-.blog-card__details--time, .blog-card__details--view, .blog-card__details--like {
+.related-card__details--time, 
+.related-card__details--view, 
+.related-card__details--like {
   float: left;
   font-size: 0.75em;
   margin-top: 11px;
   color: #C0C0C0;
 }
-.blog-card__details--view {
-  float: right;
+.related-card__details--view {
+  float: left;
+  margin-left: 5px;
+  text-decoration: line-through;
 }
-.blog-card__details--like {
-  float: right;
-  margin-left: 9px;
+.related-card__details--like {
+  float: left;
 }
-.blog-card__details--like i:hover {
+.related-card__details--like i:hover {
   color: #1382C1;
 }
 .interested {
   font-size: 1.5em;
   margin-top: 25em;
 }
+
+/* ---------------------------------------------
+   Modal for sidebar
+ --------------------------------------------- */
+.cta{
+    background-color: white; 
+    border:1px solid lightgrey; 
+    border-radius:6px; 
+    /* color: tomato; */
+    color: #2ebfac;
+    display:inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 1em;
+    padding:.3em 1em; 
+    text-decoration:none; 
+    &:hover{
+      background-color:lightgrey;
+      color:slategrey;
+      text-decoration:none; 
+    } 
+}
+// Modal
+.modaloverlay{
+  background:rgba(0,0,0,0.8);
+  bottom:0;
+  left:0;
+  opacity:0;
+  pointer-events:none;
+  position:fixed;
+  right:0;
+  top:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  z-index:-1;
+  display: none;
+  &:target{
+    display: block;
+    opacity:1;
+    pointer-events:auto;
+    z-index:99999;
+  }
+  .modal{
+    background-color:white;
+    height: 100%;
+    position:relative;
+    margin:0 auto;
+    padding:3em;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    @media (min-width: 60em) {
+      height:75%;
+     margin:5% auto;
+     max-height: 57em;
+      max-width:66em;
+      width:85%;
+    }
+  > iframe, > div{
+    border:none;
+    width:100%;
+    height:100%;
+    }
+  }
+  .modal_close{
+    background-color:turquoise;
+    color:white;
+    font-size:24px;
+    padding:8px 12px;
+    position:absolute;
+    right:0;
+    text-align:center;
+    text-decoration:none;
+    top:0;
+    z-index: 1;
+  }
+}
+@media screen and (max-width: 533px) {
+  .modaloverlay .modal {
+    padding: 0em;
+  }
+  .modaloverlay .modal_close {
+    font-size: 18px;
+  }
+}
+
+
+
+
+

@@ -7,12 +7,12 @@
 <!-- Nav -->
 <nav id="nav">
   <ul>
-    <li><a href="/">Home</a></li>
+    <li><%= link_to "Home", root_path %></li>
 
     <li>
-      <a href="#" class="icon fa-angle-down">Categories</a>
+      <a href="#" class="icon fa-angle-down">Gadgets</a>
       <ul>
-        <li><%=link_to "Everything", root_path %></li>
+        <li><%=link_to "What's New", root_path %></li>
         <% Category.all.each do |category| %>
          <li><%= link_to category.name, posts_path(category: category.name) %></li>
         <% end %>
@@ -20,54 +20,64 @@
     </li>
 
     <li>
-      <a href="#" class="icon fa-angle-down">Stores</a>
+      <a href="#" class="icon fa-angle-down">Deals</a>
       <ul>
        <li>
-          <a href="/dealzons">Amazon</a>
+          <a>Amazon</a>
           <ul>
-            <li><%= link_to "All Offer", dealzons_path %></li>
+            <li><%=link_to "What's New", dealzons_path %></li>
             <% Acategory.all.each do |acategory| %>
              <li><%= link_to acategory.name, dealzons_path(acategory: acategory.name) %></li>
-            <% end %>
+            <% end %>            
           </ul>
-       </li>
-       <li><a href="/evnets">eBay</a></li>       
+         </li>
+         <li><%= link_to "eBay", events_path %></li>
+
       </ul>
     </li>
+     
 
-    <!-- <li>
-      <a href="#" class="icon fa-angle-down">Dropdown</a>
-      <ul>
-        <li><a href="#">Option One</a></li>
-        <li><a href="#">Option Two</a></li>
-        <li><a href="#">Option Three</a></li>
-        <li>
-          <a href="#">Submenu</a>
+    <li><%= link_to "Blog", blogs_path %></li>
+
+    <% if can? :update, @post %>
+     <li>
+       <a href="#" class="icon fa-angle-down">Admin & Create</a>
+       <ul>
+         <li>
+            <a href="/dealzons">Gadget & Deals</a>
+            <ul>
+             <li><%= link_to "Gadget", new_post_path %></li>
+             <li><%= link_to "Amazon", new_dealzon_path %></li>
+             <li><%= link_to "eBay", new_event_path %></li>
+             <li><%= link_to "Blog", new_blog_path %></li>
+            </ul>
+         </li>
+         <li>
+          <a href="/dealzons">Create category</a>
           <ul>
-            <li><a href="#">Option One</a></li>
-            <li><a href="#">Option Two</a></li>
-            <li><a href="#">Option Three</a></li>
-            <li><a href="#">Option Four</a></li>
+           <li><%= link_to "Gadget", new_category_path %></li>
+           <li><%= link_to "Amazon", new_acategory_path %></li>
+           <li><%= link_to "eBay", new_ecategory_path %></li>
           </ul>
-          <li>
-          <a href="#">Submenu</a>
+         </li>
+         <li>
+          <a href="/dealzons">Manage category</a>
           <ul>
-            <li><a href="#">Option One</a></li>
-            <li><a href="#">Option Two</a></li>
-            <li><a href="#">Option Three</a></li>
-            <li><a href="#">Option Four</a></li>
+           <li><%= link_to "Gadget", categories_path %></li>
+           <li><%= link_to "Amazon", acategories_path %></li>
+           <li><%= link_to "eBay", ecategories_path %></li>
           </ul>
-        </li>
+         </li>    
+         <% if user_signed_in? %>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+         <% else %>
+          <li><%= link_to "Log in", new_user_session_path %></li>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+         <% end %>
+
       </ul>
-    </li> -->
-    <li><a href="/blogs">Blog</a></li>
-    <!-- <li><a href="elements.html">Elements</a></li> -->
-    <!-- <li><a href="#" class="button">Log In</a></li> -->
-    <% if user_signed_in? %>
-      <li class="button"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-    <% else %>
-      <li class="button"><%= link_to "Log in", new_user_session_path %></li>
-      <li class="button"><%= link_to "Sign up", new_user_registration_path %></li>
+    </li>
     <% end %>
+    
   </ul>
 </nav>

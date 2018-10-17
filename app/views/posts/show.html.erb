@@ -85,6 +85,7 @@
           </div>
 
         </section>
+        
         <div class="wrapper">
          <section class="main">
           <section>
@@ -93,40 +94,40 @@
               <h1 class="interested">You may also be interested in the following product(s)</h1>
               <% @posts_show.each do |postshow| %>
                <% if postshow.category_id == @post.category_id %> 
-                <article class="blog-card">
-                  <div class="blog-card__image">
+                <article class="related-card">
+                  <div class="related-card__image">
                     <%= link_to (image_tag postshow.post_image), postshow %>
                   </div>
-                  <div class="blog-card__title">
+                  <div class="related-card__title">
                     <p><%= link_to postshow.post_title, postshow %></p>
                   </div>
 
-                  <div class="blog-card__details">
+                  <div class="related-card__details">
                     <% if postshow.post_spare_01.present? %>
                      <div class="somthing_hidden"><%= postshow.post_spare_01 %></div>
-                     <span class="blog-card__details--like">Crowdfunding</span>
+                     <span class="related-card__details--like">Crowdfunding</span>
                     <% else %>
-                     <span class="blog-card__details--like">$<%= postshow.post_price_is %></span>
-                     <span class="blog-card__details--view">$<%= postshow.post_price_was %></i></span>        
+                     <span class="related-card__details--like">$<%= postshow.post_price_is %></span>
+                     <span class="related-card__details--view">$<%= postshow.post_price_was %></i></span>        
                     <% end %>
                   </div>
                 </article>
                <% end %>
               <% end %>
               
-              <article class="blog-card">
-                <div class="blog-card__image">
+              <!-- <article class="related-card">
+                <div class="related-card__image">
                   <img src="https://www.dropbox.com/s/6i60hcgrz7yatl5/nexus-6-2770-001.jpg?raw=1">
                 </div>
-                <div class="blog-card__title">
+                <div class="related-card__title">
                   <p> Object Oriented Programming for Junior Programmers </p>
                 </div>
-                <div class="blog-card__details">
-                  <span class="blog-card__details--time"><i class="fa fa-clock-o"></i> 1 day ago </span>
-                  <span class="blog-card__details--like"><i class="fa fa-heart"></i> 15 </span>
-                  <span class="blog-card__details--view"><i class="fa fa-eye"></i> 1259 </span>        
+                <div class="related-card__details">
+                  <span class="related-card__details--time"><i class="fa fa-clock-o"></i> 1 day ago </span>
+                  <span class="related-card__details--like"><i class="fa fa-heart"></i> 15 </span>
+                  <span class="related-card__details--view"><i class="fa fa-eye"></i> 1259 </span>        
                 </div>
-              </article>
+              </article> -->
                           
              </section>
            </section>

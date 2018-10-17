@@ -46,9 +46,23 @@
   color: #999;
   text-transform: uppercase;
 }
-.sale_index {
+.category_sale_expired {
+  font-size: .65em;
+  letter-spacing: .1ch;
+  font-weight: bold;
+  color: red;
+  text-transform: uppercase;
+}
+.code_index {
   color: #08f;
   font-weight: bold;
+}
+.deal_index {
+  color: #00cd00;
+  font-weight: bold;
+}
+.price_hidden {
+  visibility: hidden;
 }
 @media screen and (max-width: 800px) {
   .dealzon_card {
@@ -151,6 +165,16 @@
 .end_date {
   color: red;
   font-size: 0.9em;
+}
+.show_price_section ul li:nth-child(2) {
+  font-size: 1em;
+  color: #999;
+  text-decoration: line-through;
+}
+.amazon_table {
+  width: 100%;
+  overflow-y: scroll;
+  
 }
 
 

@@ -8,22 +8,46 @@
     
     <div class="category_wrap">
      <h1>List of categories of eBay</h1>
-      <%= link_to "Add New Category", new_ecategory_path %>
-      <table>
+       The List of categories I planed.
+       <table>
         <tr>
-          <th>Category</th>
-          <th>Category ID</th>
-          <th colspan="2">Option</th>
+         <th>Category</th>
+         <th>Category ID</th>
         </tr>
-        <% @ecategories.each do |category| %>
          <tr>
-          <td><%= category.name %></td>
-          <td><%= category.ecategory_id %></td>
-          <td><%= link_to "Edit", edit_ecategory_path(category) %></td>
-          <td><%= link_to "Delete", ecategory_path(category), method: :delete, data: {confrim: "Are you sure?"} %></td>
+          <td>Featured Sales</td>
+          <td>1</td>
          </tr>
-        <% end %>
-      </table>
+         <tr>
+          <td>Deals</td>
+          <td>2</td>
+         </tr>
+         <tr>
+          <td>Promo Code</td>
+          <td>3</td>
+         </tr>
+         <tr>
+          <td>Interesting</td>
+          <td>4</td>
+         </tr>
+        </table>
+
+        <%= link_to "Add New Category", new_ecategory_path %>
+        <table>
+          <tr>
+            <th>Category</th>
+            <th>Category ID</th>
+            <th colspan="2">Option</th>
+          </tr>
+          <% @ecategories.each do |category| %>
+           <tr>
+            <td><%= category.name %></td>
+            <td><%= category.ecategory_id %></td>
+            <td><%= link_to "Edit", edit_ecategory_path(category) %></td>
+            <td><%= link_to "Delete", ecategory_path(category), method: :delete, data: {confrim: "Are you sure?"} %></td>
+           </tr>
+          <% end %>
+        </table>
      </div>
     
   </section>

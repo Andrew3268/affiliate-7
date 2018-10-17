@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get "dislike", to: "posts#downvote"
     end
   end
-  # root 'posts#index'
+  root 'posts#index'
 
   resources :dealzons
   # root 'dealzons#index'
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   resources :acategories
   # root 'acategories#index'
   resources :ecategories
-  root 'ecategories#index'
+  # root 'ecategories#index'
 
 
   # get 'home/index'

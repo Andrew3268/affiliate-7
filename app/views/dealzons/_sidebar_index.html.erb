@@ -1,15 +1,11 @@
 <aside class="sidebar">
-  <!-- Blurb -->
+    <!-- Blurb -->
     <section>
-      <h2>Real Time Amazon Deals</h2>
-      <p>Amazon offers thousands of great deals, but, sifting through the endless pages can be a huge hassle. We have just made your life easier. We offer a quick way to find the best deals on Amazon Simply click on the percentage off next to the category you want to browse. You will be redirected to a new window containing your Amazon search results.</p>
-      <ul class="actions">
-        <li><a href="#" class="button">Learn More</a></li>
-      </ul>
-    </section> 
+
+    </section>
 
     <section>
-     <h2>Popular Post</h2>
+     <h2>POPULAR DEALS</h2>
      <div id="sidebar">
       <ul id="side-rcnt-thumb-post-list">      
         <% @dealzon_side.each do |ds| %>
@@ -18,6 +14,7 @@
               <%= link_to (image_tag ds.am_image), ds, :class => "srtpl-a" %>        
             </div>
             <div class="srtpl-r">
+              <p><%= ds.acategory.name %></p>
               <%= link_to ds.am_title, ds, :class => "srtpl-n" %>
             </div>
           </li>
@@ -32,10 +29,10 @@
 
    <!-- Accordian -->
    <section>
-    <h2>Popular Deals by Category</h2>
+    <h3>POPULAR DEALS BY CATEGORY</h3>
      <ul id="accord1" class="accordian">
       <li>
-        <header>One</header>
+        <header>Sales & Offer</header>
         <section>
          <div id="sidebar">
           <ul id="side-rcnt-thumb-post-list">
@@ -56,7 +53,7 @@
         </section>
       </li>
       <li>
-        <header>Two</header>
+        <header>Deals</header>
         <section>
          <div id="sidebar">
           <ul id="side-rcnt-thumb-post-list">
@@ -77,7 +74,7 @@
         </section>
       </li>
       <li>
-        <header>Three</header>
+        <header>Promotions</header>
         <section>
          <div id="sidebar">
           <ul id="side-rcnt-thumb-post-list">
@@ -98,7 +95,7 @@
         </section>
       </li>
       <li>
-        <header>Three</header>
+        <header>Promo Codes</header>
         <section>
          <div id="sidebar">
           <ul id="side-rcnt-thumb-post-list">
@@ -118,33 +115,12 @@
         </div>
         </section>
       </li>
-      <li>
-        <header>Three</header>
-        <section>
-         <div id="sidebar">
-          <ul id="side-rcnt-thumb-post-list">
-            <% @dealzon_side.each do |dealside| %>
-              <% if dealside.acategory_id == 5 %> 
-                <li>
-                  <div class="srtpl-l">
-                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
-                  </div>
-                  <div class="srtpl-r">
-                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
-                  </div>
-                </li>
-              <% end %>
-            <% end %>
-          </ul>
-        </div>
-        </section>
-      </li>
     </ul>
    </section>
    <!-- Accordian --> 
 
    <!-- Featured posts -->
-    <section class="featured-posts">
+<!--     <section class="featured-posts">
       <h2>LATEST BLOG</h2>
       <article>
         <a href="#" class="image fit"><img src="https://images-na.ssl-images-amazon.com/images/I/81F%2BkHvKecL._SL1500_.jpg" alt=""></a>
@@ -157,10 +133,10 @@
           <li><a href="#" class="button">Continue Reading</a></li>
         </ul>
       </article>
-    </section>
+    </section> -->
 
   <!-- Posts -->
-    <section>
+<!--     <section>
       <h2>Arcu dolore</h2>
       <ul class="posts">
         <li>
@@ -195,6 +171,6 @@
       <ul class="actions">
         <li><a href="#" class="button">More Posts</a></li>
       </ul>
-    </section>
+    </section> -->
 
 </aside>

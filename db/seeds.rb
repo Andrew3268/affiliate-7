@@ -16,9 +16,8 @@ Category.create(name: "Outdoor & Sports")
 # Category of Dealzon
 Acategory.create(name: "Sales & Offers")
 Acategory.create(name: "Deals")
-Acategory.create(name: "Coupons")
-Acategory.create(name: "Promo Codes")
 Acategory.create(name: "Promotions")
+Acategory.create(name: "Promo Codes")
 
 # Category of Event
 Ecategory.create(name: "Featured Sales")

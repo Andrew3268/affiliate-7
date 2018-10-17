@@ -2,14 +2,162 @@
   
   <!-- Blurb -->
     <section>
-      <h2>Real Time Amazon Deals</h2>
-      <p>Amazon offers thousands of great deals, but, sifting through the endless pages can be a huge hassle. We have just made your life easier. We offer a quick way to find the best deals on Amazon Simply click on the percentage off next to the category you want to browse. You will be redirected to a new window containing your Amazon search results.</p>
+      <h2>AMAZON QUICK SEARCH</h2>
+      <a href="#" class="image fit"><img src="https://pmcvariety.files.wordpress.com/2018/01/amazon-logo.jpg?w=1000" alt=""></a>
+      <p>Amazon offers thousands of great deals, but finding the best deal through endless pages might make you crazy. It offers a quick way to find the best deals on Amazon.</p>
       <ul class="actions">
-        <li><a href="#" class="button">Learn More</a></li>
+        <li><a class="cta" href="#modal">Quick Search</a></li>
+        <div id="modal" class="modaloverlay">
+          <div class="modal">
+            <a href="#close" class="modal_close">&times;</a>
+            <div>
+              <h2>Quick way to find the best deals</h2>
+              <p>Amazon offers thousands of great deals, but finding the best deal through endless pages might make you crazy. It offers a quick way to find the best deals on Amazon. You are going to get awesome deals just by clicking on the percentage off next to the category you want to browse.</p>
+              <%= render 'shared/amazon_table' %>
+            </div>
+          </div>
+        </div>
       </ul>
     </section>
 
-  <!-- Featured posts -->
+    <section>
+     <h2>POPULAR DEALS</h2>
+     <div id="sidebar">
+      <ul id="side-rcnt-thumb-post-list">
+        <% @post_side.each do |ps| %>
+          <li>
+            <div class="srtpl-l">
+              <%= link_to (image_tag ps.post_image), ps, :class => "srtpl-a" %>
+         <!-- <a href="#" class="srtpl-a"><img class="srtpl-thumb" src="<%= ps.post_image %>" alt=""></a> -->
+            </div>
+            <div class="srtpl-r">
+              <p><%= ps.category.name %></p>
+              <%= link_to ps.post_title, ps, :class => "srtpl-n" %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div><br/>
+    
+    <ul class="actions">
+      <li><a href="#" class="button">Learn More</a></li>
+    </ul>
+   </section>
+
+<!-- Accordian -->
+   <section>
+     <h3>POPULAR DEALS BY CATEGORY</h3>
+     <ul id="accord1" class="accordian">
+      <li>
+        <header>Tech</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @post_side.each do |postside| %>
+              <% if postside.category_id == 1 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag postside.post_image), postside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to postside.post_title, postside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
+      <li>
+        <header>Geeky</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @post_side.each do |postside| %>
+              <% if postside.category_id == 2 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag postside.post_image), postside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to postside.post_title, postside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
+      <li>
+        <header>Home & Kitchen</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @post_side.each do |postside| %>
+              <% if postside.category_id == 3 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag postside.post_image), postside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to postside.post_title, postside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
+      <li>
+        <header>Travel</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @post_side.each do |postside| %>
+              <% if postside.category_id == 4 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag postside.post_image), postside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to postside.post_title, postside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
+      <li>
+        <header>Outdoor & Sports</header>
+        <section>
+         <div id="sidebar">
+          <ul id="side-rcnt-thumb-post-list">
+            <% @post_side.each do |postside| %>
+              <% if postside.category_id == 5 %> 
+                <li>
+                  <div class="srtpl-l">
+                    <%= link_to (image_tag postside.post_image), postside, :class => "srtpl-a" %>        
+                  </div>
+                  <div class="srtpl-r">
+                    <%= link_to postside.post_title, postside, :class => "srtpl-n" %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        </section>
+      </li>
+    </ul>
+   </section>
+   <!-- Accordian -->
+
+   <!-- Featured posts -->
     <section class="featured-posts">
       <h2>LATEST BLOG</h2>
       <article>
@@ -25,65 +173,5 @@
       </article>
     </section>
 
-    <section>
-     <h2>Popular Post</h2>
-     <div id="sidebar">
-      <ul id="side-rcnt-thumb-post-list">
-        <% @post_side.each do |ps| %>
-          <li>
-            <div class="srtpl-l">
-              <%= link_to (image_tag ps.post_image), ps, :class => "srtpl-a" %>
-         <!-- <a href="#" class="srtpl-a"><img class="srtpl-thumb" src="<%= ps.post_image %>" alt=""></a> -->
-            </div>
-            <div class="srtpl-r">
-              <%= link_to ps.post_title, ps, :class => "srtpl-n" %>
-            </div>
-          </li>
-        <% end %>
-      </ul>
-    </div><br/>
-    
-    <ul class="actions">
-      <li><a href="#" class="button">Learn More</a></li>
-    </ul>
-   </section>
-
-  <!-- Posts -->
-    <section>
-      <h2>Arcu dolore</h2>
-      <ul class="posts">
-        <li>
-          <a href="#">Etiam quis viverra lorem in semper lorem.</a>
-          <span class="date">September 15, 2016</span>
-        </li>
-        <li>
-          <a href="#">Sed nisl arcu euismod sit amet nisi euismod sed cursus elementum ipsum.</a>
-          <span class="date">September 15, 2016</span>
-        </li>
-        <li>
-          <a href="#">Arcu vivamus quis venenatis orci lorem.</a>
-          <span class="date">September 15, 2016</span>
-        </li>
-        <li>
-          <a href="#">Veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore magna.</a>
-          <span class="date">September 15, 2016</span>
-        </li>
-        <li>
-          <a href="#">Mauris neque quam, fermentum ut nisl vitae</a>
-          <span class="date">September 15, 2016</span>
-        </li>
-        <li>
-          <a href="#">Convallis maximus nisl sed mattis nunc id lorem euismod amet placerat.</a>
-          <span class="date">September 15, 2016</span>
-        </li>
-        <li>
-          <a href="#">Sed nisl arcu euismod sit amet nisi euismod sed cursus elementum ipsum.</a>
-          <span class="date">September 15, 2016</span>
-        </li>
-      </ul>
-      <ul class="actions">
-        <li><a href="#" class="button">More Posts</a></li>
-      </ul>
-    </section>
 
 </aside>

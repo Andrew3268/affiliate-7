@@ -1,20 +1,30 @@
-<h2>Log in</h2>
+<header id="header">
+  <%= render 'posts/navbar' %> 
+</header>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+<div class="wrapper">
+  <section class="main">
+    <div class="devise_wrap">
+      <h2>Log in</h2>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
+        <br/>
+        <div class="form-actions">
+          <%= f.button :submit, "Log in" %>
+        </div>
+      <% end %>
 
-<%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </section>
+</div>

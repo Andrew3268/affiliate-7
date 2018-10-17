@@ -126,6 +126,18 @@
   position: relative;
   z-index: 1;
 }
+.blog-card .description p {
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -moz-line-clamp: 3; 
+  -webkit-line-clamp: 3; /* number of line */ 
+  -ms-line-clamp: 3;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  word-wrap:break-word;
+}
 .blog-card .description h1,
 .blog-card .description h2 {
   font-family: Poppins, sans-serif;
