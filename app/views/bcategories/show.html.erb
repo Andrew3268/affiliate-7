@@ -1,0 +1,6 @@
+<h1><%= @bcategory.name %></h1>
+<p><%= @bcategory.bcategory_id %></p>
+
+<%= link_to "Home", root_path %>
+<%= link_to "Edit", edit_bcategory_path(@bcategory) %>
+<%= link_to "Delete", bcategory_path(@bcategory), method: :delete, data: {confirm: "Are you sure?"} %>

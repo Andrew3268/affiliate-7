@@ -1,0 +1,36 @@
+<header id="header">
+  <%= render 'posts/navbar' %> 
+</header>
+
+<div class="wrapper">
+
+  <section class="main">
+    
+    <div class="category_wrap">
+     <h1>List of categories of Dealzon</h1>
+      <%= link_to "Add New Category", new_bcategory_path %>
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>Category ID</th>
+          <th colspan="2">Option</th>
+        </tr>
+        <% @bcategories.each do |category| %>
+         <tr>
+          <td><%= category.name %></td>
+          <td><%= category.bcategory_id %></td>
+          <td><%= link_to "Edit", edit_bcategory_path(category) %></td>
+          <td><%= link_to "Delete", bcategory_path(category), method: :delete, data: {confirm: "Are you sure?"} %></td>
+         </tr>
+        <% end %>
+      </table>
+     </div>
+    
+  </section>
+
+</div>
+
+<!-- Footer -->
+<%= render "shared/footer" %>
+
+
