@@ -1,3 +1,4 @@
+
 /* ---------------------------------------------
    Responsive Product Cards
  --------------------------------------------- */
@@ -386,88 +387,62 @@ ul.accordian li {
 /* ---------------------------------------------
    Modal for sidebar
  --------------------------------------------- */
-.cta{
-    background-color: white; 
-    border:1px solid lightgrey; 
-    border-radius:6px; 
-    /* color: tomato; */
-    color: #2ebfac;
-    display:inline-block;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1em;
-    font-weight: 700;
-    margin-bottom: 1em;
-    padding:.3em 1em; 
-    text-decoration:none; 
-    &:hover{
-      background-color:lightgrey;
-      color:slategrey;
-      text-decoration:none; 
-    } 
+[data-wrapper],
+[data-footer] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+  width: 100%;
+  height: 0;
+  transition: background .3s;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 9999;
 }
-// Modal
-.modaloverlay{
-  background:rgba(0,0,0,0.8);
-  bottom:0;
-  left:0;
-  opacity:0;
-  pointer-events:none;
-  position:fixed;
-  right:0;
-  top:0;
-  -webkit-transition: opacity 400ms ease-in;
-  -moz-transition: opacity 400ms ease-in;
-  transition: opacity 400ms ease-in;
-  z-index:-1;
-  display: none;
-  &:target{
-    display: block;
-    opacity:1;
-    pointer-events:auto;
-    z-index:99999;
-  }
-  .modal{
-    background-color:white;
-    height: 100%;
-    position:relative;
-    margin:0 auto;
-    padding:3em;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    @media (min-width: 60em) {
-      height:75%;
-     margin:5% auto;
-     max-height: 57em;
-      max-width:66em;
-      width:85%;
-    }
-  > iframe, > div{
-    border:none;
-    width:100%;
-    height:100%;
-    }
-  }
-  .modal_close{
-    background-color:turquoise;
-    color:white;
-    font-size:24px;
-    padding:8px 12px;
-    position:absolute;
-    right:0;
-    text-align:center;
-    text-decoration:none;
-    top:0;
-    z-index: 1;
-  }
+[data-wrapper].active,
+[data-footer].activefooter {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  padding: 100px 0;
 }
+[data-wrapper] .modal-content,
+[data-footer] .modal-content-footer { 
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, -50px);
+  transition: .3s;
+  padding: 25px;
+}
+[data-wrapper].active .modal-content,
+[data-footer].activefooter .modal-content-footer {
+  margin-top: 3em;
+  transform: translate(0, 0px);
+  opacity: 1;
+  visibility: visible;
+}
+[data-wrapper="modal-wrapper-large"] .modal-content,
+[data-footer="modal-footer-large"] .modal-content-footer {
+   max-width: 992px;
+}
+[data-wrapper] .modal-content h2,
+[data-footer] .modal-content-footer h2 {
+  margin: 0 0 15px 0;
+}
+
 @media screen and (max-width: 533px) {
-  .modaloverlay .modal {
+  [data-wrapper] .modal-content {
     padding: 0em;
   }
-  .modaloverlay .modal_close {
-    font-size: 18px;
+  .modal-intro {
+    padding: 20px;
   }
 }
+
 
 
 

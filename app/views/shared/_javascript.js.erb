@@ -1,3 +1,4 @@
+<%# for Accordian %>
 <script>
   $.fn.ashCordian = function() {
   
@@ -14,4 +15,34 @@
 };
 $('#accord1').ashCordian();
 $('#accord2').ashCordian();
+</script>
+
+
+<%# for Modal of amazon table in the sidebar %>
+<script>
+  $('[data-modal]').click(function(e){
+  e.preventDefault();
+  $(this).parent().find('[data-wrapper]').addClass('active');
+});
+
+$('[data-wrapper]').click(
+  function(modal){
+  if (modal.target == this) {
+    $(this).removeClass('.modal-wrapper active');
+  }
+});
+</script>
+
+<script>
+  $('[data-modal]').click(function(e){
+  e.preventDefault();
+  $(this).parent().find('[data-footer]').addClass('activefooter');
+});
+
+$('[data-footer]').click(
+  function(modalfooter){
+  if (modal.target == this) {
+    $(this).removeClass('.modal-footer activefooter');
+  }
+});
 </script>
