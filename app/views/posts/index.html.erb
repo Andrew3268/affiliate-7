@@ -9,11 +9,11 @@
       <%= render 'posts/banner' %> 
 
         <section>
-          <p class="notice">Our website contains affiliate link which means that if you click on one of the product links and buy we’ll receive a small commission. This help supports us and allows us to continue to keep finding and sharing good deals.</p>
+          <p class="notice"><I>Our website contains affiliate link which means that if you click on one of the product links and buy we’ll receive a small commission. This help supports us and allows us to continue to keep finding and sharing good deals.</I></p>
         </section>
 
         <div class="index_container">
-          <p><%= link_to "Add New Inspiration", new_post_path %></p>
+                  
           <div class="grid">
 
             <% @posts.each do |post| %>
@@ -27,7 +27,8 @@
                   <% if post.post_spare_01.present? %>
                     <div class="somthing_hidden"><%= post.post_spare_01 %></div>
                     <ul>
-                      <li class="crowdfunding">Crowdfunding</li>
+                      <li class="crowdfunding">#Crowdfunding</li>
+                      <li class="crowdfunding_sub"><%= post.post_price_is %></li>
                     </ul>
                   <% else %>
                     <div class="index_price">

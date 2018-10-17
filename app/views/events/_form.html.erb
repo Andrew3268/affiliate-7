@@ -1,7 +1,7 @@
 <%= simple_form_for @event do |f| %>
   <div class="form_section">
    <%= f.collection_select :ecategory_id, Ecategory.all, :id, :name, {prompt: "Choose a category"} %><br/>
-   <%= f.select :eb_expire, options_for_select([["Ongoing", ""], "End"]) %><br/>
+   <%= f.select :eb_expire, options_for_select([["Ongoing", ""], "This code has expired"]) %><br/>
    <%= f.input :eb_title %>
    <%= f.input :eb_image %>
    <%= f.input :eb_ckeditor, as: :text, input_html: { class: 'ckeditor' }, label: "Description" %>

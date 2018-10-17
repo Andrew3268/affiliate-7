@@ -31,6 +31,9 @@ Rails.application.routes.draw do
   resources :ecategories
   # root 'ecategories#index'
 
+  
+  get '/bridges/aboutUs', to: 'bridges#aboutUs', as: 'aboutUs'
+
 
   # get 'home/index'
   # root 'home#index'

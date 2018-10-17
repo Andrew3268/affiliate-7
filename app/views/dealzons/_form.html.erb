@@ -1,7 +1,7 @@
 <%= simple_form_for @dealzon do |f| %>
  <div class="form_section">
    <%= f.collection_select :acategory_id, Acategory.all, :id, :name, {prompt: "Choose a category"} %><br/>
-   <%= f.select :am_expire, options_for_select([["Ongoing", ""], "End"]) %><br/>
+   <%= f.select :am_expire, options_for_select([["Ongoing", ""], "This code & promotion has expired"]) %><br/>
    <%= f.input :am_title %>
    <%= f.input :am_category, label: "For related products on amazon"%>   
    <%= f.input :am_image %>
@@ -15,8 +15,6 @@
    <%= f.input :am_price_sale %>
    <%= f.input :am_link %>
    <br/>
-
-
    <%= f.button :submit %>
  </div>
 <% end %>

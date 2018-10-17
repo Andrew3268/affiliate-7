@@ -9,7 +9,12 @@
   color: #999;
  }
 .crowdfunding {
-  color: #999
+  color: #999;
+  font-size: 1em !important;
+}
+.crowdfunding_sub {
+  visibility: hidden;
+  font-size: 1.2em;
 }
 
 /* ---------------------------------------------
@@ -48,6 +53,9 @@
 }
 .show_right ul li.show_price_was {
   text-decoration: line-through;
+}
+.show_right ul li.show_crowdfunding {
+  color: #999;
 }
 .show_right ul li.show_source {
   float: right;
