@@ -95,7 +95,7 @@
          <div id="sidebar">
           <ul id="side-rcnt-thumb-post-list">
             <% @dealzon_promotion.each do |deal_promotion| %>
-              <% if deal_promotion.acategory_id == 3 %> 
+              
                 <li>
                   <div class="srtpl-l">
                     <%= link_to (image_tag deal_promotion.am_image), deal_promotion, :class => "srtpl-a" %>
@@ -104,7 +104,7 @@
                     <%= link_to deal_promotion.am_title, deal_promotion, :class => "srtpl-n" %>
                   </div>
                 </li>
-              <% end %>
+              
             <% end %>
           </ul>
         </div>
