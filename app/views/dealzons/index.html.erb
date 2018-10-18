@@ -5,6 +5,29 @@
 <div class="index_header">
  <h1>All about the Amazon Shopping</h1>
 </div>
+<!-- 
+<div class="wrapper">
+ <section class="main">
+
+  <div class="dis_slider-wrapper">
+   <div class="dis_slider">
+
+     <div class="dis_slider--content">
+      <a target="_blank" href="https://amzn.to/2MKVmXW"><img src="https://images-na.ssl-images-amazon.com/images/I/81%2BNJiYvnQL._SL1500_.jpg" title="Fryer" alt="Fryer">
+       <p>Big Boss Oil Less Fryer, Graphite</p>
+      </a>
+      <div class="dis_daily">
+       <p>$67.99</p>
+      </div>
+      <ul>
+        <li>$99.99</li> |
+        <li>32% off</li>
+      </ul>
+     </div>
+ 
+ </section>
+</div> -->
+
 
 <!-- Wrapper -->
 <div class="wrapper">
@@ -12,7 +35,7 @@
 
 <!-- Main -->
   <section class="main">
-
+    
     <div class="dealzon_nav">
       <a href="#" class="menu-trigger">Category</a>
       <ul>
@@ -99,6 +122,7 @@
                 <%= link_to "Delete", dealzon_path(deal), method: :delete, data: {confirm: "Are you sure?"}%>
                 <%= "#{deal.unique_impression_count}" %> views
               </div>
+              <p class="code_date_index"><%= deal.am_date %></p>
             <% end %>
             </div> 
           </div>
@@ -107,15 +131,38 @@
       </div><br/>
       <%= paginate @dealzons %>
     </div>
-
-
   </section>
+
+
+
 
   <!-- Sidebar -->
   <%= render "dealzons/sidebar_index" %>
 
 </div>
 
+<!-- <div class="wrapper">
+ <section class="main">
+
+  <div class="dis_slider-wrapper">
+   <div class="dis_slider">
+
+     <div class="dis_slider--content">
+      <a target="_blank" href="https://amzn.to/2MKVmXW"><img src="https://images-na.ssl-images-amazon.com/images/I/81%2BNJiYvnQL._SL1500_.jpg" title="Fryer" alt="Fryer">
+       <p>Big Boss Oil Less Fryer, Graphite</p>
+      </a>
+      <div class="dis_daily">
+       <p>$67.99</p>
+      </div>
+      <ul>
+        <li>$99.99</li> |
+        <li>32% off</li>
+      </ul>
+     </div>
+ 
+ </section>
+</div>
+ -->
 <!-- Footer -->
 <%= render "shared/footer" %>
 <!-- Javascript -->

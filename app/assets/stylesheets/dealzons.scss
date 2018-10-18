@@ -64,6 +64,11 @@
 .price_hidden {
   visibility: hidden;
 }
+.code_date_index {
+  font-size: 0.7em !important;
+  text-align: center;
+  margin: 0em !important; 
+}
 @media screen and (max-width: 800px) {
   .dealzon_card {
     display: flex;
@@ -179,6 +184,5 @@
   font-size: 1.2em;
   font-weight: bold;
 }
-
 
 

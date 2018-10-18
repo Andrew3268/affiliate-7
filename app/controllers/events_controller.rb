@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event_show = Event.all.order("created_at DESC").limit(8)
+    @relative_show = @event.ecategory.events
     @event_side = Event.order("impressions_count DESC").limit(5)
     @blogs = Blog.all.order("created_at DESC").limit(1)
   end

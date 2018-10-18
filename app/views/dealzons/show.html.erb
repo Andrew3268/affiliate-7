@@ -149,7 +149,7 @@
        <section class="grid-section">
 
           <h1 class="interested">You may also be interested in the following product(s)</h1>
-          <% @dealzon_show.each do |dealshow| %>
+          <% @relative_show.take(8).each do |dealshow| %>
            <% if dealshow.acategory_id == @dealzon.acategory_id %> 
 
             <article class="related-card">
@@ -193,6 +193,7 @@
      </section>
     </div>
 
+   
   </section>
   
 
@@ -200,7 +201,28 @@
   <%= render 'dealzons/sidebar_show' %>
 </div>
 
-  
+<!-- <div class="wrapper">
+ <section class="main">
+
+  <div class="dis_slider-wrapper">
+   <div class="dis_slider">
+
+     <div class="dis_slider--content">
+      <a target="_blank" href="https://amzn.to/2MKVmXW"><img src="https://images-na.ssl-images-amazon.com/images/I/81%2BNJiYvnQL._SL1500_.jpg" title="Fryer" alt="Fryer">
+       <p>Big Boss Oil Less Fryer, Graphite</p>
+      </a>
+      <div class="dis_daily">
+       <p>$67.99</p>
+      </div>
+      <ul>
+        <li>$99.99</li> |
+        <li>32% off</li>
+      </ul>
+     </div>
+ 
+ </section>
+</div>
+ -->
 
 
 <!-- Footer -->

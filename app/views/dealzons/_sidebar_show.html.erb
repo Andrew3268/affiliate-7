@@ -69,7 +69,7 @@
    </section>
 
    <!-- Accordian -->
-   <!-- <section>
+   <section>
     <h3>POPULAR DEALS BY CATEGORY</h3>
      <ul id="accord1" class="accordian">
       <li>
@@ -77,8 +77,8 @@
         <section>
          <div id="sidebar">
           <ul id="side-rcnt-thumb-post-list">
-            <% @dealzon_side.each do |dealside| %>
-              <% if dealside.acategory_id == 1 %> 
+            <% @relative_side.each do |dealside| %>
+              <% if dealside.acategory_id == 4 %> 
                 <li>
                   <div class="srtpl-l">
                     <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
@@ -93,7 +93,7 @@
         </div>
         </section>
       </li>
-      <li>
+      <!-- <li>
         <header>Deals</header>
         <section>
          <div id="sidebar">
@@ -156,8 +156,8 @@
         </div>
         </section>
       </li>
-    </ul>
-   </section> -->
+    </ul> -->
+   </section>
    <!-- Accordian -->
 
 

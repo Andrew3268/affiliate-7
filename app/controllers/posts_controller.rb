@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts_show = Post.all.order("created_at DESC").limit(8)
+    @relative_show = @post.category.posts
     @post_side = Post.order("impressions_count DESC").limit(5)
     @blogs = Blog.all.order("created_at DESC").limit(1)
   end

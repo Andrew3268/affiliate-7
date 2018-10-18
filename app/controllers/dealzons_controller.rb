@@ -22,7 +22,7 @@ class DealzonsController < ApplicationController
   end
 
   def show 
-    @dealzon_show = Dealzon.all.order("created_at DESC").limit(8)
+    @relative_show = @dealzon.acategory.dealzons
     @dealzon_side = Dealzon.order("impressions_count DESC").limit(5)
     @blogs = Blog.all.order("created_at DESC").limit(1)
   end
