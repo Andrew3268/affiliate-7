@@ -23,7 +23,7 @@
               <% end %>
 
               <% if @dealzon.acategory_id == 2 %> 
-               <li>$<%= @dealzon.am_price_is %></li>
+               <li><span class="price_weight">$<%= @dealzon.am_price_is %></span></li>
                <li>$<%= @dealzon.am_price_was %></li>
                <% if @dealzon.am_shipping.present? %>
                 <div class="somthing_hidden"><%= @dealzon.am_shipping %></div>
@@ -36,7 +36,7 @@
               <% end %> 
 
               <% if @dealzon.acategory_id == 4 %>   
-               <li>$<%= @dealzon.am_price_is %></li>  
+               <li><span class="price_weight">$<%= @dealzon.am_price_is %></span></li>  
                <% if @dealzon.am_shipping.present? %>
                 <div class="somthing_hidden"><%= @dealzon.am_shipping %></div>
                 <li>+ free shipping</li>

@@ -52,14 +52,14 @@
         <section>
          <div id="sidebar">
           <ul id="side-rcnt-thumb-post-list">
-            <% @dealzon_side.each do |dealside| %>
-              <% if dealside.acategory_id == 1 %> 
+            <% @dealzon_side.each do |deal_sale| %>
+              <% if deal_sale.acategory_id == 1 %> 
                 <li>
                   <div class="srtpl-l">
-                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
+                    <%= link_to (image_tag deal_sale.am_image), deal_sale, :class => "srtpl-a" %>        
                   </div>
                   <div class="srtpl-r">
-                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
+                    <%= link_to deal_sale.am_title, deal_sale, :class => "srtpl-n" %>
                   </div>
                 </li>
               <% end %>
@@ -73,14 +73,14 @@
         <section>
          <div id="sidebar">
           <ul id="side-rcnt-thumb-post-list">
-            <% @dealzon_side.each do |dealside| %>
-              <% if dealside.acategory_id == 2 %> 
+            <% @dealzon_side.each do |deal_deal| %>
+              <% if deal_deal.acategory_id == 2 %> 
                 <li>
                   <div class="srtpl-l">
-                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
+                    <%= link_to (image_tag deal_deal.am_image), deal_deal, :class => "srtpl-a" %>        
                   </div>
                   <div class="srtpl-r">
-                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
+                    <%= link_to deal_deal.am_title, deal_deal, :class => "srtpl-n" %>
                   </div>
                 </li>
               <% end %>
@@ -94,14 +94,14 @@
         <section>
          <div id="sidebar">
           <ul id="side-rcnt-thumb-post-list">
-            <% @dealzon_side.each do |dealside| %>
-              <% if dealside.acategory_id == 3 %> 
+            <% @dealzon_side.each do |deal_promotion| %>
+              <% if deal_promotion.acategory_id == 3 %> 
                 <li>
                   <div class="srtpl-l">
-                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
+                    <%= link_to (image_tag deal_promotion.am_image), deal_promotion, :class => "srtpl-a" %>
                   </div>
                   <div class="srtpl-r">
-                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
+                    <%= link_to deal_promotion.am_title, deal_promotion, :class => "srtpl-n" %>
                   </div>
                 </li>
               <% end %>
@@ -115,14 +115,14 @@
         <section>
          <div id="sidebar">
           <ul id="side-rcnt-thumb-post-list">
-            <% @dealzon_side.each do |dealside| %>
-              <% if dealside.acategory_id == 4 %> 
+            <% @dealzon_side.each do |deal_code| %>
+              <% if deal_code.acategory_id == 4 %> 
                 <li>
                   <div class="srtpl-l">
-                    <%= link_to (image_tag dealside.am_image), dealside, :class => "srtpl-a" %>        
+                    <%= link_to (image_tag deal_code.am_image), deal_code, :class => "srtpl-a" %>        
                   </div>
                   <div class="srtpl-r">
-                    <%= link_to dealside.am_title, dealside, :class => "srtpl-n" %>
+                    <%= link_to deal_code.am_title, deal_code, :class => "srtpl-n" %>
                   </div>
                 </li>
               <% end %>

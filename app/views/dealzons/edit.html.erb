@@ -4,22 +4,24 @@
 <div class="wrapper">
   <section class="main">
    <%= simple_form_for @dealzon do |f| %>
-     <h1>Edit Deals of Amazon</h1>
      <div class="form_section">
        <%= f.collection_select :acategory_id, Acategory.all, :id, :name, {prompt: "Choose a category"} %><br/>
-       <%= f.select :am_expire, ([["Ongoing", ""], "This code & promotion has expired"]) %><br/>
+       <%= f.select :am_expire, options_for_select([["Ongoing", ""], "This code & promotion has expired"]) %><br/>
        <%= f.input :am_title %>
        <%= f.input :am_category, label: "For related products on amazon"%>   
        <%= f.input :am_image %>
-       <%= f.input :am_spare_21, as: :text, input_html: { class: 'ckeditor' }, label: "Description" %>
        <%= f.input :am_review %>
        <%= f.input :am_code %>
        <%= f.input :am_date %>
+       <%= f.input :am_link %>
+
        <%= f.input :am_price_is %>
-       <%= f.select :am_shipping, ([["No! Shipping isn't free", ""], "Yes! Shipping is free"]) %><br/>
+       <%= f.select :am_shipping, options_for_select([["No! Shipping isn't free", ""], "Yes! Shipping is free"]) %><br/>
        <%= f.input :am_price_was %>
        <%= f.input :am_price_sale %>
-       <%= f.input :am_link %>
+
+       <%= f.input :am_spare_21, as: :text, input_html: { class: 'ckeditor' }, label: "Description" %>
+       
        <br/>
        <%= f.button :submit %>
      </div>
