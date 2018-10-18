@@ -3,7 +3,7 @@
     <section>
 
      <section>
-      <h2>AMAZON QUICK SEARCH</h2>
+      <h3>AMAZON QUICK SEARCH</h3>
       <section data-group="modal-group">
         <div class="container">
           <a href="#" class="image fit"><img src="https://pmcvariety.files.wordpress.com/2018/01/amazon-logo.jpg?w=1000" alt=""></a>
@@ -24,29 +24,25 @@
     
   </section>
 
-    <section>
-     <h2>POPULAR DEALS</h2>
-     <div id="sidebar">
-      <ul id="side-rcnt-thumb-post-list">
-        <% @post_side.each do |ps| %>
-          <li>
-            <div class="srtpl-l">
-              <%= link_to (image_tag ps.post_image), ps, :class => "srtpl-a" %>
-         <!-- <a href="#" class="srtpl-a"><img class="srtpl-thumb" src="<%= ps.post_image %>" alt=""></a> -->
-            </div>
-            <div class="srtpl-r">
-              <p><%= ps.category.name %></p>
-              <%= link_to ps.post_title, ps, :class => "srtpl-n" %>
-            </div>
-          </li>
-        <% end %>
-      </ul>
-    </div><br/>
-    
-    <ul class="actions">
-      <li><a href="#" class="button">Learn More</a></li>
+  <section>
+   <h3>POPULAR DEALS</h3>
+   <div id="sidebar">
+    <ul id="side-rcnt-thumb-post-list">
+      <% @post_side.each do |ps| %>
+        <li>
+          <div class="srtpl-l">
+            <%= link_to (image_tag ps.post_image), ps, :class => "srtpl-a" %>
+       <!-- <a href="#" class="srtpl-a"><img class="srtpl-thumb" src="<%= ps.post_image %>" alt=""></a> -->
+          </div>
+          <div class="srtpl-r">
+            <p><%= ps.category.name %></p>
+            <%= link_to ps.post_title, ps, :class => "srtpl-n" %>
+          </div>
+        </li>
+      <% end %>
     </ul>
-   </section>
+   </div><br/>
+  </section>
 
 <!-- Accordian -->
    <section>
@@ -163,7 +159,7 @@
 
    <!-- Featured posts -->
     <section class="featured-posts">
-      <h2>LATEST BLOG</h2>
+      <h3>LATEST BLOG</h3>
       <% @blogs.each do |blog| %>
         <article>
           <a href="#" class="image fit"><img src="<%= blog.blog_image %>" alt=""></a>

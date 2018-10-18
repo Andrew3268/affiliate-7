@@ -8,10 +8,12 @@
 
 # Category of Post
 Category.create(name: "Tech")
-Category.create(name: "Geeky")
+Category.create(name: "Geeky & Ridiculous")
 Category.create(name: "Home & kitchen")
 Category.create(name: "Travel")
 Category.create(name: "Outdoor & Sports")
+Category.create(name: "Pet Sutff")
+
 
 # Category of Dealzon
 Acategory.create(name: "Sales & Offers")
@@ -26,8 +28,8 @@ Ecategory.create(name: "Promo Codes")
 Ecategory.create(name: "Interesing")
 
 # Category of Blog
-Bcategory.create(name: "blog_01")
-Bcategory.create(name: "blog_02")
-Bcategory.create(name: "blog_03")
-Bcategory.create(name: "blog_04")
-Bcategory.create(name: "blog_05")
+# Bcategory.create(name: "blog_01")
+# Bcategory.create(name: "blog_02")
+# Bcategory.create(name: "blog_03")
+# Bcategory.create(name: "blog_04")
+# Bcategory.create(name: "blog_05")

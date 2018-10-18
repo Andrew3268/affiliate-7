@@ -1,50 +1,47 @@
 <aside class="sidebar">
-    <!-- Blurb -->
-    <section>
+  <section>
 
-     <section>
-      <h2>AMAZON QUICK SEARCH</h2>
-      <section data-group="modal-group">
-        <div class="container">
-          <a href="#" class="image fit"><img src="https://pmcvariety.files.wordpress.com/2018/01/amazon-logo.jpg?w=1000" alt=""></a>
-          <p>Amazon offers thousands of great deals, but finding the best deal through endless pages might make you crazy. It offers a quick way to find the best deals on Amazon.</p>
-          <a class="button btn-px open-modal" data-modal="modal">Quick Search</a>
-          <div class="modal-wrapper" data-wrapper="modal-wrapper-large">
-           <div class="modal-content">
-            <div class="modal-intro">
-             <h2>Quick way to find the best deals</h2>
-             <p>Amazon offers thousands of great deals, but finding the best deal through endless pages might make you crazy. It offers a quick way to find the best deals on Amazon. You are going to get awesome deals just by clicking on the percentage off next to the category you want to browse.</p>
-            </div>
-            <%= render 'shared/amazon_table' %>
-           </div>
+   <section>
+    <h3>AMAZON QUICK SEARCH</h3>
+    <section data-group="modal-group">
+      <div class="container">
+        <a href="#" class="image fit"><img src="https://pmcvariety.files.wordpress.com/2018/01/amazon-logo.jpg?w=1000" alt=""></a>
+        <p>Amazon offers thousands of great deals, but finding the best deal through endless pages might make you crazy. It offers a quick way to find the best deals on Amazon.</p>
+        <a class="button btn-px open-modal" data-modal="modal">Quick Search</a>
+        <div class="modal-wrapper" data-wrapper="modal-wrapper-large">
+         <div class="modal-content">
+          <div class="modal-intro">
+           <h2>Quick way to find the best deals</h2>
+           <p>Amazon offers thousands of great deals, but finding the best deal through endless pages might make you crazy. It offers a quick way to find the best deals on Amazon. You are going to get awesome deals just by clicking on the percentage off next to the category you want to browse.</p>
           </div>
+          <%= render 'shared/amazon_table' %>
+         </div>
         </div>
-      </section>  
-    </section><br/>
-    </section>
+      </div>
+    </section>  
+   </section><br/>
 
-    <section>
-     <h2>POPULAR DEALS</h2>
-     <div id="sidebar">
-      <ul id="side-rcnt-thumb-post-list">      
-        <% @dealzon_side.each do |ds| %>
-          <li>
-            <div class="srtpl-l">
-              <%= link_to (image_tag ds.am_image), ds, :class => "srtpl-a" %>        
-            </div>
-            <div class="srtpl-r">
-              <p><%= ds.acategory.name %></p>
-              <%= link_to ds.am_title, ds, :class => "srtpl-n" %>
-            </div>
-          </li>
-        <% end %>
-      </ul>
-    </div><br/>
-    
-    <ul class="actions">
-      <li><a href="#" class="button">Learn More</a></li>
+  </section>
+
+  <section>
+   <h3>POPULAR DEALS</h3>
+   <div id="sidebar">
+    <ul id="side-rcnt-thumb-post-list">      
+      <% @dealzon_side.each do |ds| %>
+        <li>
+          <div class="srtpl-l">
+            <%= link_to (image_tag ds.am_image), ds, :class => "srtpl-a" %>        
+          </div>
+          <div class="srtpl-r">
+            <p><%= ds.acategory.name %></p>
+            <%= link_to ds.am_title, ds, :class => "srtpl-n" %>
+          </div>
+        </li>
+      <% end %>
     </ul>
-   </section>
+   </div><br/>
+
+  </section>
 
    <!-- Accordian -->
    <section>
@@ -140,7 +137,7 @@
 
    <!-- Featured posts -->
     <section class="featured-posts">
-      <h2>LATEST BLOG</h2>
+      <h3>LATEST BLOG</h3>
       <% @blogs.each do |blog| %>
         <article>
           <a href="#" class="image fit"><img src="<%= blog.blog_image %>" alt=""></a>

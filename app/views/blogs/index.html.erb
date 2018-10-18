@@ -6,19 +6,6 @@
 
   <section class="main">
 
-    <div class="dealzon_nav">
-      <a href="#" class="menu-trigger">Category</a>
-      <ul>
-        <li><%= link_to "All Offer", blogs_path %></li>
-        <% Bcategory.all.each do |bcategory| %>
-          <li><%= link_to bcategory.name, blogs_path(bcategory: bcategory.name) %></li>
-        <% end %>
-        <% if can? :update, @blog %>
-         <li><%= link_to "Write Blog ", new_blog_path %></li>
-        <% end %>
-      </ul>
-    </div>
-
     <% @blogs.each do |blog| %>
      <div class="blog-card">
       <div class="meta">

@@ -18,10 +18,16 @@ class BlogsController < ApplicationController
       @blogs = Blog.where(bcategory_id: @bcategory_id).order("created_at DESC").page(params[:page]).per(15)
     end
     @blog_side = Blog.order("impressions_count DESC").limit(5)
+    @post_side = Post.order("impressions_count DESC").limit(5)
+    @event_side = Event.order("impressions_count DESC").limit(5)
+    @dealzon_side = Dealzon.order("impressions_count DESC").limit(5)
   end
 
   def show
     @blog_side = Blog.order("impressions_count DESC").limit(5) 
+    @post_side = Post.order("impressions_count DESC").limit(5)
+    @event_side = Event.order("impressions_count DESC").limit(5)
+    @dealzon_side = Dealzon.order("impressions_count DESC").limit(5)
   end
 
   def new
