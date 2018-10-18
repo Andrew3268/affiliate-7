@@ -18,11 +18,13 @@ class EventsController < ApplicationController
       @events = Event.where(ecategory_id: @ecategory_id).order("created_at DESC").page(params[:page]).per(40)
     end
     @event_side = Event.order("impressions_count DESC").limit(5)
+    @blogs = Blog.all.order("created_at DESC").limit(1)
   end
 
   def show
     @event_show = Event.all.order("created_at DESC").limit(8)
     @event_side = Event.order("impressions_count DESC").limit(5)
+    @blogs = Blog.all.order("created_at DESC").limit(1)
   end
 
   def new

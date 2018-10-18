@@ -164,17 +164,20 @@
    <!-- Featured posts -->
     <section class="featured-posts">
       <h2>LATEST BLOG</h2>
-      <article>
-        <a href="#" class="image fit"><img src="https://images-na.ssl-images-amazon.com/images/I/81F%2BkHvKecL._SL1500_.jpg" alt=""></a>
-        <header>
-          <span class="date">September 19, 2016</span>
-          <h3><a href="#">Non velit accumsan cursus gravida amet sapien</a></h3>
-        </header>
-        <p>Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis varius.</p>
-        <ul class="actions">
-          <li><a href="#" class="button">Continue Reading</a></li>
-        </ul>
-      </article>
+      <% @blogs.each do |blog| %>
+        <article>
+          <a href="#" class="image fit"><img src="<%= blog.blog_image %>" alt=""></a>
+          <header>
+            <span class="date"><%= blog.blog_date %></span>
+            <!-- <h3><a href="#"><%= blog.blog_title %></a></h3> -->
+            <h3><%= link_to blog.blog_title, blog %></h3>
+          </header>
+          <p><%= blog.blog_intro %></p>
+          <ul class="actions">
+            <li><a href="/blogs/<%= blog.id %>" class="button">Continue Reading</a></li>
+          </ul>
+        </article>
+      <% end %>
     </section>
 
 
