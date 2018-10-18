@@ -18,10 +18,10 @@ class DealzonsController < ApplicationController
      @dealzons = Dealzon.where(acategory_id: @acategory_id).order("created_at DESC").page(params[:page]).per(40)
     end
      @dealzon_side = Dealzon.order("impressions_count DESC").limit(5)
-     @dealzon_sale = Dealzon.order("impressions_count DESC").limit(10)
-     @dealzon_deal = Dealzon.order("impressions_count DESC").limit(10)
-     @dealzon_code = Dealzon.order("impressions_count DESC").limit(10)
-     @dealzon_promotion = Dealzon.order("impressions_count DESC").limit(10)
+     @dealzon_sale = Dealzon.order("impressions_count DESC").limit(20)
+     @dealzon_deal = Dealzon.order("impressions_count DESC").limit(20)
+     @dealzon_code = Dealzon.order("impressions_count DESC").limit(20)
+     @dealzon_promotion = Dealzon.order("impressions_count DESC").limit(20)
      @blogs = Blog.all.order("created_at DESC").limit(1)     
   end
 
