@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Workspace</title>  
+  <title>Oh, I Gotta Buy This</title>
   <meta charset="utf-8"/>
   <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -11,8 +11,19 @@
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
 
+  <!-- eBay Network Partner -->
   <script>window._epn = {campaign:5338397259};</script>
   <script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113637704-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113637704-1');
+  </script>
 </head>
 
 <body class="is-preload">
@@ -25,6 +36,18 @@
 
 
 </body>
+<!-- VigLink -->
+<script type="text/javascript">
+  var vglnk = {key: '9f8b8215c45eaf9e20303d2bf9cb410c'};
+  (function(d, t) {
+      var s = d.createElement(t);
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = '//cdn.viglink.com/api/vglnk.js';
+      var r = d.getElementsByTagName(t)[0];
+          r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
 
 <%= render 'shared/javascript.js' %>
 <%= render 'posts/post.js' %>
