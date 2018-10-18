@@ -23,7 +23,7 @@ class DealzonsController < ApplicationController
 
   def show 
     @dealzon_show = Dealzon.all.order("created_at DESC").limit(8)
-    @dealzon_side = Dealzon.order("impressions_count DESC").limit(5)
+    @dealzon_side = Dealzon.order("impressions_count DESC").limit(10)
     @dealzon_sale = Dealzon.order("impressions_count DESC").limit(5)
     @dealzon_deal = Dealzon.order("impressions_count DESC").limit(5)
     @dealzon_code = Dealzon.order("impressions_count DESC").limit(5)
