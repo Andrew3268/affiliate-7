@@ -18,7 +18,7 @@
 
         <section>
           
-          <p class="notice"><I>Our website contains affiliate link which means that if you click on one of the product links and buy we’ll receive a small commission. This help supports us and allows us to continue to keep finding and sharing good deals.</I></p>
+          <p class="notice"><I>Our website contains affiliate link which means that if you click on one of the product links and buy we’ll receive a small commission. This help supports us and allows us to continue to keep finding and sharing awesome gadgets.</I></p>
         
           <div class="show_detail_wrap">
             <div class="show_left">
@@ -41,12 +41,16 @@
               <hr>
               <div class="youtube">
                 <ul>
-                  <li>
+                  <% if @post.post_youtube_01.present? %>
+                   <li>
                     <div class="js-overlay-start start" data-url="<%= @post.post_youtube_01 %>">
                      <button class="button small"><i class="fa fa-play"></i>&nbsp;Watch Video</button>
                     </div>
-                  </li>
-                  <li><a class="button small" href="<%= @post.post_review %>"><i class="fa fa-check-circle"></i>&nbsp;See Review</a></li>
+                   </li>
+                  <% end %>
+                  <% if @post.post_review %>
+                   <li><a class="button small" href="<%= @post.post_review %>"><i class="fa fa-check-circle"></i>&nbsp;See Review</a></li>
+                  <% end %>
                 </ul>
               </div>
               <hr>
