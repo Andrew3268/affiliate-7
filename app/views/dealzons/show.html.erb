@@ -151,6 +151,7 @@
           <h1 class="interested">You may also be interested in the following product(s)</h1>
           <% @dealzon_show.each do |dealshow| %>
            <% if dealshow.acategory_id == @dealzon.acategory_id %> 
+
             <article class="related-card">
               <div class="related-card__image">
                 <%= link_to (image_tag dealshow.am_image), dealshow %>
@@ -166,32 +167,27 @@
                </div>
               <% end %>
 
-              
               <% if @dealzon.acategory_id == 1 %>
-              <% else %>
-               <% if @dealzon.acategory_id == 3 %>
-               <% else %>
-                <% if @dealzon.acategory_id == 4 %>
-                  <div class="related-card__details">
-                     <span class="related-card__details--like">$<%= dealshow.am_price_is %></span>
-                  </div>
-                <% else %>
-                <div class="related-card__details">
-                   <span class="related-card__details--like">$<%= dealshow.am_price_is %></span>
-                   <span class="related-card__details--view">$<%= dealshow.am_price_was %></i></span>        
-                </div>
-                <% end %>
-               <% end %>
               <% end %>
-
+              <% if @dealzon.acategory_id == 2 %>
+               <div class="related-card__details">
+                <span class="related-card__details--like">$<%= dealshow.am_price_is %></span>
+                <span class="related-card__details--view">$<%= dealshow.am_price_was %></i></span>        
+               </div>
+              <% end %>
+              <% if @dealzon.acategory_id == 3 %>
+              <% end %>
+              <% if @dealzon.acategory_id == 4 %>
+               <div class="related-card__details">
+                <span class="related-card__details--like">$<%= dealshow.am_price_is %></span>
+               </div>
+              <% end %>
             </article>
+
            <% end %>
           <% end %>
 
-          
-
-
-                      
+                                
          </section>
        </section>
      </section>
