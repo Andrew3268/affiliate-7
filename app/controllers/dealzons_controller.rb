@@ -18,7 +18,7 @@ class DealzonsController < ApplicationController
      @dealzons = Dealzon.where(acategory_id: @acategory_id).order("created_at DESC").page(params[:page]).per(40)
     end
      @dealzon_side = Dealzon.order("impressions_count DESC").limit(5) 
-     @blogs = Blog.all.order("created_at DESC").limit(1)       
+     @blogs = Blog.all.order("created_at DESC").limit(1)
   end
 
   def show 

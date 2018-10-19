@@ -34,7 +34,9 @@
                     <div class="index_price">
                       <ul>
                         <li>$<%= post.post_price_is %></li>
-                        <li>$<%= post.post_price_was %></li>
+                        <% if post.post_price_was.present? %>
+                         <li>$<%= post.post_price_was %></li>
+                        <% end %>
                       </ul>
                     </div>
                   <% end %>
@@ -55,7 +57,7 @@
     </section><!-- /.main -->
 
   <!-- Sidebar -->
-  <%= render 'posts/sidebar' %>  
+  <%= render 'posts/sidebar' %>
 
 </div><!-- /.warpper -->
 

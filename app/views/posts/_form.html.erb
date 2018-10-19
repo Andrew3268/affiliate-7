@@ -7,8 +7,9 @@
    <%= f.input :post_intro %>
    <%= f.input :post_spare_21, as: :text, input_html: { class: 'ckeditor' }, label: "Description" %>
    <%= f.input :post_price_is %>
-   <%= f.input :post_price_was %>
+   <%= f.select :post_spare_02, options_for_select([["No! It's not Free Shipping", ""], "Yes! It's Free Shipping"]) %>
    <%= f.select :post_spare_01, options_for_select([["No! It's not Crowdfunding", ""], "Yes! It's Crowdfunding"]) %>
+   <%= f.input :post_price_was %>
    <%= f.input :post_source %>
    <%= f.input :post_youtube_01 %>
    <%= f.input :post_youtube_02 %>
