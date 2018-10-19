@@ -13,7 +13,9 @@
         </section>
 
         <div class="index_container">
-          <h4><%= link_to "Add New Gadgets", new_post_path %></h4>
+          <% if can? :update, @post %>
+           <h4><%= link_to "Add New Gadgets", new_post_path %></h4>
+          <% end %>
           <div class="grid">
 
             <% @posts.each do |post| %>
