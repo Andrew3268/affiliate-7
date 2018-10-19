@@ -2,6 +2,7 @@
  <div class="form_section">
    <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a category"} %>
    <%= f.input :post_title %>
+   <%= f.input :post_spare_03, label: "Title for Amazon search" %>
    <%= f.input :post_image %>
    <%= f.input :post_link %>
    <%= f.input :post_intro %>
