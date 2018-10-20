@@ -53,7 +53,7 @@ class DealzonsController < ApplicationController
 
   def destroy
     @dealzon.destroy
-     redirect_to root_path
+     redirect_to dealzons_path
   end
 
   private

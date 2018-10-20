@@ -24,6 +24,11 @@
 
     gtag('config', 'UA-113637704-1');
   </script>
+
+  <!-- ShareThis Begin -->
+  <div class="sharethis-inline-share-buttons"></div><script async src="//platform-api.sharethis.com/js/sharethis.js#property=5bcaf6e3e0bd05001110552d&product="inline-share-buttons"></script>
+  <!-- ShareThis End -->
+
 </head>
 
 <body class="is-preload">
@@ -34,7 +39,7 @@
   <%= yield %>
   <%= javascript_include_tag 'application' %>
 
-  <!-- VigLink -->
+  <!-- VigLink Begin -->
   <script type="text/javascript">
     var vglnk = {key: '9f8b8215c45eaf9e20303d2bf9cb410c'};
     (function(d, t) {
@@ -46,8 +51,8 @@
             r.parentNode.insertBefore(s, r);
     }(document, 'script'));
   </script>
-
-
+  <!-- VigLink End -->
+  
 </body>
   <%= render 'shared/javascript.js' %>
   <%= render 'posts/post.js' %>
