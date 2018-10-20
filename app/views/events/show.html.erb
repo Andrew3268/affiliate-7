@@ -56,7 +56,7 @@
                <% if @event.ecategory_id == 4 %>
                 <p><span class="show_bold"><%= @event.eb_title %></span> is on sale now for <span class="show_bold"><%= @event.eb_price_is %> (<%= @event.eb_price_sale %>% off)</span> at eBay. 
                <% else %>
-                <p><span>This Coupon is a <%= @event.eb_price_sale %>% discount valid until <%= @event.eb_date %><br/>Discount applies to the purchase price (excluding shipping, handling, and taxes) of an eligible item(s) of $0 or more on ebay.com.</p><br/>
+                <!-- <p><span>This Coupon is a <%= @event.eb_price_sale %>% discount valid until <%= @event.eb_date %><br/>Discount applies to the purchase price (excluding shipping, handling, and taxes) of an eligible item(s) of $0 or more on ebay.com.</p><br/> -->
                <% end %>
               <% end %>
              <% end %>
@@ -108,7 +108,7 @@
            <section class="grid-section">
 
               <h1 class="interested">You may also be interested in the following product(s)</h1>
-              <% @relative_show.each do |eventshow| %>
+              <% @relative_show.shuffle.take(8).each do |eventshow| %>
                <% if eventshow.ecategory_id == @event.ecategory_id %> 
                 <article class="related-card">
                   <div class="related-card__image">

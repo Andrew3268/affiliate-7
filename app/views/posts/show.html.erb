@@ -122,7 +122,7 @@
            <section class="grid-section">
 
               <h1 class="interested">You may also be interested in the following product(s)</h1>
-              <% @relative_show.take(8).each do |postshow| %>
+              <% @relative_show.shuffle.take(8).each do |postshow| %>
                <% if postshow.category_id == @post.category_id %> 
                 <article class="related-card">
                   <div class="related-card__image">

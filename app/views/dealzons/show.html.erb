@@ -76,7 +76,7 @@
 
           <div class="contents">
             <% if @dealzon.acategory_id == 4 %> 
-             <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %></span> at Amazon. If you use this promo code(<span class="show_bold"><%= @dealzon.am_code %></span>), you could save <span class="show_bold"><%= @dealzon.am_price_sale %>% off</span> more.</p>
+             <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %></span> at Amazon. If you use this promo code(<span class="show_bold"><%= @dealzon.am_code %></span>), you could save <span class="show_bold"><%= @dealzon.am_price_sale %>% off</span> more.</p><br/>
              <% if @dealzon.am_shipping.present? %>
               <div class="somthing_hidden"><%= @dealzon.am_shipping %></div>
               <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)<br/><a href="/blogs/1"><span class="wia">What is Amazon Prime?</span></a></p>
@@ -88,10 +88,10 @@
                 <% if @dealzon.acategory_id == 3 %> 
 
                 <% else %>
-                 <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %>(<%= @dealzon.am_price_sale %>% Off)</span> at Amazon.</p>
+                 <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %>(<%= @dealzon.am_price_sale %>% Off)</span> at Amazon.</p><br/>
                  <% if @dealzon.am_shipping.present? %>
                   <div class="somthing_hidden"><%= @dealzon.am_shipping %></div>
-                  <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)</p><br/>
+                  <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)<br/><a href="/blogs/1"><span class="wia">What is Amazon Prime?</span></a>s
                 <% end %>
                <% end %>
               <% end %>
@@ -199,28 +199,12 @@
   <%= render 'dealzons/sidebar_show' %>
 </div>
 
-<!-- <div class="wrapper">
+<div class="wrapper">
  <section class="main">
-
-  <div class="dis_slider-wrapper">
-   <div class="dis_slider">
-
-     <div class="dis_slider--content">
-      <a target="_blank" href="https://amzn.to/2MKVmXW"><img src="https://images-na.ssl-images-amazon.com/images/I/81%2BNJiYvnQL._SL1500_.jpg" title="Fryer" alt="Fryer">
-       <p>Big Boss Oil Less Fryer, Graphite</p>
-      </a>
-      <div class="dis_daily">
-       <p>$67.99</p>
-      </div>
-      <ul>
-        <li>$99.99</li> |
-        <li>32% off</li>
-      </ul>
-     </div>
- 
+  <%= render 'dealzons/promotions' %> 
  </section>
 </div>
- -->
+
 
 
 <!-- Footer -->
