@@ -35,9 +35,14 @@
                   <% else %>
                     <div class="index_price">
                       <ul>
-                        <li>$<%= post.post_price_is %></li>
-                        <% if post.post_price_was.present? %>
-                         <li>$<%= post.post_price_was %></li>
+                        <% if post.post_spare_04.present? %>
+                         <div class="somthing_hidden"><%= post.post_spare_04 %></div>
+                         <li class="price_hidden_post">hidden</li>                 
+                        <% else %>
+                          <li>$<%= post.post_price_is %></li>
+                          <% if post.post_price_was.present? %>
+                           <li>$<%= post.post_price_was %></li>
+                          <% end %>
                         <% end %>
                       </ul>
                     </div>

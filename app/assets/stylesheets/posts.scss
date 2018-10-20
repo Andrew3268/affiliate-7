@@ -16,6 +16,10 @@
   visibility: hidden;
   font-size: 1.2em;
 }
+.price_hidden_post {
+  visibility: hidden;
+  font-size: 1.3em;
+}
 
 /* ---------------------------------------------
    Show Page
@@ -41,7 +45,10 @@
   margin: 0 0 0 0;
   padding-left: 0em;
 }
-.show_right ul li, .youtube ul li {
+.show_right ul li:nth-child(1),
+.show_right ul li:nth-child(2), 
+.youtube ul li:nth-child(1),
+.youtube ul li:nth-child(2) {
   display: inline-block;
   list-style: none;
   padding-left: 0em;   
@@ -92,6 +99,7 @@
 .ckeditor {
   margin-top: 2em;
 }
+
 .amazon_related {  
   padding: 0.5em;
 }
