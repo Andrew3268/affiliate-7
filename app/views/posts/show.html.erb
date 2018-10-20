@@ -72,18 +72,6 @@
                 <p class="post_index">What is this?</p>
                 <%= @post.post_intro %>
                 
-             <!--- have to fix --->   
-                <% if @post.post_spare_01.present? %>
-                  <div class="somthing_hidden"><%= @post.post_spare_01 %></div>
-                  fdasfdsafdsfadsfdas
-                <% else %>
-                  <p><%= @post.post_title %> is now on sale for <%= @post.post_price_is %> at <%= @post.post_source %></p>
-                  <% if @post.post_spare_02.present? %>
-                   <div class="somthing_hidden"><%= @post.post_spare_02 %></div>
-                   <p>Shpping is free( Prime or on $25+ orders.) <a href="/blogs/1"><span class="wia">What is Amazon Prime?</span></a></p>
-                  <% end %>
-                <% end %>
-
                 <div class="ckeditor">
                  <%= raw @post.post_spare_21 %>
                 </div>
