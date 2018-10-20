@@ -1,6 +1,6 @@
 class BridgesController < ApplicationController
 
-  def aboutUs
+  def discountCode
   end
   
 end

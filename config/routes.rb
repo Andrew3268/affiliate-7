@@ -34,7 +34,9 @@ Rails.application.routes.draw do
   # root 'bcategories#index'
 
   
-  get '/bridges/aboutUs', to: 'bridges#aboutUs', as: 'aboutUs'
+  # get '/bridges/aboutUs', to: 'bridges#aboutUs', as: 'aboutUs'
+  get '/search/discountCode', to: 'search#discountCode', as: 'discountCode'
+  get '/search/quicksearch', to: 'search#quicksearch', as: 'quicksearch'
 
 
   # get 'home/index'
