@@ -12,10 +12,10 @@ class BlogsController < ApplicationController
 
   def index
     if params[:bcategory].blank?
-      @blogs = Blog.all.order("created_at DESC").page(params[:page]).per(15)
+      @blogs = Blog.all.order("created_at DESC").page(params[:page]).per(20)
     else
       @bcategory_id = Bcategory.find_by(name: params[:bcategory]).id
-      @blogs = Blog.where(bcategory_id: @bcategory_id).order("created_at DESC").page(params[:page]).per(15)
+      @blogs = Blog.where(bcategory_id: @bcategory_id).order("created_at DESC").page(params[:page]).per(20)
     end
     @blog_side = Blog.order("impressions_count DESC").limit(5)
     @post_side = Post.order("impressions_count DESC").limit(5)

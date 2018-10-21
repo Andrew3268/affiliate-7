@@ -3,186 +3,192 @@
 </header>
 
 <div class="wrapper">
-
-    <section class="main">
+ <section class="main">
       
-        <!-- for play youtube video-->
-        <div class="overlay-video">
-          <div class="videoWrapperExt">
-            <div class="videoWrapper">
-              <div class="video_close"></div>
-                <iframe id="player" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
-            </div>
-          </div>        
-         </div>
+    <!-- for play youtube video-->
+    <div class="overlay-video">
+      <div class="videoWrapperExt">
+        <div class="videoWrapper">
+          <div class="video_close"></div>
+            <iframe id="player" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>        
+     </div>
 
-        <section>
-          
-          <p class="notice"><I>Our website contains affiliate link which means that if you click on one of the product links and buy we’ll receive a small commission. This help supports us and allows us to continue to keep finding and sharing awesome gadgets.</I></p>
-        
-          <div class="show_detail_wrap">
-            <div class="show_left">
-              <img src="<%= @post.post_image %>">
-            </div>
+    <section>
+      
+      <p class="notice"><I>Our website contains affiliate link which means that if you click on one of the product links and buy we’ll receive a small commission. This help supports us and allows us to continue to keep finding and sharing awesome gadgets.</I></p>
+    
+      <div class="show_detail_wrap">
+        <div class="show_left">
+          <img src="<%= @post.post_image %>">
+        </div>
 
-            <div class="show_right">
-              <h3><%= @post.post_title %></h3>
-              <% if @post.post_spare_01.present? %>
-               <div class="somthing_hidden"><%= @post.post_spare_01 %></div>
-               <ul>
-                <li class="show_crowdfunding">#crowdfunding.</li>
-               </ul>
-              <% else %>
-               <% if @post.post_spare_04.present? %>
-                <div class="somthing_hidden"><%= @post.post_spare_04 %></div> 
-               <% else %>
-                <ul>
-                  <li class="show_price_is">$<%= @post.post_price_is %></li>
-                  <% if @post.post_price_was.present? %>
-                   <li class="show_price_was">$<%= @post.post_price_was %></li>
-                  <% end %>
-                  <% if @post.post_spare_02.present? %>
-                   <div class="somthing_hidden"><%= @post.post_spare_02 %></div>
-                   <li>+ free shipping</li>
-                  <% end %>
-                </ul>
-               <% end %>
+        <div class="show_right">
+          <h3><%= @post.post_title %></h3>
+          <% if @post.post_spare_01.present? %>
+           <div class="somthing_hidden"><%= @post.post_spare_01 %></div>
+           <ul>
+            <li class="show_crowdfunding">#crowdfunding.</li>
+           </ul>
+          <% else %>
+           <% if @post.post_spare_04.present? %>
+            <div class="somthing_hidden"><%= @post.post_spare_04 %></div> 
+           <% else %>
+            <ul>
+              <li class="show_price_is">$<%= @post.post_price_is %></li>
+              <% if @post.post_price_was.present? %>
+               <li class="show_price_was">$<%= @post.post_price_was %></li>
               <% end %>
-              <hr>
-              <div class="youtube">
-                <ul>
-                  <% if @post.post_youtube_01.present? %>
-                   <li>
-                    <div class="js-overlay-start start" data-url="<%= @post.post_youtube_01 %>">
-                     <button class="button small"><i class="fa fa-play"></i>&nbsp;Watch Video</button>
-                    </div>
-                   </li>
-                  <% end %>
-
-                  <% if @post.post_review.present? %>
-                   <li><a class="button small" href="<%= @post.post_review %>"><i class="fa fa-check-circle"></i>&nbsp;See Review</a></li>
-                  <% end %>
-
-                </ul>
-              </div>
-
-              <hr>
-
-              <div class="contents">
-                <p class="post_index">What is this?</p>
-                <%= @post.post_intro %>
-                
-                <div class="ckeditor">
-                 <%= raw @post.post_spare_21 %>
+              <% if @post.post_spare_02.present? %>
+               <div class="somthing_hidden"><%= @post.post_spare_02 %></div>
+               <li>+ free shipping</li>
+              <% end %>
+            </ul>
+           <% end %>
+          <% end %>
+          <hr>
+          <div class="youtube">
+            <ul>
+              <% if @post.post_youtube_01.present? %>
+               <li>
+                <div class="js-overlay-start start" data-url="<%= @post.post_youtube_01 %>">
+                 <button class="button small"><i class="fa fa-play"></i>&nbsp;Watch Video</button>
                 </div>
-              </div>
+               </li>
+              <% end %>
 
-              <%= @post.post_source %>
-              
-              <% if can? :update, @post %>
-                <div class="admin">
-                  <%= link_to "Home", root_path %>
-                  <%= link_to "New", new_post_path %>
-                  <%= link_to "Edit", edit_post_path(@post) %>
-                  <%= link_to "Delete", post_path(@post), method: :delete, date: {confirm: "Are you sure?"}%>
-                  <%= "#{@post.unique_impression_count}" %> views
-                </div>
+              <% if @post.post_review.present? %>
+               <li><a class="button small" href="<%= @post.post_review %>"><i class="fa fa-check-circle"></i>&nbsp;See Review</a></li>
               <% end %>
-              <hr>
-             
-              <% if @post.post_spare_01.present? %>
-               <div class="somthing_hidden"><%= @post.post_spare_01 %></div>
-               <div class="check_boutton">
-                <a target="_blank" href="<%= @post.post_link %>" class="button primary fit">Pre-order from <%= @post.post_source %></a>
-               </div>
-              <% else %>
-               <div class="check_boutton">
-                 <a target="_blank" href="<%= @post.post_link %>" class="button primary fit">Check it Out</a>
-               </div>
-              <% end %>
+            </ul>
+          </div>
+
+          <hr>
+
+          <div class="contents">
+            <p class="post_index">What is this?</p>
+            <p><%= @post.post_intro %></p>
+            <br/>
+
+            <p>You are available <span class="show_bold" %><%= @post.post_title %></span> at <span class="show_bold"><%= @post.post_source %></span> 
+            <% if @post.post_price_is.present? %>
+             for <span class="show_bold">$<%= @post.post_price_is %></span></p>
+            <% end %>
+                        
+            <div class="ckeditor">
+             <%= raw @post.post_spare_21 %>
             </div>
           </div>
 
-        </section>
-        
-        <div class="wrapper">
-         <section class="main">
-          <section>
-           <section class="grid-section">
-
-              <h1 class="interested">You may also be interested in the following product(s)</h1>
-              <% @relative_show.shuffle.take(8).each do |postshow| %>
-               <% if postshow.category_id == @post.category_id %> 
-                <article class="related-card">
-                  <div class="related-card__image">
-                    <%= link_to (image_tag postshow.post_image), postshow %>
-                  </div>
-                  <div class="related-card__title">
-                    <p class="show_category"><%= postshow.category.name %></p>
-                    <p><%= link_to postshow.post_title, postshow %></p>
-                  </div>
-
-                  <div class="related-card__details">
-                    <% if postshow.post_spare_01.present? %>
-                     <div class="somthing_hidden"><%= postshow.post_spare_01 %></div>
-                     <span class="related-card__details--like">Crowdfunding</span>
-                    <% else %>
-                     <span class="related-card__details--like">$<%= postshow.post_price_is %></span>
-                     <% if postshow.post_price_was.present? %>
-                      <span class="related-card__details--view">$<%= postshow.post_price_was %></i></span>
-                     <% end %>
-                    <% end %>
-                  </div>
-                </article>
-               <% end %>
-              <% end %>
-              
-              <!-- <article class="related-card">
-                <div class="related-card__image">
-                  <img src="https://www.dropbox.com/s/6i60hcgrz7yatl5/nexus-6-2770-001.jpg?raw=1">
-                </div>
-                <div class="related-card__title">
-                  <p> Object Oriented Programming for Junior Programmers </p>
-                </div>
-                <div class="related-card__details">
-                  <span class="related-card__details--time"><i class="fa fa-clock-o"></i> 1 day ago </span>
-                  <span class="related-card__details--like"><i class="fa fa-heart"></i> 15 </span>
-                  <span class="related-card__details--view"><i class="fa fa-eye"></i> 1259 </span>        
-                </div>
-              </article> -->
-                          
-             </section>
-           </section>
-
-
-           <section>
-            <div class="amazon_related">
-              <script type="text/javascript">
-                amzn_assoc_placement = "adunit0";
-                amzn_assoc_tracking_id = "3628-20";
-                amzn_assoc_ad_mode = "search";
-                amzn_assoc_ad_type = "smart";
-                amzn_assoc_marketplace = "amazon";
-                amzn_assoc_region = "US";
-                amzn_assoc_default_search_phrase = "<%= @post.post_spare_03 %>";
-                amzn_assoc_default_category = "All";
-                amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
-                amzn_assoc_search_bar = "true";
-                amzn_assoc_search_bar_position = "top";
-                amzn_assoc_title = "Shop Related Products";
-              </script>
-              <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-            </div><br>
-          </section>
-
-         </section>
+          <%= @post.post_source %>
+          
+          <% if can? :update, @post %>
+            <div class="admin">
+              <%= link_to "Home", root_path %>
+              <%= link_to "New", new_post_path %>
+              <%= link_to "Edit", edit_post_path(@post) %>
+              <%= link_to "Delete", post_path(@post), method: :delete, date: {confirm: "Are you sure?"}%>
+              <%= "#{@post.unique_impression_count}" %> views
+            </div>
+          <% end %>
+          <hr>
+         
+          <% if @post.post_spare_01.present? %>
+           <div class="somthing_hidden"><%= @post.post_spare_01 %></div>
+           <div class="check_boutton">
+            <a target="_blank" href="<%= @post.post_link %>" class="button primary fit">Pre-order from <%= @post.post_source %></a>
+           </div>
+          <% else %>
+           <div class="check_boutton">
+             <a target="_blank" href="<%= @post.post_link %>" class="button primary fit">Check it Out</a>
+           </div>
+          <% end %>
         </div>
+      </div>
 
-    </section><!--/.main-->
+    </section>
+        
+    <div class="wrapper">
+     <section class="main">
+      <section>
+       <section class="grid-section">
 
+          <h1 class="interested">You may also be interested in the following product(s)</h1>
+          <% @relative_show.shuffle.take(8).each do |postshow| %>
+           <% if postshow.category_id == @post.category_id %> 
+            <article class="related-card">
+              <div class="related-card__image">
+                <%= link_to (image_tag postshow.post_image), postshow %>
+              </div>
+              <div class="related-card__title">
+                <p class="show_category"><%= postshow.category.name %></p>
+                <p><%= link_to postshow.post_title, postshow %></p>
+              </div>
+
+              <div class="related-card__details">
+                <% if postshow.post_spare_01.present? %>
+                 <div class="somthing_hidden"><%= postshow.post_spare_01 %></div>
+                 <span class="related-card__details--like">Crowdfunding</span>
+                <% else %>
+                 <% if postshow.post_spare_04.present? %>
+                  <div class="somthing_hidden"><%= postshow.post_spare_04 %></div>
+                 <% else %>
+                   <span class="related-card__details--like">$<%= postshow.post_price_is %></span>
+                   <% if postshow.post_price_was.present? %>
+                    <span class="related-card__details--view">$<%= postshow.post_price_was %></i></span>
+                   <% end %>
+                 <% end %>
+                <% end %>
+              </div>
+            </article>
+           <% end %>
+          <% end %>
+          
+          <!-- <article class="related-card">
+            <div class="related-card__image">
+              <img src="https://www.dropbox.com/s/6i60hcgrz7yatl5/nexus-6-2770-001.jpg?raw=1">
+            </div>
+            <div class="related-card__title">
+              <p> Object Oriented Programming for Junior Programmers </p>
+            </div>
+            <div class="related-card__details">
+              <span class="related-card__details--time"><i class="fa fa-clock-o"></i> 1 day ago </span>
+              <span class="related-card__details--like"><i class="fa fa-heart"></i> 15 </span>
+              <span class="related-card__details--view"><i class="fa fa-eye"></i> 1259 </span>        
+            </div>
+          </article> -->
+                      
+         </section>
+       </section>
+
+
+       <section>
+        <div class="amazon_related">
+          <script type="text/javascript">
+            amzn_assoc_placement = "adunit0";
+            amzn_assoc_tracking_id = "3628-20";
+            amzn_assoc_ad_mode = "search";
+            amzn_assoc_ad_type = "smart";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "US";
+            amzn_assoc_default_search_phrase = "<%= @post.post_spare_03 %>";
+            amzn_assoc_default_category = "All";
+            amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
+            amzn_assoc_search_bar = "true";
+            amzn_assoc_search_bar_position = "top";
+            amzn_assoc_title = "Shop Related Products";
+          </script>
+          <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+        </div><br>
+      </section>
+
+     </section>
+    </div>
+
+  </section><!--/.main-->
   <!-- Sidebar -->
   <%= render 'posts/sidebar' %>  
-
 </div>
 
 

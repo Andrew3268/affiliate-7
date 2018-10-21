@@ -1,72 +1,73 @@
-<header id="header">
-  <%= render 'posts/navbar' %> 
-</header>
+    <header id="header">
+      <%= render 'posts/navbar' %> 
+    </header>
 
-<div class="wrapper">
+    <div class="wrapper">
 
-    <section class="main">
+        <section class="main">
 
-      <%= render 'posts/banner' %> 
+          <%= render 'posts/banner' %> 
 
-        <section>
-          <p class="notice"><I>Our website contains affiliate link which means that if you click on one of the product links and buy we’ll receive a small commission. This help supports us and allows us to continue to keep finding and sharing awesome gadgets.</I></p>
-        </section>
+            <section>
+              <h2>Awesome Gadgets That Will Blow Your Mind.</h2>
+              <p>This is a collection that features all kinds of unique items that really cannot be classified in a single category. All you need to know is in this page, you are going to find a lot of cool & awesome items that you are most definitely going to like and perhaps even get tempted to buy some of them, so hang on tight to your wallet.:D</p>
+            </section>
 
-        <div class="index_container">
-          <% if can? :update, @post %>
-           <h4><%= link_to "Add New Gadgets", new_post_path %></h4>
-          <% end %>
-          <div class="grid">
+            <div class="index_container">
+              <% if can? :update, @post %>
+               <h4><%= link_to "Add New Gadgets", new_post_path %></h4>
+              <% end %>
+              <div class="grid">
 
-            <% @posts.each do |post| %>
-              <div class="card">
-                <div class="card--image">
-                  <%= link_to (image_tag post.post_image), post %>
-                </div>
-                <div class="card--content">
-                  <div class="card--category"><span class="source_index"><%= post.post_source %></span></div>
-                  <p><%= post.post_title %></p>
-                  <% if post.post_spare_01.present? %>
-                    <div class="somthing_hidden"><%= post.post_spare_01 %></div>
-                    <ul>
-                      <li class="crowdfunding">#Crowdfunding</li>
-                      <li class="crowdfunding_sub"><%= post.post_price_is %></li>
-                    </ul>
-                  <% else %>
-                    <div class="index_price">
-                      <ul>
-                        <% if post.post_spare_04.present? %>
-                         <div class="somthing_hidden"><%= post.post_spare_04 %></div>
-                         <li class="price_hidden_post">hidden</li>                 
-                        <% else %>
-                          <li>$<%= post.post_price_is %></li>
-                          <% if post.post_price_was.present? %>
-                           <li>$<%= post.post_price_was %></li>
-                          <% end %>
-                        <% end %>
-                      </ul>
+                <% @posts.each do |post| %>
+                  <div class="card">
+                    <div class="card--image">
+                      <%= link_to (image_tag post.post_image), post %>
                     </div>
-                  <% end %>
-                  
-                  <div class="index_button">
-                   <a class="button fit" target="_blank" href="<%= post.post_link %>">Check it Out</a>
-                   <!-- <a class="button primary fit" href="posts/<%= post.id %>">See More Detail</a> -->
+                    <div class="card--content">
+                      <div class="card--category"><span class="source_index"><%= post.post_source %></span></div>
+                      <p><%= post.post_title %></p>
+                      <% if post.post_spare_01.present? %>
+                        <div class="somthing_hidden"><%= post.post_spare_01 %></div>
+                        <ul>
+                          <li class="crowdfunding">#Crowdfunding</li>
+                          <li class="crowdfunding_sub"><%= post.post_price_is %></li>
+                        </ul>
+                      <% else %>
+                        <div class="index_price">
+                          <ul>
+                            <% if post.post_spare_04.present? %>
+                             <div class="somthing_hidden"><%= post.post_spare_04 %></div>
+                             <li class="price_hidden_post">hidden</li>                 
+                            <% else %>
+                              <li>$<%= post.post_price_is %></li>
+                              <% if post.post_price_was.present? %>
+                               <li>$<%= post.post_price_was %></li>
+                              <% end %>
+                            <% end %>
+                          </ul>
+                        </div>
+                      <% end %>
+                      
+                      <div class="index_button">
+                       <a class="button fit" target="_blank" href="<%= post.post_link %>">Check it Out</a>
+                       <!-- <a class="button primary fit" href="posts/<%= post.id %>">See More Detail</a> -->
+                      </div>
+                    </div>          
                   </div>
-                </div>          
-              </div>
-            <% end %>
+                <% end %>
+               
+              </div><br/>
+              <%= paginate @posts %>
+            </div>
            
-          </div><br/>
-          <%= paginate @posts %>
-        </div>
-       
-        
-    </section><!-- /.main -->
+            
+        </section><!-- /.main -->
 
-  <!-- Sidebar -->
-  <%= render 'posts/sidebar' %>
+      <!-- Sidebar -->
+      <%= render 'posts/sidebar' %>
 
-</div><!-- /.warpper -->
+    </div><!-- /.warpper -->
 
-<!-- Footer -->
-<%= render 'shared/footer' %>
+    <!-- Footer -->
+    <%= render 'shared/footer' %>

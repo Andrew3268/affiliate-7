@@ -18,6 +18,7 @@
           <div class="show_right">
             <h3><%= @event.eb_title %></h3>
             <% if @event.ecategory_id == 1 %>
+             <%= @event.eb_featured_sale %>
             <% else %>
              <% if @event.ecategory_id == 3 %>
              <% else %>
@@ -48,7 +49,6 @@
             <hr>
             <div class="contents">
              <% if @event.ecategory_id == 1 %>
-               <p class="featured_deal">- Best Deals -</p>
              <% else %>
               <% if @event.ecategory_id == 2 %>
                <p><span class="show_bold"><%= @event.eb_title %></span> is on sale now for <span class="show_bold"><%= @event.eb_price_is %> (<%= @event.eb_price_sale %>% off)</span> at eBay. 
@@ -88,7 +88,7 @@
             <% else %>
               <% if @event.ecategory_id == 1 %>
                 <div class="check_boutton">
-                 <a target="_blank" href="<%= @event.eb_link %>" class="button primary fit">See More Sales</a>
+                 <a target="_blank" href="<%= @event.eb_link %>" class="button primary fit">See More Deals</a>
                 </div>
               <% else %>
                 <div class="check_boutton">
