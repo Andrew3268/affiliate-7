@@ -71,7 +71,7 @@
             <p><%= @post.post_intro %></p>
             <br/>
 
-            <p>You are available <span class="show_bold" %><%= @post.post_title %></span> at <span class="show_bold"><%= @post.post_source %></span> 
+            <p>You are available for <span class="show_bold" %><%= @post.post_title %></span> at <span class="show_bold"><%= @post.post_source %></span> 
             <% if @post.post_price_is.present? %>
              for <span class="show_bold">$<%= @post.post_price_is %></span></p>
             <% end %>
