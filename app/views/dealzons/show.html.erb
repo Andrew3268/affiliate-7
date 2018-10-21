@@ -76,7 +76,11 @@
 
           <div class="contents">
             <% if @dealzon.acategory_id == 4 %> 
-             <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %></span> at Amazon. If you use this promo code(<span class="show_bold"><%= @dealzon.am_code %></span>), you could save <span class="show_bold"><%= @dealzon.am_price_sale %>% off</span> more.</p><br/>
+             <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %></span> at Amazon. <I><span class="ifyousave">If you use this promo code(<span class="show_bold"><%= @dealzon.am_code %></span>), you cloud get a  <span class="show_bold"><%= @dealzon.am_price_sale %>% discount</span> out of the suggested price.
+             </span></I></span></p><br/>
+
+
+
              <% if @dealzon.am_shipping.present? %>
               <div class="somthing_hidden"><%= @dealzon.am_shipping %></div>
               <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)<br/><a href="/blogs/1"><span class="wia">What is Amazon Prime?</span></a></p>
@@ -188,6 +192,27 @@
                                 
          </section>
        </section>
+
+       <section>
+        <div class="amazon_related">
+          <script type="text/javascript">
+            amzn_assoc_placement = "adunit0";
+            amzn_assoc_tracking_id = "3628-20";
+            amzn_assoc_ad_mode = "search";
+            amzn_assoc_ad_type = "smart";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "US";
+            amzn_assoc_default_search_phrase = "<%= @dealzon.am_category %>";
+            amzn_assoc_default_category = "All";
+            amzn_assoc_linkid = "8e4056cd7c49b6d726c657f30e19d527";
+            amzn_assoc_search_bar = "true";
+            amzn_assoc_search_bar_position = "top";
+            amzn_assoc_title = "Shop Related Products";
+          </script>
+          <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+        </div><br>
+       </section>
+
      </section>
     </div>
 
