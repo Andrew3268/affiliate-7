@@ -45,12 +45,28 @@
   margin: 0 0 0 0;
   padding-left: 0em;
 }
-.show_right ul li, .youtube ul li {
+
+/*
+.show_right ul li, 
+.youtube ul li {
   display: inline-block;
   list-style: none;
   padding-left: 0em;   
   margin-right: 0.2em;
 }
+*/
+
+.show_right .show_price_ul .show_price_is,
+.show_right .show_price_ul .show_price_was,
+.show_right .show_price_ul .freeshipping,
+.youtube ul li {
+  display: inline-block;
+  list-style: none;
+  padding-left: 0em;   
+  margin-right: 0.2em;
+}
+
+
 .show_right ul li.show_price_is {
   font-weight: bold;
   font-size: 1.3em;
@@ -94,7 +110,7 @@
   font-weight: bold;
 }
 .ckeditor {
-  margin-top: 2em;
+  margin: 2em 0 0 1em;
 }
 .amazon_related {  
   padding: 0.5em;

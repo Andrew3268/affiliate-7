@@ -28,21 +28,21 @@
           <h3><%= @post.post_title %></h3>
           <% if @post.post_spare_01.present? %>
            <div class="somthing_hidden"><%= @post.post_spare_01 %></div>
-           <ul>
+           <ul class="show_price_ul">
             <li class="show_crowdfunding">#crowdfunding.</li>
            </ul>
           <% else %>
            <% if @post.post_spare_04.present? %>
             <div class="somthing_hidden"><%= @post.post_spare_04 %></div> 
            <% else %>
-            <ul>
+            <ul class="show_price_ul">
               <li class="show_price_is">$<%= @post.post_price_is %></li>
               <% if @post.post_price_was.present? %>
                <li class="show_price_was">$<%= @post.post_price_was %></li>
               <% end %>
               <% if @post.post_spare_02.present? %>
                <div class="somthing_hidden"><%= @post.post_spare_02 %></div>
-               <li>+ free shipping</li>
+               <li class="freeshipping">+ free shipping</li>
               <% end %>
             </ul>
            <% end %>

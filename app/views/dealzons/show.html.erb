@@ -27,17 +27,17 @@
         <div class="show_right">
           <h3><%= @dealzon.am_title %></h3>
           <div class="show_price_section">
-             <ul>
+             <ul class="show_price_ul">
               <% if @dealzon.acategory_id == 1 %> 
-               <li><%= @dealzon.am_price_sale %>% Off</li>
+               <li class="show_price_is"><%= @dealzon.am_price_sale %>% Off</li>
               <% end %>
 
               <% if @dealzon.acategory_id == 2 %> 
-               <li><span class="price_weight">$<%= @dealzon.am_price_is %></span></li>
-               <li>$<%= @dealzon.am_price_was %></li>
+               <li class="show_price_is">$<%= @dealzon.am_price_is %></li>
+               <li class="show_price_was">$<%= @dealzon.am_price_was %></li>
                <% if @dealzon.am_shipping.present? %>
                 <div class="somthing_hidden"><%= @dealzon.am_shipping %></div>
-                <li>+ free shipping</li>
+                <li class="freeshipping">+ free shipping</li>
                <% end %>
               <% end %>
 
@@ -46,10 +46,10 @@
               <% end %> 
 
               <% if @dealzon.acategory_id == 4 %>   
-               <li><span class="price_weight">$<%= @dealzon.am_price_is %></span></li>  
+               <li class="show_price_is">$<%= @dealzon.am_price_is %></span></li>  
                <% if @dealzon.am_shipping.present? %>
                 <div class="somthing_hidden"><%= @dealzon.am_shipping %></div>
-                <li>+ free shipping</li>
+                <li class="freeshipping">+ free shipping</li>
                <% end %>           
               <% end %>
             </ul>

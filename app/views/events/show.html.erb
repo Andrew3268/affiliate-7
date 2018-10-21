@@ -22,12 +22,12 @@
             <% else %>
              <% if @event.ecategory_id == 3 %>
              <% else %>
-              <ul>
+              <ul class="show_price_ul">
                 <li class="show_price_is">$<%= @event.eb_price_is %></li>
                 <li class="show_price_was">$<%= @event.eb_price_was %></li>
                 <% if @event.eb_shipping.present? %>
                   <p class="somthing_hidden"><%= @event.eb_shipping %></p>
-                  <li>+ free shipping</li>
+                  <li class="freeshipping">+ free shipping</li>
                 <% end %>
                </ul>
              <% end %>
@@ -60,12 +60,15 @@
                <% end %>
               <% end %>
              <% end %>
-            
+
+
              <div class="ckeditor">
               <%= raw @event.eb_ckeditor %>
              </div>
 
+            
             </div>
+
 
             <%= @event.ecategory.name if @event.ecategory %>
             
@@ -99,7 +102,7 @@
 
           </div>
         </div>
-        
+
       </section>
 
       <div class="wrapper">
