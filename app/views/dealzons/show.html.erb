@@ -5,7 +5,17 @@
 <div class="wrapper">
 
   <section class="main">
-    
+
+    <!-- for play youtube video-->
+    <div class="overlay-video">
+      <div class="videoWrapperExt">
+        <div class="videoWrapper">
+          <div class="video_close"></div>
+            <iframe id="player" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>        
+     </div>
+
     <section>
       <p class="notice"><I>Our website contains affiliate link which means that if you click on one of the product links and buy we’ll receive a small commission. This help supports us and allows us to continue to keep finding and sharing good deals.</I></p>
     
@@ -45,78 +55,93 @@
             </ul>
           </div>
           <hr>
-           <% if @dealzon.am_expire.present? %>
-             <div class="somthing_hidden"><%= @dealzon.am_expire %></div>
-             <% if @dealzon.acategory_id == 4 %>
-              <div class="promo_code">
-                <p class="end_code">PROMO CODE : <%= @dealzon.am_code %></p>
-                <p class="end_date">This code has expired.</p>                
-              </div>
-             <% end %>
-             <% if @dealzon.acategory_id == 3 %>
-              <div class="promo_code">
-               <p class="end_date">This promotion has expired.</p>
-              </div>
-             <% end %>
-            <% else %>
-             <% if @dealzon.acategory_id == 4  %>
-               <div class="promo_code">
-                <p class="code_number">PROMO CODE : <%= @dealzon.am_code %></p>
-                <p class="code_date">Expiration Date: <%= @dealzon.am_date %></p>
-               </div>
+<!-- Youtube & Review Begin -->          
+          <div class="youtube">
+            <ul>
+              <% if @dealzon.am_spare_01.present? %>
+               <li>
+                <div class="js-overlay-start start" data-url="<%= @dealzon.am_spare_01 %>">
+                 <button class="button small"><i class="fa fa-play"></i>&nbsp;Watch Video</button>
+                </div>
+               </li>
               <% end %>
-              <% if @dealzon.acategory_id == 3  %>
-               <div class="promo_code">
-                <p class="code_date">Expiration Date: <%= @dealzon.am_date %></p>
-               </div>
-              <% end %>
-            <% end %>
 
+              <% if @dealzon.am_review.present? %>
+               <li><a class="button small" href="<%= @dealzon.am_review %>"><i class="fa fa-check-circle"></i>&nbsp;See Review</a></li>
+              <% end %>
+            </ul>
+          </div>
+<!-- Youtube & Review End -->
           <hr>
-
-          <div class="contents">
-            <% if @dealzon.acategory_id == 4 %> 
-             <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %></span> at Amazon. <I><span class="ifyousave">If you use this promo code(<span class="show_bold"><%= @dealzon.am_code %></span>), you cloud get a  <span class="show_bold"><%= @dealzon.am_price_sale %>% discount</span> out of the suggested price.
-             </span></I></span></p><br/>
-
-
-
-             <% if @dealzon.am_shipping.present? %>
-              <div class="somthing_hidden"><%= @dealzon.am_shipping %></div>
-              <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)<br/><a href="/blogs/1"><span class="wia">What is Amazon Prime?</span></a></p>
-             <% end %>
-            <% else %>
-             <% if @dealzon.acategory_id == 1 %> 
-             
-             <% else %>
-                <% if @dealzon.acategory_id == 3 %> 
-
-                <% else %>
-                 <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %>(<%= @dealzon.am_price_sale %>% Off)</span> at Amazon.</p><br/>
-                 <% if @dealzon.am_shipping.present? %>
-                  <div class="somthing_hidden"><%= @dealzon.am_shipping %></div>
-                  <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)<br/><a href="/blogs/1"><span class="wia">What is Amazon Prime?</span></a>s
-                <% end %>
-               <% end %>
-              <% end %>
-            <% end %>
-          
-            <div class="ckeditor">
-             <%= raw @dealzon.am_spare_21 %><br/>
+<!-- Promo Code & Expiration Begin -->        
+          <% if @dealzon.am_expire.present? %>
+           <div class="somthing_hidden"><%= @dealzon.am_expire %></div>
+           <% if @dealzon.acategory_id == 4 %>
+            <div class="promo_code">
+              <p class="end_code">PROMO CODE : <%= @dealzon.am_code %></p>
+              <p class="end_date">This code has expired.</p>                
             </div>
-            
-            <% if @dealzon.acategory_id == 4 %>
-              <div class="code_step">
-                <p>How To Use:</p>
-                <ol>
-                  <li>Click "Copy code & Open site"</li>
-                  <li>Click "Buy Now or Add to Cart"</li>
-                  <li>Proceed with payment then the code(<span class="show_bold"><%= @dealzon.am_code %></span>) is automatically applied.</li>
-                </ol>
-              </div>
+           <% end %>
+           <% if @dealzon.acategory_id == 3 %>
+            <div class="promo_code">
+             <p class="end_date">This promotion has expired.</p>
+            </div>
+           <% end %>
+          <% else %>
+           <% if @dealzon.acategory_id == 4  %>
+             <div class="promo_code">
+              <p class="code_number">PROMO CODE : <%= @dealzon.am_code %></p>
+              <p class="code_date">Expiration Date: <%= @dealzon.am_date %></p>
+             </div>
             <% end %>
-          </div><!--/.contents-->
+            <% if @dealzon.acategory_id == 3  %>
+             <div class="promo_code">
+              <p class="code_date">Expiration Date: <%= @dealzon.am_date %></p>
+             </div>
+            <% end %>
+          <% end %>
+<!-- Promo Code & Expiration End -->              
+          <hr>
+<!-- Content Begin -->  
+        <div class="contents">
+           <% if @dealzon.acategory_id == 4 %> 
+            <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %></span> at Amazon. <I><span class="ifyousave">If you use this promo code(<span class="show_bold"><%= @dealzon.am_code %></span>), you cloud get a  <span class="show_bold"><%= @dealzon.am_price_sale %>% discount</span> out of the suggested price.
+            </span></I></span></p><br/>
 
+            <% if @dealzon.am_shipping.present? %>
+             <div class="somthing_hidden"><%= @dealzon.am_shipping %></div>
+             <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)<br/><a href="/blogs/1"><span class="wia">What is Amazon Prime?</span></a></p>
+            <% end %>
+          <% else %>
+            <% if @dealzon.acategory_id == 1 %>              
+            <% else %>
+             <% if @dealzon.acategory_id == 3 %> 
+             <% else %>
+              <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %>(<%= @dealzon.am_price_sale %>% Off)</span> at Amazon.</p><br/>
+              <% if @dealzon.am_shipping.present? %>
+                <div class="somthing_hidden"><%= @dealzon.am_shipping %></div>
+                <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)<br/><a href="/blogs/1"><span class="wia">What is Amazon Prime?</span></a>
+              <% end %>
+             <% end %>
+            <% end %>
+          <% end %>
+          
+          <div class="ckeditor">
+           <%= raw @dealzon.am_spare_21 %><br/>
+          </div>
+            
+          <% if @dealzon.acategory_id == 4 %>
+            <div class="code_step">
+              <p>How To Use:</p>
+              <ol>
+                <li>Click "Copy code & Open site"</li>
+                <li>Click "Buy Now or Add to Cart"</li>
+                <li>Proceed with payment then the code(<span class="show_bold"><%= @dealzon.am_code %></span>) is automatically applied.</li>
+              </ol>
+            </div>
+          <% end %>
+        </div>
+<!-- Content End -->
           <%= @dealzon.acategory.name %>
           
           <% if can? :update, @dealzon %>
@@ -143,9 +168,9 @@
         </div><!--/.show-right-->
       </div><!--/.show_detail_wrap-->
 
-
     </section>
 
+<!-- Related Deals Begin -->
     <div class="wrapper">
      <section class="main">
       <section>
@@ -215,11 +240,9 @@
 
      </section>
     </div>
-
+<!-- Related Deals End -->
    
   </section>
-  
-
   <!-- Sidebar -->
   <%= render 'dealzons/sidebar_show' %>
 </div>
@@ -229,8 +252,6 @@
   <%= render 'dealzons/promotions' %> 
  </section>
 </div>
-
-
 
 <!-- Footer -->
 <%= render 'shared/footer' %>

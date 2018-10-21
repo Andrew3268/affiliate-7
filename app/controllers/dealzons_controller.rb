@@ -12,10 +12,10 @@ class DealzonsController < ApplicationController
 
   def index
     if params[:acategory].blank?
-     @dealzons = Dealzon.all.order("created_at DESC").page(params[:page]).per(40)
+     @dealzons = Dealzon.all.order("created_at DESC").page(params[:page]).per(100)
     else
      @acategory_id = Acategory.find_by(name: params[:acategory]).id
-     @dealzons = Dealzon.where(acategory_id: @acategory_id).order("created_at DESC").page(params[:page]).per(40)
+     @dealzons = Dealzon.where(acategory_id: @acategory_id).order("created_at DESC").page(params[:page]).per(100)
     end
      @dealzon_side = Dealzon.order("impressions_count DESC").limit(5) 
      @blogs = Blog.all.order("created_at DESC").limit(1)
