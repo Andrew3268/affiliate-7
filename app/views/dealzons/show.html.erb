@@ -105,7 +105,7 @@
 <!-- Content Begin -->  
         <div class="contents">
            <% if @dealzon.acategory_id == 4 %> 
-            <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %></span> at Amazon. <I><span class="ifyousave">If you use this promo code(<span class="show_bold"><%= @dealzon.am_code %></span>), you cloud get a  <span class="show_bold"><%= @dealzon.am_price_sale %>% discount</span> out of the suggested price.
+            <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %></span> at Amazon. <I><span class="ifyousave">If you use this promo code(<span class="show_bold"><%= @dealzon.am_code %></span>), you could get a  <span class="show_bold"><%= @dealzon.am_price_sale %>% discount</span> out of the suggested price.
             </span></I></span></p><br/>
 
             <% if @dealzon.am_shipping.present? %>
