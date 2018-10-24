@@ -116,6 +116,7 @@
             <% if @dealzon.acategory_id == 1 %>              
             <% else %>
              <% if @dealzon.acategory_id == 3 %> 
+               <div id="amzn-assoc-ad-f4a85a11-65b9-4b4e-972c-2ef22eaa4389"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=f4a85a11-65b9-4b4e-972c-2ef22eaa4389"></script>
              <% else %>
               <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %>(<%= @dealzon.am_price_sale %>% Off)</span> at Amazon.</p><br/>
               <% if @dealzon.am_shipping.present? %>

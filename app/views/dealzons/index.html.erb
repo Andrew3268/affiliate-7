@@ -13,17 +13,21 @@
    <div class="dis_slider">
 
      <div class="dis_slider--content">
-      <a target="_blank" href="https://amzn.to/2MKVmXW"><img src="https://images-na.ssl-images-amazon.com/images/I/81%2BNJiYvnQL._SL1500_.jpg" title="Fryer" alt="Fryer">
-       <p>Big Boss Oil Less Fryer, Graphite</p>
+      <a target="_blank" href="https://amzn.to/2PImsfI"><img src="https://i-h2.pinimg.com/564x/99/e8/77/99e877922c69b7899a8c92942b6646d4.jpg" title="Amazon Sales & Coupons Up to 70% off" alt="Amazon Sales & Coupons Up to 70% off">
+       <p>Amazon Sales & Coupons Up to 70% off</p>
       </a>
-      <div class="dis_daily">
-       <p>$67.99</p>
-      </div>
-      <ul>
-        <li>$99.99</li> |
-        <li>32% off</li>
-      </ul>
      </div>
+
+     <% @dealzons.each do |sale_offer| %>
+       <div class="dis_slider--content">
+        <a target="_blank" href="<%= sale_offer.am_link %>"><img src="<%= sale_offer.am_image %>" title="<%= sale_offer.am_title %>" alt="<%= sale_offer.am_title %>">
+         <p><%= sale_offer.am_title %></p>
+        </a>
+       </div>
+     <% end %>
+
+   </div>
+  </div>
  
  </section>
 </div> -->
@@ -83,7 +87,7 @@
                   <div class="somthing_hidden"><%= deal.am_expire %></div>
                   <div class="category_sale_expired">This code has expired.</div>
                  <% else %>
-                  <div class="category_sale"> you can save more <span class="code_index"><%= deal.am_price_sale %>% off</span></div>
+                  <div class="category_sale"> you can save <span class="code_index">more <%= deal.am_price_sale %>% off</span></div>
                  <% end %>
                 <% end %>
 
