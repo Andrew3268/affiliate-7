@@ -107,6 +107,9 @@
            <% if @dealzon.acategory_id == 4 %> 
             <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %></span> at Amazon. <I><span class="ifyousave">If you use this promo code(<span class="show_bold"><%= @dealzon.am_code %></span>), you could get a  <span class="show_bold"><%= @dealzon.am_price_sale %>% discount</span> out of the suggested price.
             </span></I></span></p><br/>
+            <!-- related product banner on Amazon -->
+            <div id="amzn-assoc-ad-f4a85a11-65b9-4b4e-972c-2ef22eaa4389"></div>
+            <script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=f4a85a11-65b9-4b4e-972c-2ef22eaa4389"></script>
 
             <% if @dealzon.am_shipping.present? %>
              <div class="somthing_hidden"><%= @dealzon.am_shipping %></div>
