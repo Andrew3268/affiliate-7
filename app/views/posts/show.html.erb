@@ -22,6 +22,7 @@
       <div class="show_detail_wrap">
         <div class="show_left">
           <img src="<%= @post.post_image %>">
+          <p><%= social_share_button_tag(@post.post_title) %></p>
         </div>
 
         <div class="show_right">

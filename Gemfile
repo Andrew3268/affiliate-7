@@ -13,6 +13,7 @@ gem 'rolify'
 gem 'impressionist'
 gem 'figaro'
 gem 'enumerize', '~> 1.1.1'
+gem 'social-share-button'
 
 # group :production do
 #   gem 'mysql2'
