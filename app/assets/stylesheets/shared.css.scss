@@ -1,4 +1,6 @@
-/* ================= Social Sharing ================= */
+/* ---------------------------------------------
+   Social share button
+ --------------------------------------------- */
 .footer-social-icons {
     width: 350px;
     display:block;
@@ -26,7 +28,10 @@ ul.social-icons {
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition: .5s;
-    background-color: #322f30;
+    
+}
+.sharebg {
+  background-color: #322f30;
 }
 .fa-facebook:hover {
     background-color: #3d5b99;
@@ -38,22 +43,9 @@ ul.social-icons {
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition: .5s;
-    background-color: #322f30;
 }
 .fa-twitter:hover {
     background-color: #00aced;
-}
-.fa-google-plus {
-    padding:10px 9px;
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition: .5s;
-    background-color: #322f30;
-}
-.fa-google-plus:hover {
-    background-color: #e25714;
 }
 .sns_span_f {
   margin-right: -8.75em;

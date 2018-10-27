@@ -22,24 +22,25 @@
       <div class="show_detail_wrap">
         <div class="show_left">
           <img src="<%= @post.post_image %>">
-          <% if can? :update, @post %>
-          <div class="footer-social-icons">
-            <ul class="social-icons">
-              <a class="social-icon" id="shareFB" href="https://www.facebook.com/sharer/sharer.php?u=<%= url_for([@post, { 
-                 only_path: false }]) %>&t=<%= @post.post_title %>"
-                 onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"   target="_blank" title="Share on Facebook"><li><i class="fa fa-facebook"></i><span class="sns_span_f">Share on Facebook</span></a></li></a>
-                <script type="text/javascript">document.getElementById("shareFB").setAttribute("href", "https://www.facebook.com/sharer/sharer.php?u=" + document.URL);
-                </script>
 
-               <a class="social-icon" href="https://twitter.com/share?url=<%= url_for([@post, { 
-                 only_path: false }]) %>&via=ohigottabuythis&text=<%= @post.post_title %>"
-                 onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
-                 target="_blank" title="Share on Twitter">
-                 <li><i class="fa fa-twitter"></i><span class="sns_span_t">Share on Twitter</span></a></li>
-                </a>   
-            </ul>
-          </div>
-        <% end %>
+          <% if can? :update, @post %>
+            <div class="footer-social-icons">
+              <ul class="social-icons">
+                <a class="social-icon" id="shareFB" href="https://www.facebook.com/sharer/sharer.php?u=<%= url_for([@post, { 
+                   only_path: false }]) %>&t=<%= @post.post_title %>"
+                   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"   target="_blank" title="Share on Facebook"><li><i class="sharebg fa fa-facebook"></i><span class="sns_span_f">Share on Facebook</span></a></li></a>
+                  <script type="text/javascript">document.getElementById("shareFB").setAttribute("href", "https://www.facebook.com/sharer/sharer.php?u=" + document.URL);
+                  </script>
+
+                 <a class="social-icon" href="https://twitter.com/share?url=<%= url_for([@post, { 
+                   only_path: false }]) %>&via=ohigottabuythis&text=<%= @post.post_title %>"
+                   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                   target="_blank" title="Share on Twitter">
+                   <li><i class="sharebg fa fa-twitter"></i><span class="sns_span_t">Share on Twitter</span></a></li>
+                  </a>   
+              </ul>
+            </div>
+          <% end %>
 
         </div>
 
@@ -86,8 +87,10 @@
           <hr>
 
           <div class="contents">
-            <p class="post_index">What is this?</p>
-            <p><%= @post.post_intro %></p>
+            <% if @post.post_intro.present? %>
+             <p class="post_index">What is this?</p>
+            <% end %>
+             <p><%= @post.post_intro %></p>
             <br/>
 
             <p>You can take "<span class="show_bold" %><%= @post.post_title %></span>" at <span class="show_bold_source"><%= @post.post_source %></span> 
