@@ -13,6 +13,24 @@
         <h1><%= @blog.blog_title %></h1>
         <p><%= @blog.blog_intro %></p>
         <img src="<%= @blog.blog_image %>">
+        <% if can? :update, @blog %>
+          <div class="footer-social-icons">
+            <ul class="social-icons">
+              <a class="social-icon" id="shareFB" href="https://www.facebook.com/sharer/sharer.php?u=<%= url_for([@blog, { 
+                 only_path: false }]) %>&t=<%= @blog.blog_title %>"
+                 onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"   target="_blank" title="Share on Facebook"><li><i class="sharebg fa fa-facebook"></i><span class="sns_span_f">Share on Facebook</span></a></li></a>
+                <script type="text/javascript">document.getElementById("shareFB").setAttribute("href", "https://www.facebook.com/sharer/sharer.php?u=" + document.URL);
+                </script>
+
+               <a class="social-icon" href="https://twitter.com/share?url=<%= url_for([@blog, { 
+                 only_path: false }]) %>&via=ohigottabuythis&text=<%= @blog.blog_title %>"
+                 onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                 target="_blank" title="Share on Twitter">
+                 <li><i class="sharebg fa fa-twitter"></i><span class="sns_span_t">Share on Twitter</span></a></li>
+                </a>   
+            </ul>
+          </div>
+        <% end %>
       </div>
       <div class="ckeditor_blog_show">
         <%= raw @blog.blog_ckeditor %>

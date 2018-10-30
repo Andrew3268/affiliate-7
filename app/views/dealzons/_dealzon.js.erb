@@ -11,3 +11,29 @@
   });//end resize
 });//end ready
 </script>
+
+<script>
+var slideIndex = 0, timeout = 6000;
+var slides = document.getElementsByClassName("slide");
+var dots = document.getElementsByClassName("dot");
+function getSlide(index) {
+    slides[slideIndex].classList.remove("active");
+    dots[slideIndex].classList.remove("activedot");
+    slideIndex = index;
+    slides[slideIndex].classList.add("active");
+    dots[slideIndex].classList.add("activedot");
+}
+showSlides();
+function showSlides() {
+    slides[slideIndex].classList.remove("active");
+    dots[slideIndex].classList.remove("activedot");
+    slideIndex++;
+    if (slideIndex > slides.length - 1) {
+        slideIndex = 0;
+    }
+    ;
+    slides[slideIndex].classList.add("active");
+    dots[slideIndex].classList.add("activedot");
+    setTimeout(showSlides, timeout); // Change image every 2 seconds
+}
+</script>
