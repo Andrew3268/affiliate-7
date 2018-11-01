@@ -1,18 +1,6 @@
-
-.author {
-  text-align: center;
-}
-
-.name, .profecy {
-  display: block;
-  margin: 0;
-}
-
-.quote-character {
-  font-size: 3rem;
-  opacity: 0.3;
-}
-
+/* ---------------------------------------------
+   index auto slider
+ --------------------------------------------- */
 .slide {
   display: none;
   flex-direction: row;
@@ -22,44 +10,34 @@
   width: 100%;
   height: 100%;
   background-color: #ddd;
-  padding: 1rem 3rem;
-}
-@media screen and (max-width: 800px) {
-  .slide {
-    padding: 1rem;
-  }
+  padding: 1rem;
 }
 .slide .visible {
   display: flex;
 }
-
 .slide-photo-box {
+  float: left;
   width: 20%;
-  min-width: 150px;
+  height: 100%;
+  margin-right: 3em;
 }
-
-.slide-photo {
-  width: 122px;
-  height: 122px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 50% 10%;
-     object-position: 50% 10%;
+.slide-photo-box img { 
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
-
 .slide-text {
+  float: left;
   width: 70%;
   height: 100%;
+  margin-top: 1em;
 }
-
 .slider {
   padding: 0;
 }
-
 .dots {
   text-align: center;
 }
-
 .dot {
   cursor: pointer;
   height: 15px;
@@ -70,21 +48,17 @@
   display: inline-block;
   transition: background-color 0.1s ease;
 }
-
 .activedot, .dot:hover {
   background-color: #717171;
 }
-
-.active {
+.index_active {
   display: flex;
 }
-
 .slider {
   margin: 0 0 1rem;
   width: 100%;
   height: 15em;
 }
-
 .slider-container {
   padding: 2rem;
   width: 100%;
@@ -96,11 +70,19 @@
   .slider {
     height: 100%;
   }
+  .slide {
+    padding: 1rem;
+  }
 }
-
-
-
-
+@media screen and (max-width: 480px) {
+  .slide-text {
+    width: 100%;
+  }
+  .slide-photo-box {
+    width: 100%;
+    margin-right : 0em;
+  }
+}
 
 /* ---------------------------------------------
    Social share button
@@ -197,6 +179,7 @@ ul.social-icons {
   padding: 0 2rem 2rem;
   margin: 0 auto;
   max-width: 1000px;
+  margin-top: 2em;
 }
 .grid {
   display: flex;
@@ -622,7 +605,7 @@ ul.accordian li {
 
 
 /* ---------------------------------------------
-   Products Slider
+   Promotion Slider on show page
  --------------------------------------------- */
 .dis_slider-wrapper {
   margin: 0;

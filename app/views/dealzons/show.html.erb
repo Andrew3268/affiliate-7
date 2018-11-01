@@ -55,7 +55,12 @@
               <% end %>
 
               <% if @dealzon.acategory_id == 3 %>
-               <li class="price_hidden">hidden</li>                
+               <% if @dealzon.am_price_is.present? %>
+                 <li class="show_price_is">$<%= @dealzon.am_price_is %></li>
+                 <li class="show_price_was">$<%= @dealzon.am_price_was %></li>
+               <% else %>
+                 <li class="price_hidden">hidden</li>                
+               <% end %>
               <% end %> 
 
               <% if @dealzon.acategory_id == 4 %>   
@@ -120,14 +125,14 @@
            <% if @dealzon.acategory_id == 4 %> 
             <p><span class="show_bold"><%= @dealzon.am_title %></span> is on sale now for <span class="show_bold">$<%= @dealzon.am_price_is %></span> at Amazon. <I><span class="ifyousave">If you use this promo code(<span class="show_bold"><%= @dealzon.am_code %></span>), you could get a  <span class="show_bold"><%= @dealzon.am_price_sale %>% discount</span> out of the suggested price.
             </span></I></span></p><br/>
-            <!-- related product banner on Amazon -->
-            <div id="amzn-assoc-ad-f4a85a11-65b9-4b4e-972c-2ef22eaa4389"></div>
-            <script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=f4a85a11-65b9-4b4e-972c-2ef22eaa4389"></script>
-
+            
             <% if @dealzon.am_shipping.present? %>
              <div class="somthing_hidden"><%= @dealzon.am_shipping %></div>
              <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)<br/><a href="/blogs/1"><span class="wia">What is Amazon Prime?</span></a></p>
             <% end %>
+            <!-- related product banner on Amazon -->
+            <div id="amzn-assoc-ad-f4a85a11-65b9-4b4e-972c-2ef22eaa4389"></div>
+            <script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=f4a85a11-65b9-4b4e-972c-2ef22eaa4389"></script>
           <% else %>
             <% if @dealzon.acategory_id == 1 %>              
             <% else %>
@@ -221,6 +226,12 @@
                </div>
               <% end %>
               <% if @dealzon.acategory_id == 3 %>
+               <% if @dealzon.am_price_is.present? %>
+                 <span class="related-card__details--like">$<%= @dealzon.am_price_is %></span>
+                 <span class="related-card__details--view">$<%= @dealzon.am_price_was %></span>
+               <% else %>
+                 <li class="price_hidden">hidden</li>                
+               <% end %>
               <% end %>
               <% if @dealzon.acategory_id == 4 %>
                <div class="related-card__details">

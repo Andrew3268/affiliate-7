@@ -13,26 +13,26 @@
 </script>
 
 <script>
-var slideIndex = 0, timeout = 6000;
+var slideIndex = 0, timeout = 99999999000;
 var slides = document.getElementsByClassName("slide");
 var dots = document.getElementsByClassName("dot");
 function getSlide(index) {
-    slides[slideIndex].classList.remove("active");
+    slides[slideIndex].classList.remove("index_active");
     dots[slideIndex].classList.remove("activedot");
     slideIndex = index;
-    slides[slideIndex].classList.add("active");
+    slides[slideIndex].classList.add("index_active");
     dots[slideIndex].classList.add("activedot");
 }
 showSlides();
 function showSlides() {
-    slides[slideIndex].classList.remove("active");
+    slides[slideIndex].classList.remove("index_active");
     dots[slideIndex].classList.remove("activedot");
     slideIndex++;
     if (slideIndex > slides.length - 1) {
         slideIndex = 0;
     }
     ;
-    slides[slideIndex].classList.add("active");
+    slides[slideIndex].classList.add("index_active");
     dots[slideIndex].classList.add("activedot");
     setTimeout(showSlides, timeout); // Change image every 2 seconds
 }
