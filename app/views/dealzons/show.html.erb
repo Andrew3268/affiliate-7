@@ -23,15 +23,9 @@
           <img src="<%= @dealzon.am_image %>">
 
           <% if can? :update, @dealzon %>
-            <div class="footer-social-icons">
-              <ul class="social-icons">
-                <a class="social-icon" id="shareFB" href="https://www.facebook.com/sharer/sharer.php?u=<%= url_for([@dealzon, { 
-                   only_path: false }]) %>&t=<%= @dealzon.am_title %>"
-                   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"   target="_blank" title="Share on Facebook"><li><i class="sharebg fa fa-facebook"></i><span class="sns_span_f">Share on Facebook</span></a></li></a>
-                  <script type="text/javascript">document.getElementById("shareFB").setAttribute("href", "https://www.facebook.com/sharer/sharer.php?u=" + document.URL);
-                  </script>   
-              </ul>
-            </div>
+           <div class="sns_sharing">
+            <div class="sharethis-inline-share-buttons"></div>
+           </div>
           <% end %>
 
         </div>
