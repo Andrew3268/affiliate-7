@@ -84,66 +84,6 @@
   }
 }
 
-/* ---------------------------------------------
-   Social share button
- --------------------------------------------- */
-.footer-social-icons {
-    width: 350px;
-    display:block;
-    margin-bottom: -2em;
-}
-.social-icon {
-    color: #fff;
-}
-ul.social-icons {
-    margin-top: 10px;
-}
-.social-icons li {
-    vertical-align: top;
-    display: inline;
-    height: 100px;
-}
-.social-icons a {
-    color: #fff;
-    text-decoration: none;
-}
-.fa-facebook {
-    padding:10px 14px;
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition: .5s;
-    
-}
-.sharebg {
-  background-color: #322f30;
-}
-.fa-facebook:hover {
-    background-color: #3d5b99;
-}
-.fa-twitter {
-    padding:10px 12px;
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition: .5s;
-}
-.fa-twitter:hover {
-    background-color: #00aced;
-}
-.sns_span_f {
-  margin-right: -8.75em;
-}
-.sns_span_t {
-  margin-right: -7.5em;
-}
-
-.sns_sharing {
-  text-align: center;
-}
-
 
 /* ---------------------------------------------
    On Old verson's webpage
