@@ -33,10 +33,13 @@ Rails.application.routes.draw do
   resources :bcategories
   # root 'bcategories#index'
 
-  
-  # get '/bridges/aboutUs', to: 'bridges#aboutUs', as: 'aboutUs'
   get '/search/discountCode', to: 'search#discountCode', as: 'discountCode'
   get '/search/quicksearch', to: 'search#quicksearch', as: 'quicksearch'
+
+  #For Black Friday
+  get '/bridges/blackfriday', to: 'bridges#blackfriday', as: 'blackfriday'
+  get '/bridges/blackfriday_01', to: 'bridges#blackfriday_01', as: 'blackfriday_01'
+  
 
 
   # get 'home/index'

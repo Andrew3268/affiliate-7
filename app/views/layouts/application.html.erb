@@ -29,13 +29,15 @@
 
 </head>
 
-<body class="is-preload">
+<body class="is-preload" onload="myFunction()">
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
   <%= yield %>
   <%= javascript_include_tag 'application' %>
+  <!-- for Isotope -->
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 
   <!-- VigLink Begin -->
   <script type="text/javascript">
@@ -50,8 +52,6 @@
     }(document, 'script'));
   </script>
   <!-- VigLink End -->
-
-
 
 </body>
   <%= render 'shared/javascript.js' %>
