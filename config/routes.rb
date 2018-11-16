@@ -38,7 +38,7 @@ Rails.application.routes.draw do
 
   #For Black Friday
   get '/bridges/blackfriday', to: 'bridges#blackfriday', as: 'blackfriday'
-  get '/bridges/blackfriday_01', to: 'bridges#blackfriday_01', as: 'blackfriday_01'
+
   
 
 

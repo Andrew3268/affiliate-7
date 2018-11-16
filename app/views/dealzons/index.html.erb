@@ -132,7 +132,7 @@
                  <div class="card--category category_purple"><%= deal.acategory.name %></div>
                  <% if deal.am_expire.present? %>
                   <div class="somthing_hidden"><%= deal.am_expire %></div>
-                  <div class="category_sale_expired">This promotion has expired.</div>
+                  <div class="category_sale_expired">Sorry. this promotion has expired.</div>
                  <% end %>
                 <% end %>
 
@@ -140,7 +140,7 @@
                  <div class="card--category category_blue"><%= deal.acategory.name %></div>
                  <% if deal.am_expire.present? %>
                   <div class="somthing_hidden"><%= deal.am_expire %></div>
-                  <div class="category_sale_expired">This code has expired.</div>
+                  <div class="category_sale_expired">Sorry, this code has expired.</div>
                  <% else %>
                   <div class="category_sale"> you can save <span class="code_index">more <%= deal.am_price_sale %>% off</span></div>
                  <% end %>

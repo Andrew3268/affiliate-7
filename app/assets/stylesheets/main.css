@@ -1665,9 +1665,11 @@ input, select, textarea {
     }
   input[type="checkbox"] + label:before {
     border-radius: 0;
+    visibility:hidden;
   }
   input[type="radio"] + label:before {
     border-radius: 100%;
+    visibility:hidden;
   }
   ::-webkit-input-placeholder {
     opacity: 1.0;

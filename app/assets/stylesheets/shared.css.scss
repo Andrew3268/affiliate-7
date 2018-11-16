@@ -1,6 +1,5 @@
-
 /* ---------------------------------------------
-   index auto slider
+   index auto slider on Dealzon
  --------------------------------------------- */
 .slide {
   display: none;
@@ -83,7 +82,6 @@
     margin-right : 0em;
   }
 }
-
 
 /* ---------------------------------------------
    On Old verson's webpage
@@ -638,7 +636,179 @@ ul.accordian li {
 }
 
 
+/* ---------------------------------------------
+   For Black Friday 2018
+ --------------------------------------------- */
 
+.BF_header-section {
+  width: 98%;
+  height: 50px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 1280px) {
+  .BF_header-section {
+    width: 1001px;
+  }
+}
+.BF_class-for {
+  text-align: left;
+  font-size: 1.5em;
+  color: #666;
+  font-weight: 400;
+  height: 100%;
+  width: 65%;
+  padding: 12px 0 0 0;
+  margin: 0;
+  float: left;
+}
+
+@media screen and (max-width: 768px) {
+  .BF_class-for {
+    font-size: 1.2em;
+    padding: 18px 0 0 0;
+  }
+}
+@media screen and (max-width: 414px) {
+  .BF_class-for {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 320px) {
+  .BF_class-for {
+    width: 55%;
+  }
+}
+.BF_more-btn {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  z-index: 999;
+  top: 0;
+  right: 1px;
+  margin-top: 12px;
+}
+
+.BF_grid-section {
+  width: 80%;
+  height: auto;
+  /* text-align: center; */
+  position: relative;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1280px) {
+  .BF_grid-section {
+    width: 1010px;
+  }
+}
+@media screen and (max-width: 853px) {
+  .BF_grid-section {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .BF_grid-section {
+    width: 100%;
+  }
+}
+/* Blog Card */
+.BF_blog-card {
+  width: calc(96.5% / 4);
+  height: 210px;
+  background: #fff;
+  display: inline-block;
+  margin: 4px 2px;
+  vertical-align: top;
+  cursor: pointer;
+}
+.BF_blog-card:hover {
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.1);
+}
+.BF_blog-card__image {
+  width: 100%;
+  height: 150px;
+  margin: 0;
+}
+.BF_blog-card__image img {
+  width: 100%;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 1275px) {
+  .BF_blog-card {
+    width: calc(95% / 4);
+  }
+}
+@media screen and (max-width: 768px) {
+  .BF_blog-card {
+    width: calc(96% / 3);
+  }
+}
+@media screen and (max-width: 533px) {
+  .BF_blog-card {
+    width: calc(96% / 2);
+  }
+}
+@media screen and (max-width: 360px) {
+  .BF_blog-card {
+    width: 98%;
+  }
+}
+.BF_blog-card__title {
+  width: 100%;
+  height: 40px;
+}
+.BF_blog-card__title p {
+  margin: 8px 5px;
+  text-align: left;
+  color: #9C9C9C;
+  font-size: 0.82em;
+  font-weight: 600;
+}
+.BF_blog-card hr {
+  width: 95%;
+  border-top: 1px solid #EDEDED;
+  margin-top: 20px;
+}
+.BF_blog-card__details {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  margin-top: 12px;
+  bottom: 0;
+  padding: 0 5px;
+  display: block;
+}
+.BF_blog-card__details--time, .BF_blog-card__details--view, .BF_blog-card__details--like {
+  float: left;
+  font-size: 0.75em;
+  margin-top: 11px;
+  color: #C0C0C0;
+}
+.BF_blog-card__details--view {
+  float: right;
+}
+.BF_blog-card__details--like {
+  float: right;
+  margin-left: 9px;
+}
+.BF_blog-card__details--like i:hover {
+  color: #1382C1;
+}
+
+.BF_container .BF_banner {
+  width: 100%;
+}
+
+.BF_container .BF_banner img {
+  width: 100%;
+}
 
 
 

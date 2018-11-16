@@ -7,12 +7,12 @@
   <section class="main">
     
     <section>
-      <p class="notice"><I>Our website contains affiliate link which means that if you click on one of the product links and buy we’ll receive a small commission. This help supports us and allows us to continue to keep finding and sharing good deals.</I></p>
 
       <div class="header_blog_show">
         <h1><%= @blog.blog_title %></h1>
         <p><%= @blog.blog_intro %></p>
         <img src="<%= @blog.blog_image %>">
+        <p class="notice"><I>Our website contains affiliate link which means that if you click on one of the product links and buy we’ll receive a small commission. This help supports us and allows us to continue to keep finding and sharing good deals.</I></p>
 
         <% if can? :update, @blog %>
          <div class="sns_sharing">

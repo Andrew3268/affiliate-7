@@ -124,9 +124,11 @@
              <div class="somthing_hidden"><%= @dealzon.am_shipping %></div>
              <p><span class="show_bold">Shipping is free</span> ( Prime or $25+ of all other eligible items.)<br/><a href="/blogs/1"><span class="wia">What is Amazon Prime?</span></a></p>
             <% end %>
+
             <!-- related product banner on Amazon -->
             <div id="amzn-assoc-ad-f4a85a11-65b9-4b4e-972c-2ef22eaa4389"></div>
             <script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=f4a85a11-65b9-4b4e-972c-2ef22eaa4389"></script>
+            
           <% else %>
             <% if @dealzon.acategory_id == 1 %>              
             <% else %>
