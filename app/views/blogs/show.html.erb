@@ -19,16 +19,18 @@
            <div class="sharethis-inline-share-buttons"></div>
          </div>
         <% end %>
+
+        <% if can? :update, @blog %>
+          <%= link_to "Home", blogs_path %>
+          <%= link_to "Edit", edit_blog_path(@blog) %>
+          <%= link_to "Delete", blog_path(@blog), method: :delete, data: {confirm: "Are you sure?"} %>
+        <% end %>
         
       </div>
       <div class="ckeditor_blog_show">
         <%= raw @blog.blog_ckeditor %>
       </div>
-      
-      <%= link_to "Home", blogs_path %>
-      <%= link_to "Edit", edit_blog_path(@blog) %>
-      <%= link_to "Delete", blog_path(@blog), method: :delete, data: {confirm: "Are you sure?"} %>
-      
+
     </section>
  
   </section>
