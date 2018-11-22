@@ -38,6 +38,11 @@
   <%= javascript_include_tag 'application' %>
   <!-- for Isotope -->
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script src="/js/index.js"></script>
+  <%= render 'events/event.js' %>
 
   <!-- VigLink Begin -->
   <script type="text/javascript">
@@ -56,4 +61,5 @@
 </body>
   <%= render 'shared/javascript.js' %>
   <%= render 'posts/post.js' %>
+  
 </html>
