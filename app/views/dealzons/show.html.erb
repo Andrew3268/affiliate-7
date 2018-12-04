@@ -165,7 +165,19 @@
 
           <p class="notice"><I>Our website contains affiliate link which means that if you click on one of the product links and buy we’ll receive a small commission. This help supports us and allows us to continue to keep finding and sharing good deals.</I></p>
 <!-- Content End -->
-          <%= @dealzon.acategory.name %>
+          
+          <% if @dealzon.acategory_id == 1 %>
+          <span class="category_color_01"><%= @dealzon.acategory.name %></span>
+          <% end %>
+          <% if @dealzon.acategory_id == 2 %>
+          <span class="category_color_02"><%= @dealzon.acategory.name %></span>
+          <% end %>
+          <% if @dealzon.acategory_id == 3 %>
+          <span class="category_color_03"><%= @dealzon.acategory.name %></span>
+          <% end %>
+          <% if @dealzon.acategory_id == 4 %>
+          <span class="category_color_04"><%= @dealzon.acategory.name %></span>
+          <% end %>
           
           <% if can? :update, @dealzon %>
             <div class="admin">

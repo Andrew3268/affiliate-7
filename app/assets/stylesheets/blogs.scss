@@ -2,6 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+/* ---------------------------------------------
+   SideBar
+ --------------------------------------------- */
+.blog_content {
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -moz-line-clamp: 5; 
+  -webkit-line-clamp: 5; /* number of line */ 
+  -ms-line-clamp: 5;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  word-wrap:break-word;
+}
+
 /* ---------------------------------------------
    Index Page
  --------------------------------------------- */
