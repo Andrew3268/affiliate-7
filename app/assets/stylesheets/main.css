@@ -3074,6 +3074,10 @@ input, select, textarea {
           #header > nav > ul > li:last-child a {
             margin-right: 0 !important;
           }
+
+      #header .header_wrap{
+        width:84em;
+      }
       .dropotron {
         background-color: #fff;
         border-radius: 0.5em;
