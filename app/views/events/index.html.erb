@@ -1,29 +1,42 @@
+<header id="header">
+  <%= render 'dealzons/navbar' %> 
+</header>
 
-  <div class="isotope_main">
-    
-    <%= render 'events/side' %>
+<!-- Wrapper -->
+<div class="wrapper">
 
-    <section id="items">
-      <div class="filter-info">
-        <div id="filter-display-container">
-          <p id="category-filter-display"></p>
-          <p id="color-filter-display"></p>
-        </div>
-        <div id="filter-count-container">
-          <p id="initial-filter-count"></p>
-          <p id="updated-filter-count"></p>
-        </div>
-      </div>
-      <div id="no-items-container">
-        <p id="no-items-text">No items matched this filter. Please try another.</p>
-      </div>
+
+<!-- Main -->
+  <section class="main clearfix">
+
+    <div class="isotope_main clearfix">
       
+      <%= render 'events/side' %>
+
+      <section id="items">
+        <div class="filter-info">
+          <div id="filter-display-container">
+            <p id="category-filter-display"></p>
+            <p id="color-filter-display"></p>
+          </div>
+          <div id="filter-count-container">
+            <p id="initial-filter-count"></p>
+            <p id="updated-filter-count"></p>
+          </div>
+        </div>
+        <div id="no-items-container">
+          <p id="no-items-text">No items matched this filter. Please try another.</p>
+        </div>
+        
+        
+      <%= render 'events/content' %>
+      </section>
       
-    <%= render 'events/content' %>
-    </section>
+    </div>
+
+  </section>
+</div>
     
-  </div>
-  
   <!--<footer>-->
   <!--  <i id="back-to-top-btn" class="fas fa-angle-up" aria-hidden="true"></i>-->
     

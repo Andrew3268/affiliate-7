@@ -3,21 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .isotope_main {
-  margin: 0 30px 80px 30px;
+  // margin: 0 30px 80px 30px;
   display: flex;
   background-color: white important;
   flex-direction: row;
   justify-content: space-between;
 }
 .isotope_main #filter {
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-bottom: 150px;
-  padding-left: 30px;
+  //padding-top: 50px;
+  //padding-right: 30px;
+  //padding-bottom: 150px;
+  //padding-left: 30px;
   background: white;
   width: 20%;
   height: 100%;
-  position: fixed;
+  //position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -191,7 +191,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
+  //margin-bottom: 50px;
   color: #777777;
   cursor: pointer;
   overflow: hidden;
@@ -203,7 +203,8 @@
 .isotope_main #items .Ch_grid .Ch_grid-item img {
   width: 80%;
   max-width: 440px;
-  height: 20em;
+  //height: 20em;
+  height: 200px;
   object-fit: contain;
 }
 .isotope_main #items .Ch_grid .Ch_grid-item .item-name {
@@ -224,6 +225,7 @@
   letter-spacing: 1px;
   transition: all .2s ease-in-out;
 }
+
 
 /* 
 footer {
@@ -317,10 +319,12 @@ footer #cart {
   }
   .isotope_main #items .Ch_grid .Ch_grid-item img {
       width: 100%;
+      height:150px;
   }
   .isotope_main #items {
       padding-right: 0em;
   }
+  
 }
 
 
