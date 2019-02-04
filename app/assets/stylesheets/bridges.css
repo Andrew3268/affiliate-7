@@ -2,16 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-ot {
-  /* Base font size */
-  font-size: 10px;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 
 .BF_container {
@@ -71,3 +61,21 @@ ot {
     padding: 0em;
   }
 }
+
+
+
+.wrapper .main>.gadget_menu>ul{list-style-type:none;padding:10px 0 0 0;}
+.wrapper .main>.gadget_menu>ul>li{float:left;width:123px;text-align:center;padding:0;}
+.wrapper .main>.gadget_menuul>li>a{display:block;}
+.wrapper .main .gadget_card>ul{}
+.wrapper .main .gadget_card>ul>li{float:left;width:31.33%;margin:0 1%;}
+.wrapper .main .gadget_card>ul>li>.gadget_img{height:270px;border-bottom: 1px solid #ccc;}
+.wrapper .main .gadget_card>ul>li>.gadget_img>img{width:100%;padding:50px 10px;height:300px;object-fit:cover;}
+.wrapper .main .gadget_card>ul>li>p{margin:10px 0 0 0;}
+.wrapper .main .gadget_card>ul>li>em{}
+
+
+
+
+
+

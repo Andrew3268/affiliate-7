@@ -6,17 +6,29 @@
 
         <section class="main">
 
-          <%= render 'posts/banner' %> 
+            <ul>
+              <li><%=link_to "What's New", root_path %></li>
+              <% Category.all.each do |category| %>
+               <li><%= link_to category.name, posts_path(category: category.name) %></li>
+              <% end %>
+            </ul>
+
 
             <section>
               <h2>Awesome Gadgets That Will Blow Your Mind.</h2>
               <p>This is a collection that features all kinds of unique items that really cannot be classified in a single category. All you need to know is in this page, you are going to find a lot of cool & awesome items that you are most definitely going to like and perhaps even get tempted to buy some of them, so hang on tight to your wallet.:D</p>
             </section>
 
+
+
             <div class="index_container">
+              <!--
               <% if can? :update, @post %>
                <h4><%= link_to "Add New Gadgets", new_post_path %></h4>
               <% end %>
+              -->
+
+
               <div class="grid">
 
                 <% @posts.each do |post| %>
@@ -49,10 +61,12 @@
                         </div>
                       <% end %>
                       
+                    <!--
                       <div class="index_button">
                        <a class="button fit" target="_blank" href="<%= post.post_link %>">Check it Out</a>
-                       <!-- <a class="button primary fit" href="posts/<%= post.id %>">See More Detail</a> -->
+                       <a class="button primary fit" href="posts/<%= post.id %>">See More Detail</a>
                       </div>
+                    -->
                     </div>          
                   </div>
                 <% end %>

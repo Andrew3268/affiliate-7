@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'coming_soon/coming_soon'
+
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :users 
@@ -13,7 +15,9 @@ Rails.application.routes.draw do
       get "dislike", to: "posts#downvote"
     end
   end
-  root 'posts#index'
+
+  # root 'posts#index'
+  root 'coming_soon#coming_soon'
 
   resources :dealzons
   # root 'dealzons#index'
@@ -38,6 +42,9 @@ Rails.application.routes.draw do
 
   #For Black Friday
   get '/bridges/blackfriday', to: 'bridges#blackfriday', as: 'blackfriday'
+  get '/bridges/newly', to: 'bridges#newly', as: 'newly'
+
+  
 
   
 

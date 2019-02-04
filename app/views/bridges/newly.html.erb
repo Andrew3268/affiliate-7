@@ -1,0 +1,79 @@
+    <header id="header">
+       <%= render 'posts/navbar' %>
+    </header>
+
+    <div class="wrapper">
+
+        <section class="main clearfix">
+
+          <div class="gadget_menu clearfix">
+            <ul>
+              <li><%=link_to "What's New", root_path %></li>
+              <% Category.all.each do |category| %>
+               <li><%= link_to category.name, posts_path(category: category.name) %></li>
+              <% end %>
+            </ul>
+          </div>
+
+          <div class="gadget_card clearfix">
+            <ul class="actions">
+              <li>
+                <div class="gadget_img">
+                  <img src="https://images-na.ssl-images-amazon.com/images/I/41FO8NZJUML._SL260_.jpg" alt="" />
+                </div>
+                <p>test test</p>
+                <em>$100.00</em>
+              </li>
+
+               <li>
+                <div class="gadget_img">
+                 <img src="https://images-na.ssl-images-amazon.com/images/I/614l20nEhmL._SX679_.jpg" alt="" />
+                </div>
+                <p>test test</p>
+                <em>$100.00</em>
+              </li>
+
+               <li>
+                <div class="gadget_img">
+                  <img src="https://bornrealist.com/wp-content/uploads/2017/09/electronic-gadgets.jpg" alt="" />
+                </div>
+                <p>test test</p>
+                <em>$100.00</em>
+              </li>
+
+              <li>
+                <div class="gadget_img">
+                  <img src="https://images-na.ssl-images-amazon.com/images/I/41FO8NZJUML._SL260_.jpg" alt="" />
+                </div>
+                <p>test test</p>
+                <em>$100.00</em>
+              </li>
+
+               <li>
+                <div class="gadget_img">
+                 <img src="https://images-na.ssl-images-amazon.com/images/I/614l20nEhmL._SX679_.jpg" alt="" />
+                </div>
+                <p>test test</p>
+                <em>$100.00</em>
+              </li>
+
+               <li>
+                <div class="gadget_img">
+                  <img src="https://bornrealist.com/wp-content/uploads/2017/09/electronic-gadgets.jpg" alt="" />
+                </div>
+                <p>test test</p>
+                <em>$100.00</em>
+              </li>
+            </ul>
+          </div>
+
+
+        </section><!-- /.main -->
+
+      <!-- Sidebar -->
+      <%= render 'posts/sidebar' %>
+
+    </div><!-- /.warpper -->
+
+    <!-- Footer -->
+    <%= render 'shared/footer' %>
