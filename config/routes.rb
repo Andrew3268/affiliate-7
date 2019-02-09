@@ -1,48 +1,48 @@
 Rails.application.routes.draw do
 
-  # get 'coming_soon/coming_soon'
+  get 'coming_soon/coming_soon'
 
-  # mount Ckeditor::Engine => '/ckeditor'
+  mount Ckeditor::Engine => '/ckeditor'
 
-  # devise_for :users 
-  # devise_scope :user do  
-   # get '/users/sign_out' => 'devise/sessions#destroy'     
-  # end
+  devise_for :users 
+  devise_scope :user do  
+   get '/users/sign_out' => 'devise/sessions#destroy'     
+  end
 
-  # resources :posts do
-    # member do
-  #     get "like", to: "posts#upvote"
-  #     get "dislike", to: "posts#downvote"
-  #   end
-  # end
+  resources :posts do
+    member do
+      get "like", to: "posts#upvote"
+      get "dislike", to: "posts#downvote"
+    end
+  end
 
   # root 'posts#index'
   root 'coming_soon#coming_soon'
 
-  # resources :dealzons
+  resources :dealzons
   # root 'dealzons#index'
 
-  # resources :events
+  resources :events
   # root 'events#index'
 
-  # resources :blogs
-  # # root 'blogs#index'
+  resources :blogs
+  # root 'blogs#index'
 
-  # resources :categories
-  # # root 'categories#index'
-  # resources :acategories
-  # # root 'acategories#index'
-  # resources :ecategories
-  # # root 'ecategories#index'
-  # resources :bcategories
-  # # root 'bcategories#index'
+  resources :categories
+  # root 'categories#index'
+  resources :acategories
+  # root 'acategories#index'
+  resources :ecategories
+  # root 'ecategories#index'
+  resources :bcategories
+  # root 'bcategories#index'
 
-  # get '/search/discountCode', to: 'search#discountCode', as: 'discountCode'
-  # get '/search/quicksearch', to: 'search#quicksearch', as: 'quicksearch'
+  get '/search/discountCode', to: 'search#discountCode', as: 'discountCode'
+  get '/search/quicksearch', to: 'search#quicksearch', as: 'quicksearch'
 
-  # #For Black Friday
-  # get '/bridges/blackfriday', to: 'bridges#blackfriday', as: 'blackfriday'
-  # get '/bridges/newly', to: 'bridges#newly', as: 'newly'
+  #For Black Friday
+  get '/bridges/blackfriday', to: 'bridges#blackfriday', as: 'blackfriday'
+  get '/bridges/newly', to: 'bridges#newly', as: 'newly'
 
   
 

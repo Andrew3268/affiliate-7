@@ -1,226 +1,226 @@
-<header id="header">
-  <%= render 'dealzons/navbar' %> 
-</header>
+<div class="none">
+  <header id="header">
+    <%= render 'dealzons/navbar' %> 
+  </header>
 
-<div class="index_header">
- <h1>All about the Amazon Shopping</h1>
-</div>
-
-<div class="slider-container">
-  <ul class="slider">
-
-    <li class="slide index_active">
-      <div class="slide-photo-box">
-       <img src="https://i-h2.pinimg.com/564x/39/fa/ac/39faac7bfd546cea05274125fc7fb8a6.jpg" alt="deals&promotions">
-      </div>
-      <div class="slide-text">
-        <h1>Amazon Deals & Promotions 2018</h1>
-        <p class="article">
-          Browse the Amazon deals of the day to save as much as 70% on electronics and more.<br/>
-          You can purchase items featured in different Today's Deals sections on the same day
-        </p>
-        <a class="button large" target="_blank" href="https://amzn.to/2T2tMVA">Learn More</a>
-      </div>
-    </li>
-    
-   <!--  <li class="slide">
-      <div class="slide-photo-box">
-       <img src="https://i-h2.pinimg.com/564x/62/15/4c/62154c9629abd7ccd4f6e07d006afa75.jpg"/>
-      </div>
-      <div class="slide-text">
-        <h1>Offer Title</h1>
-        <p class="article">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed dolor at
-          magna tempus facilisis. Vivamus auctor accumsan diam a tincidunt. Mauris
-          imperdiet molestie diam condimentum aliquet. Pellentesque lectus sem.
-        </p>
-        <button>button</button>
-      </div>
-    </li>
-
-    <li class="slide">
-      <div class="slide-photo-box">
-       <img src="https://i-h2.pinimg.com/564x/95/5a/8b/955a8b7610de23eb0ea48b5e839be18b.jpg"/>
-      </div>
-      <div class="slide-text">
-        <h1>Offer Title</h1>
-        <p class="article">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed dolor at
-          magna tempus facilisis. Vivamus auctor accumsan diam a tincidunt. Mauris
-          imperdiet molestie diam condimentum aliquet. Pellentesque lectus sem.
-        </p>
-        <button>button</button>
-      </div>
-    </li>
-    <li class="slide">
-      <div class="slide-photo-box">
-       <img src="https://i-h2.pinimg.com/564x/95/5a/8b/955a8b7610de23eb0ea48b5e839be18b.jpg"/>
-      </div>
-      <div class="slide-text">
-        <h1>Offer Title</h1>
-        <p class="article">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed dolor at
-          magna tempus facilisis. Vivamus auctor accumsan diam a tincidunt. Mauris
-          imperdiet molestie diam condimentum aliquet. Pellentesque lectus sem.
-        </p>
-        <button>button</button>
-      </div>
-    </li>
-    
-  </ul> -->
-  <div class="dots">
-   <span class="dot activedot" onclick="getSlide(0)"></span>
-   <!-- <span class="dot" onclick="getSlide(1)"></span> -->
-   <!-- <span class="dot" onclick="getSlide(2)"></span>
-   <span class="dot" onclick="getSlide(3)"></span> -->
+  <div class="index_header">
+   <h1>All about the Amazon Shopping</h1>
   </div>
-</div>
 
+  <div class="slider-container">
+    <ul class="slider">
 
-<!-- Wrapper -->
-<div class="wrapper">
+      <li class="slide index_active">
+        <div class="slide-photo-box">
+         <img src="https://i-h2.pinimg.com/564x/39/fa/ac/39faac7bfd546cea05274125fc7fb8a6.jpg" alt="deals&promotions">
+        </div>
+        <div class="slide-text">
+          <h1>Amazon Deals & Promotions 2018</h1>
+          <p class="article">
+            Browse the Amazon deals of the day to save as much as 70% on electronics and more.<br/>
+            You can purchase items featured in different Today's Deals sections on the same day
+          </p>
+          <a class="button large" target="_blank" href="https://amzn.to/2T2tMVA">Learn More</a>
+        </div>
+      </li>
+      
+     <!--  <li class="slide">
+        <div class="slide-photo-box">
+         <img src="https://i-h2.pinimg.com/564x/62/15/4c/62154c9629abd7ccd4f6e07d006afa75.jpg"/>
+        </div>
+        <div class="slide-text">
+          <h1>Offer Title</h1>
+          <p class="article">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed dolor at
+            magna tempus facilisis. Vivamus auctor accumsan diam a tincidunt. Mauris
+            imperdiet molestie diam condimentum aliquet. Pellentesque lectus sem.
+          </p>
+          <button>button</button>
+        </div>
+      </li>
 
-
-<!-- Main -->
-  <section class="main">
-    
-    <div class="dealzon_nav">
-      <a href="#" class="menu-trigger">Category</a>
-      <ul>
-        <li><%= link_to "All Offer", dealzons_path %></li>
-        <% Acategory.all.each do |acategory| %>
-          <li><%= link_to acategory.name, dealzons_path(acategory: acategory.name) %></li>
-        <% end %>
-        <% if can? :update, @dealzon %>
-         <li><%= link_to "Add New Inspiration", new_dealzon_path %></li>
-        <% end %>
-      </ul>
+      <li class="slide">
+        <div class="slide-photo-box">
+         <img src="https://i-h2.pinimg.com/564x/95/5a/8b/955a8b7610de23eb0ea48b5e839be18b.jpg"/>
+        </div>
+        <div class="slide-text">
+          <h1>Offer Title</h1>
+          <p class="article">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed dolor at
+            magna tempus facilisis. Vivamus auctor accumsan diam a tincidunt. Mauris
+            imperdiet molestie diam condimentum aliquet. Pellentesque lectus sem.
+          </p>
+          <button>button</button>
+        </div>
+      </li>
+      <li class="slide">
+        <div class="slide-photo-box">
+         <img src="https://i-h2.pinimg.com/564x/95/5a/8b/955a8b7610de23eb0ea48b5e839be18b.jpg"/>
+        </div>
+        <div class="slide-text">
+          <h1>Offer Title</h1>
+          <p class="article">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed dolor at
+            magna tempus facilisis. Vivamus auctor accumsan diam a tincidunt. Mauris
+            imperdiet molestie diam condimentum aliquet. Pellentesque lectus sem.
+          </p>
+          <button>button</button>
+        </div>
+      </li>
+      
+    </ul> -->
+    <div class="dots">
+     <span class="dot activedot" onclick="getSlide(0)"></span>
+     <!-- <span class="dot" onclick="getSlide(1)"></span> -->
+     <!-- <span class="dot" onclick="getSlide(2)"></span>
+     <span class="dot" onclick="getSlide(3)"></span> -->
     </div>
-
-    <div class="index_container">
-      <div class="grid">
-
-        <% @dealzons.each do |deal| %>
-          <div class="card">
-            <div class="card--image">
-              <%= link_to (image_tag deal.am_image), deal %>
-            </div>
-            <div class="card--content">
-
-              <div class="index_category">
-                <% if deal.acategory_id == 1 %> 
-                 <div class="card--category category_red"><%= deal.acategory.name %></div>
-                <% end %>
-
-                <% if deal.acategory_id == 2 %> 
-                 <div class="card--category category_green"><%= deal.acategory.name %></div>
-                 <div class="category_sale"> you can save <span class="deal_index"><%= deal.am_price_sale %>% off</span></div>
-                <% end %>
-
-                <% if deal.acategory_id == 3 %> 
-                 <div class="card--category category_purple"><%= deal.acategory.name %></div>
-                 <% if deal.am_expire.present? %>
-                  <div class="somthing_hidden"><%= deal.am_expire %></div>
-                  <div class="category_sale_expired">Sorry. this promotion has expired.</div>
-                 <% end %>
-                <% end %>
-
-                <% if deal.acategory_id == 4 %> 
-                 <div class="card--category category_blue"><%= deal.acategory.name %></div>
-                 <% if deal.am_expire.present? %>
-                  <div class="somthing_hidden"><%= deal.am_expire %></div>
-                  <div class="category_sale_expired">Sorry, this code has expired.</div>
-                 <% else %>
-                  <div class="category_sale"> you can save <span class="code_index">more <%= deal.am_price_sale %>% off</span></div>
-                 <% end %>
-                <% end %>
-
-              </div>
-
-              <p><%= deal.am_title %></p>
+  </div>
 
 
-              <ul>
-                <% if deal.acategory_id == 1 %> 
-                 <li><%= deal.am_price_sale %>% Off</li>
-                <% end %>
-
-                <% if deal.acategory_id == 2 %> 
-                 <li>$<%= deal.am_price_is %></li>
-                 <li>$<%= deal.am_price_was %></li>
-                <% end %>
-     
-                <% if deal.acategory_id == 3 %>
-                 <% if deal.am_price_is.present? %>
-                  <li>$<%= deal.am_price_is %></li>
-                  <li>$<%= deal.am_price_was %></li>
-                 <% else %>
-                  <li class="price_hidden">hidden</li>
-                 <% end %>
-                <% end %> 
-
-                <% if deal.acategory_id == 4 %>   
-                 <li>$<%= deal.am_price_is %></li>             
-                <% end %>
-              </ul>
-
-              
-              <div class="index_button">
-              <a class="button fit" href="dealzons/<%= deal.id %>">See More Detail</a>
-              </div>  
-
-              <% if can? :update, deal %>
-              <div class="admin_index">
-                <%= link_to "Edit", edit_dealzon_path(deal) %>
-                <%= link_to "Delete", dealzon_path(deal), method: :delete, data: {confirm: "Are you sure?"}%>
-                <%= "#{deal.unique_impression_count}" %> views
-              </div>
-              <p class="code_date_index"><%= deal.am_date %></p>
-            <% end %>
-            </div> 
-          </div>
-        <% end %>
-
-      </div><br/>
-      <%= paginate @dealzons %>
-    </div>
-  </section>
+  <!-- Wrapper -->
+  <div class="wrapper">
 
 
-
-
-  <!-- Sidebar -->
-  <%= render "dealzons/sidebar_index" %>
-
-</div>
-
-<!-- <div class="wrapper">
- <section class="main">
-
-  <div class="dis_slider-wrapper">
-   <div class="dis_slider">
-
-     <div class="dis_slider--content">
-      <a target="_blank" href="https://amzn.to/2MKVmXW"><img src="https://images-na.ssl-images-amazon.com/images/I/81%2BNJiYvnQL._SL1500_.jpg" title="Fryer" alt="Fryer">
-       <p>Big Boss Oil Less Fryer, Graphite</p>
-      </a>
-      <div class="dis_daily">
-       <p>$67.99</p>
+  <!-- Main -->
+    <section class="main">
+      
+      <div class="dealzon_nav">
+        <a href="#" class="menu-trigger">Category</a>
+        <ul>
+          <li><%= link_to "All Offer", dealzons_path %></li>
+          <% Acategory.all.each do |acategory| %>
+            <li><%= link_to acategory.name, dealzons_path(acategory: acategory.name) %></li>
+          <% end %>
+          <% if can? :update, @dealzon %>
+           <li><%= link_to "Add New Inspiration", new_dealzon_path %></li>
+          <% end %>
+        </ul>
       </div>
-      <ul>
-        <li>$99.99</li> |
-        <li>32% off</li>
-      </ul>
-     </div>
- 
- </section>
+
+      <div class="index_container">
+        <div class="grid">
+
+          <% @dealzons.each do |deal| %>
+            <div class="card">
+              <div class="card--image">
+                <%= link_to (image_tag deal.am_image), deal %>
+              </div>
+              <div class="card--content">
+
+                <div class="index_category">
+                  <% if deal.acategory_id == 1 %> 
+                   <div class="card--category category_red"><%= deal.acategory.name %></div>
+                  <% end %>
+
+                  <% if deal.acategory_id == 2 %> 
+                   <div class="card--category category_green"><%= deal.acategory.name %></div>
+                   <div class="category_sale"> you can save <span class="deal_index"><%= deal.am_price_sale %>% off</span></div>
+                  <% end %>
+
+                  <% if deal.acategory_id == 3 %> 
+                   <div class="card--category category_purple"><%= deal.acategory.name %></div>
+                   <% if deal.am_expire.present? %>
+                    <div class="somthing_hidden"><%= deal.am_expire %></div>
+                    <div class="category_sale_expired">Sorry. this promotion has expired.</div>
+                   <% end %>
+                  <% end %>
+
+                  <% if deal.acategory_id == 4 %> 
+                   <div class="card--category category_blue"><%= deal.acategory.name %></div>
+                   <% if deal.am_expire.present? %>
+                    <div class="somthing_hidden"><%= deal.am_expire %></div>
+                    <div class="category_sale_expired">Sorry, this code has expired.</div>
+                   <% else %>
+                    <div class="category_sale"> you can save <span class="code_index">more <%= deal.am_price_sale %>% off</span></div>
+                   <% end %>
+                  <% end %>
+
+                </div>
+
+                <p><%= deal.am_title %></p>
+
+
+                <ul>
+                  <% if deal.acategory_id == 1 %> 
+                   <li><%= deal.am_price_sale %>% Off</li>
+                  <% end %>
+
+                  <% if deal.acategory_id == 2 %> 
+                   <li>$<%= deal.am_price_is %></li>
+                   <li>$<%= deal.am_price_was %></li>
+                  <% end %>
+       
+                  <% if deal.acategory_id == 3 %>
+                   <% if deal.am_price_is.present? %>
+                    <li>$<%= deal.am_price_is %></li>
+                    <li>$<%= deal.am_price_was %></li>
+                   <% else %>
+                    <li class="price_hidden">hidden</li>
+                   <% end %>
+                  <% end %> 
+
+                  <% if deal.acategory_id == 4 %>   
+                   <li>$<%= deal.am_price_is %></li>             
+                  <% end %>
+                </ul>
+
+                
+                <div class="index_button">
+                <a class="button fit" href="dealzons/<%= deal.id %>">See More Detail</a>
+                </div>  
+
+                <% if can? :update, deal %>
+                <div class="admin_index">
+                  <%= link_to "Edit", edit_dealzon_path(deal) %>
+                  <%= link_to "Delete", dealzon_path(deal), method: :delete, data: {confirm: "Are you sure?"}%>
+                  <%= "#{deal.unique_impression_count}" %> views
+                </div>
+                <p class="code_date_index"><%= deal.am_date %></p>
+              <% end %>
+              </div> 
+            </div>
+          <% end %>
+
+        </div><br/>
+        <%= paginate @dealzons %>
+      </div>
+    </section>
+
+
+
+
+    <!-- Sidebar -->
+    <%= render "dealzons/sidebar_index" %>
+
+  </div>
+
+  <!-- <div class="wrapper">
+   <section class="main">
+
+    <div class="dis_slider-wrapper">
+     <div class="dis_slider">
+
+       <div class="dis_slider--content">
+        <a target="_blank" href="https://amzn.to/2MKVmXW"><img src="https://images-na.ssl-images-amazon.com/images/I/81%2BNJiYvnQL._SL1500_.jpg" title="Fryer" alt="Fryer">
+         <p>Big Boss Oil Less Fryer, Graphite</p>
+        </a>
+        <div class="dis_daily">
+         <p>$67.99</p>
+        </div>
+        <ul>
+          <li>$99.99</li> |
+          <li>32% off</li>
+        </ul>
+       </div>
+   
+   </section>
+  </div>
+   -->
+  <!-- Footer -->
+  <%= render "shared/footer" %>
+  <!-- Javascript -->
+  <%= render "dealzon.js" %>
 </div>
- -->
-<!-- Footer -->
-<%= render "shared/footer" %>
-<!-- Javascript -->
-<%= render "dealzon.js" %>
-
-
 
 
