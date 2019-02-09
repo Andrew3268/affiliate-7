@@ -1,47 +1,53 @@
-<header id="header">
-  <%= render 'posts/navbar' %> 
-</header>
-
-<div class="wrapper">
-
-  <section class="main">
-
-    <% @blogs.each do |blog| %>
-     <div class="blog-card">
-      <div class="meta">
-        <div class="photo" style="background-image: url(<%= blog.blog_image %>)"></div>
-        <ul class="details">
-          <li class="author"><a href="#">Oh,i gott buy this</a></li>
-          <li class="date"><%= blog.blog_date %></li>
-          <% if can? :update, blog %>
-           <li class="tags">
-             <ul>
-              <li><%= link_to "Edit", edit_blog_path(blog) %></li>
-              <li><%= link_to "Delete", blog_path(blog), method: :delete, data: {confirm: "Are you sure?"} %></li>
-              <li><%= "#{blog.unique_impression_count}" %> views</li>
-             </ul>
-           </li>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-      <div class="description">
-        <h1 class="blog_title"><%= blog.blog_title %></h1>
-        <!-- <h2>Opening a door to the future</h2> -->
-        <p><%= blog.blog_intro %></p>
-        <p class="read-more"><a href="/blogs/<%= blog.id %>">Read More</a></p>
-      </div>
-     </div>
-    <% end %>
-
-   <%= paginate @blogs %>
-
-  </section>
-
-  <!-- Sidebar -->
-  <%= render "blogs/sidebar_index" %>
-
+<div class="soon_wraper">
+    <h1>coming soon</h1>
 </div>
 
-<!-- Footer -->
-<%= render "shared/footer" %>
+<div class="none">
+  <header id="header">
+    <%= render 'posts/navbar' %> 
+  </header>
+
+  <div class="wrapper">
+
+    <section class="main">
+
+      <% @blogs.each do |blog| %>
+       <div class="blog-card">
+        <div class="meta">
+          <div class="photo" style="background-image: url(<%= blog.blog_image %>)"></div>
+          <ul class="details">
+            <li class="author"><a href="#">Oh,i gott buy this</a></li>
+            <li class="date"><%= blog.blog_date %></li>
+            <% if can? :update, blog %>
+             <li class="tags">
+               <ul>
+                <li><%= link_to "Edit", edit_blog_path(blog) %></li>
+                <li><%= link_to "Delete", blog_path(blog), method: :delete, data: {confirm: "Are you sure?"} %></li>
+                <li><%= "#{blog.unique_impression_count}" %> views</li>
+               </ul>
+             </li>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="description">
+          <h1 class="blog_title"><%= blog.blog_title %></h1>
+          <!-- <h2>Opening a door to the future</h2> -->
+          <p><%= blog.blog_intro %></p>
+          <p class="read-more"><a href="/blogs/<%= blog.id %>">Read More</a></p>
+        </div>
+       </div>
+      <% end %>
+
+     <%= paginate @blogs %>
+
+    </section>
+
+    <!-- Sidebar -->
+    <%= render "blogs/sidebar_index" %>
+
+  </div>
+
+  <!-- Footer -->
+  <%= render "shared/footer" %>
+</div>
