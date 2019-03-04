@@ -16,14 +16,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :gadgets
+  root 'gadgets#index'
+
   # root 'posts#index'
-  root 'coming_soon#coming_soon'
+  # root 'coming_soon#coming_soon'
 
   resources :dealzons
   # root 'dealzons#index'
-
-  resources :events
-  # root 'events#index'
 
   resources :blogs
   # root 'blogs#index'

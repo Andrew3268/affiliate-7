@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :dealzons
-  has_many :events
   has_many :blogs
+  has_many :gadgets
   has_many :categories
   has_many :acategories
   has_many :ecategories

@@ -1,0 +1,7 @@
+<p>This is Gadgets Index Page</p>
+
+<% @gadgets.each do |gadget| %>
+  <h2><%= link_to gadget.title, gadget %></h2>
+<% end %>
+
+<%= link_to "New Gadgets", new_gadget_path %>

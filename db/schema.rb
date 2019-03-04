@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181012045316) do
+ActiveRecord::Schema.define(version: 20181009113528) do
 
   create_table "acategories", force: :cascade do |t|
     t.string   "name"
@@ -19,28 +19,6 @@ ActiveRecord::Schema.define(version: 20181012045316) do
     t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-  end
-
-  create_table "bcategories", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "bcategory_id"
-    t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "blogs", force: :cascade do |t|
-    t.string   "blog_title"
-    t.string   "blog_writer"
-    t.string   "blog_date"
-    t.text     "blog_intro"
-    t.string   "blog_image"
-    t.text     "blog_ckeditor"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.integer  "user_id"
-    t.integer  "bcategory_id"
-    t.integer  "impressions_count"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -107,65 +85,6 @@ ActiveRecord::Schema.define(version: 20181012045316) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "user_id"
-    t.integer  "impressions_count"
-    t.integer  "acategory_id"
-  end
-
-  create_table "ecategories", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "ecategory_id"
-    t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "events", force: :cascade do |t|
-    t.string   "eb_title"
-    t.text     "eb_intro"
-    t.text     "eb_ckeditor"
-    t.string   "eb_link"
-    t.string   "eb_image"
-    t.string   "eb_price_is"
-    t.string   "eb_price_was"
-    t.string   "eb_price_sale"
-    t.string   "eb_youtube_01"
-    t.string   "eb_youtube_02"
-    t.string   "eb_review"
-    t.string   "eb_source"
-    t.string   "eb_code"
-    t.string   "eb_date"
-    t.string   "eb_expire"
-    t.string   "eb_shipping"
-    t.string   "eb_featured_sale"
-    t.string   "eb_spare_01"
-    t.string   "eb_spare_02"
-    t.string   "eb_spare_03"
-    t.string   "eb_spare_04"
-    t.string   "eb_spare_05"
-    t.string   "eb_spare_06"
-    t.string   "eb_spare_07"
-    t.string   "eb_spare_08"
-    t.string   "eb_spare_09"
-    t.string   "eb_spare_10"
-    t.string   "eb_spare_11"
-    t.string   "eb_spare_12"
-    t.string   "eb_spare_13"
-    t.string   "eb_spare_14"
-    t.string   "eb_spare_15"
-    t.string   "eb_spare_16"
-    t.string   "eb_spare_17"
-    t.string   "eb_spare_18"
-    t.string   "eb_spare_19"
-    t.string   "eb_spare_20"
-    t.text     "eb_spare_21"
-    t.text     "eb_spare_22"
-    t.text     "eb_spare_23"
-    t.text     "eb_spare_24"
-    t.text     "eb_spare_25"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.integer  "user_id"
-    t.integer  "ecategory_id"
     t.integer  "impressions_count"
   end
 

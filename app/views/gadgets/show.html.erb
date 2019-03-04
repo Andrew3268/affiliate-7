@@ -1,0 +1,7 @@
+<h1><%= @gadget.title %></h1>
+<p><%= @gadget.link %></p>
+<p><%= @gadget.description %></p>
+
+<%= link_to "HOME", root_path %>
+<%= link_to "Edit", edit_gadget_path(@gadget) %>
+<%= link_to "Delete", gadget_path(@gadget), method: :delete, data: {confirm: "Are you sure?"} %>
